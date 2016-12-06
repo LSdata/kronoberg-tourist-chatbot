@@ -56,11 +56,6 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   process.exit(1);
 }
 
-// App ID can be retrieved from the App Dashboard
-const APP_ID = (process.env.MESSENGER_APP_ID) ? 
-  process.env.MESSENGER_APP_ID :
-  config.get('appID');
-
 /*
  * Use your own validation token. Check that the token used in the Webhook 
  * setup is the same token used here.
