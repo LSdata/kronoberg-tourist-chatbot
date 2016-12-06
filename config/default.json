@@ -2,5 +2,6 @@
     "appSecret": "79a67f9b87af6c2a0393aa4801048969",
     "pageAccessToken": "EAAYC57iV2J8BAFLp3sdbWEZAzcKZCMLz1zOFykZCWDyk9IPSVZAFPxGS6jEFoJyVld5ZBwr07ZBzRPgzqmB6v4B8qQk2N8EXrkOuT289gWdRG7rdRkKIiq80Mda737ZBRNPGwMnN3lnaDc439tvSLzKbihXZBfnO3dqpmls1drn8XAZDZD",
     "validationToken": "verify123token",
-    "serverURL": "https://kronoberg-tourist-chatbot.herokuapp.com/"
+    "serverURL": "https://kronoberg-tourist-chatbot.herokuapp.com/", 
+    "appID": "1692044117792927"
 }
