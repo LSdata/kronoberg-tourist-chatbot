@@ -14,13 +14,17 @@ const
   request = require('request'),
   routes = require('./router/routes'); //using the Express.js Router
 
+//new
 var app = express();
-app.set('port', process.env.PORT || 5000);
-app.set('view engine', 'ejs');
-app.use(bodyParser.json({ verify: verifyRequestSignature }));
+var server = https.createServer(app);
+
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use('/webhook', routes); 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/app/views');
+app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 5000);
 
 /*
  * Be sure to setup your config values before running this code. You can 
