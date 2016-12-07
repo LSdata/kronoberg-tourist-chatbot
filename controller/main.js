@@ -63,6 +63,8 @@ var data = req.body;
 }
 
 module.exports.authorize = function(req,res){
+console.log("module.exports.authorize..");
+
 var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
 
