@@ -7,6 +7,7 @@
 
 const 
   bodyParser = require('body-parser'),
+  path = require("path"),
   config = require('config'),
   crypto = require('crypto'),
   express = require('express'),
@@ -18,7 +19,8 @@ const
 var app = express();
 var server = https.createServer(app);
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use('/webhook', routes); 
