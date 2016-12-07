@@ -4,7 +4,7 @@
  */
 
 var path = require('path');
-var appJS = require('../app.js');
+var appJS = require('/../app.js');
 
 const 
     crypto = require('crypto'), 

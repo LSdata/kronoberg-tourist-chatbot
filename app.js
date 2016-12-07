@@ -21,7 +21,7 @@ var server = https.createServer(app);
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use('/webhook', routes); 
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
