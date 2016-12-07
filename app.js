@@ -12,7 +12,7 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request'),
-  routes = require('./router/routes'); //using the Express.js Router
+  routes = require('./routes'); //using the Express.js Router
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
