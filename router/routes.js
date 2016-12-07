@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var controller = require(path.join(__dirname, '/../controller/main.js'))
+var controller = require(path.join(__dirname, '/controller/main.js'))
 
 /* 
  * Description: a routing API for HTTP verb methods. 
