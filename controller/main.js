@@ -12,6 +12,7 @@ const
 
 //search results page
 module.exports.get_webhook = function(req,res){
+
  if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === appJS.verify_token) {
     console.log("Validating webhook");
@@ -63,7 +64,6 @@ var data = req.body;
 }
 
 module.exports.authorize = function(req,res){
-console.log("module.exports.authorize..");
 
 var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
