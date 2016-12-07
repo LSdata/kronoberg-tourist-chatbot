@@ -12,13 +12,17 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request'),
-  routes = require('./router/routes.js'); //using the Express.js Router
+  routes = require('./app/router/routes.js'),
+  path = require("path"); //using the Express.js Router
 
 var app = express();
+
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/app/views');
+
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, 'app/public')));
 app.use('/', routes)
 
 /*

@@ -4,7 +4,8 @@
  */
 
 var path = require('path');
-var appJS = require('../app.js');
+var appJS = require(path.join(__dirname, '/../../app.js'))
+
 
 const 
     crypto = require('crypto'), 
