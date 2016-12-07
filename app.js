@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 app.use('/webhook', routes); 
-//app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views');
 
 /*
  * Be sure to setup your config values before running this code. You can 
