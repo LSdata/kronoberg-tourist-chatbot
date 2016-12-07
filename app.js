@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 //app.use('/webhook', routes); 
-app.use('/router/routes', routes)
+//app.use('/router/routes', routes)
 
 
 
