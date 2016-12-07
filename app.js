@@ -14,6 +14,8 @@ const
   request = require('request');
 
 var app = express();
+var router = express.Router()
+
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
@@ -56,12 +58,15 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   process.exit(1);
 }
 
+router.use(function (req,res,next) {
+    next(); /* next() is passing the control to the next handler. Otherwise this middleware router.use-fkn would not end the request-response cycle. The the request would then be left hanging.*/
+});
 /*
  * Use your own validation token. Check that the token used in the Webhook 
  * setup is the same token used here.
  *
  */
-app.get('/webhook', function(req, res) {
+router.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === VALIDATION_TOKEN) {
     console.log("Validating webhook");
@@ -80,7 +85,7 @@ app.get('/webhook', function(req, res) {
  * https://developers.facebook.com/docs/messenger-platform/product-overview/setup#subscribe_app
  *
  */
-app.post('/webhook', function (req, res) {
+router.post('/webhook', function (req, res) {
   var data = req.body;
 
   // Make sure this is a page subscription
@@ -124,7 +129,7 @@ app.post('/webhook', function (req, res) {
  * (sendAccountLinking) is pointed to this URL. 
  * 
  */
-app.get('/authorize', function(req, res) {
+router.get('/authorize', function(req, res) {
   var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
 
@@ -141,6 +146,7 @@ app.get('/authorize', function(req, res) {
     redirectURISuccess: redirectURISuccess
   });
 });
+
 
 /*
  * Verify that the callback came from Facebook. Using the App Secret from 
