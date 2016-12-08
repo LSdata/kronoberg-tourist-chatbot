@@ -4,7 +4,6 @@ var appJS = require(path.join(__dirname, '/../../app.js'))
 
 const request = require('request');
 
-
 /*
  * Send a message with the account linking call-to-action
  *
@@ -31,7 +30,27 @@ module.exports = {
         };  
     
         fbGraph.callSendAPI(messageData,function(response){
-            alert("Request to FB Graph");
+            return response;
+        });
+    }
+}
+
+/*
+ * Turn typing indicator off
+ *
+ */
+module.exports = {
+    sendTypingOff: function(recipientId){
+
+        console.log("Turning typing indicator off");
+    
+        var messageData = {
+            recipient: {
+                id: recipientId
+            },
+            sender_action: "typing_off"
+        };
+        fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
     }
