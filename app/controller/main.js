@@ -5,7 +5,7 @@
 
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'))
-
+var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
 
 const 
     crypto = require('crypto'), 
@@ -83,7 +83,6 @@ var accountLinkingToken = req.query.account_linking_token;
   });
     
 }
-
 
 /*
  * Authorization Event
@@ -217,7 +216,8 @@ function receivedMessage(event) {
         break;        
 
       case 'account linking':
-        sendAccountLinking(senderID);
+        chats.sendAccountLinking(senderID)
+        //sendAccountLinking(senderID);
         break;
 
       default:
