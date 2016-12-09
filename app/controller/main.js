@@ -201,15 +201,15 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText) {
       case 'image':
-        sendImageMessage(senderID);
+        chats.sendImageMessage(senderID);
         break;
 
       case 'gif':
-        sendGifMessage(senderID);
+        chats.sendGifMessage(senderID);
         break;
 
       case 'audio':
-        sendAudioMessage(senderID);
+        chats.sendAudioMessage(senderID);
         break;
 
       case 'video':
@@ -348,73 +348,6 @@ function receivedAccountLink(event) {
   console.log("Received account link event with for user %d with status %s " +
     "and auth code %s ", senderID, status, authCode);
 }
-
-/*
- * Send an image using the Send API.
- *
- */
-function sendImageMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "image",
-        payload: {
-          url: appJS.server_url + "/assets/rift.png"
-        }
-      }
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Send a Gif using the Send API.
- *
- */
-function sendGifMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "image",
-        payload: {
-          url: appJS.server_url + "/assets/instagram_logo.gif"
-        }
-      }
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Send audio using the Send API.
- *
- */
-function sendAudioMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "audio",
-        payload: {
-          url: appJS.server_url + "/assets/sample.mp3"
-        }
-      }
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 

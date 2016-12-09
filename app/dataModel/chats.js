@@ -294,7 +294,7 @@ module.exports = {
       });
   },
 
-   //Send a button message using the Send API.
+  //Send a button message using the Send API.
   sendButtonMessage: function(recipientId){
     var messageData = {
       recipient: {
@@ -327,5 +327,68 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
               return response;
         });
-    }
+    }, 
+    
+  //Send an image using the Send API.
+  sendImageMessage: function(recipientId){
+      var messageData = {
+        recipient: {
+          id: recipientId
+        },
+        message: {
+          attachment: {
+            type: "image",
+            payload: {
+              url: appJS.server_url + "/assets/rift.png"
+            }
+          }
+        }
+      };
+    
+      fbGraph.callSendAPI(messageData,function(response){
+            return response;
+      });
+  },
+
+  //Send a Gif using the Send API.
+  sendGifMessage: function(recipientId){
+      var messageData = {
+        recipient: {
+          id: recipientId
+        },
+        message: {
+          attachment: {
+            type: "image",
+            payload: {
+              url: appJS.server_url + "/assets/instagram_logo.gif"
+            }
+          }
+        }
+      };
+
+      fbGraph.callSendAPI(messageData,function(response){
+            return response;
+      });
+  },
+
+  //Send audio using the Send API.
+  sendAudioMessage: function(recipientId){
+      var messageData = {
+        recipient: {
+          id: recipientId
+        },
+        message: {
+          attachment: {
+            type: "audio",
+            payload: {
+              url: appJS.server_url + "/assets/sample.mp3"
+            }
+          }
+        }
+      };
+
+      fbGraph.callSendAPI(messageData,function(response){
+            return response;
+      });
+  }
 };
