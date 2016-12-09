@@ -39,6 +39,7 @@ module.exports = {
  * Turn typing indicator off
  *
  */
+ /*
 module.exports = {
     sendTypingOff: function(recipientId){
         console.log("Turning typing indicator off");
@@ -55,4 +56,4 @@ module.exports = {
         });
 
     }
-}
+}*/
