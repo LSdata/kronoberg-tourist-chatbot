@@ -6,7 +6,7 @@
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'))
 var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
-var events = require(path.join(__dirname, 'chats.js'))
+var events = require(path.join(__dirname, 'events.js'))
 
 
 const 
