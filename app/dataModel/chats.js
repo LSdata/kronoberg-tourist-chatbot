@@ -1,5 +1,5 @@
 var path = require('path');
-var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'))
+var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 var appJS = require(path.join(__dirname, '/../../app.js'))
 
 const request = require('request');
