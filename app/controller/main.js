@@ -143,7 +143,7 @@ function receivedAuthentication(event) {
 
   // When an authentication is received, we'll send a message back to the sender
   // to let them know it was successful.
-  sendTextMessage(senderID, "Authentication successful");
+  chats.sendTextMessage(senderID, "Authentication successful");
 }
 
 /*
@@ -190,7 +190,7 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped");
+    chats.sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
 
@@ -213,15 +213,15 @@ function receivedMessage(event) {
         break;
 
       case 'video':
-        sendVideoMessage(senderID);
+        chats.sendVideoMessage(senderID);
         break;
 
       case 'file':
-        sendFileMessage(senderID);
+        chats.sendFileMessage(senderID);
         break;
 
       case 'button':
-        sendButtonMessage(senderID);
+        chats.sendButtonMessage(senderID);
         break;
 
       case 'generic':
@@ -253,10 +253,10 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);//messageText);
+        chats.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);//messageText);
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received");
+    chats.sendTextMessage(senderID, "Message with attachment received");
   }
 }
 
@@ -308,7 +308,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  chats.sendTextMessage(senderID, "Postback called");
 }
 
 /*
@@ -415,103 +415,6 @@ function sendAudioMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-/*
- * Send a video using the Send API.
- *
- */
-function sendVideoMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "video",
-        payload: {
-          url: appJS.server_url + "/assets/allofus480.mov"
-        }
-      }
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Send a file using the Send API.
- *
- */
-function sendFileMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "file",
-        payload: {
-          url: appJS.server_url + "/assets/test.txt"
-        }
-      }
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Send a text message using the Send API.
- *
- */
-function sendTextMessage(recipientId, messageText) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: messageText,
-      metadata: "DEVELOPER_DEFINED_METADATA"
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Send a button message using the Send API.
- *
- */
-function sendButtonMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "button",
-          text: "This is test text",
-          buttons:[{
-            type: "web_url",
-            url: "https://www.oculus.com/en-us/rift/",
-            title: "Open Web URL"
-          }, {
-            type: "postback",
-            title: "Trigger Postback",
-            payload: "DEVELOPER_DEFINED_PAYLOAD"
-          }, {
-            type: "phone_number",
-            title: "Call Phone Number",
-            payload: "+16505551234"
-          }]
-        }
-      }
-    }
-  };  
-
-  callSendAPI(messageData);
-}
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
