@@ -32,14 +32,8 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    }
-};
-
-/*
- * Turn typing indicator off
- *
- */
-module.exports = {
+    },
+     //Turn typing indicator off
     sendTypingOff: function(recipientId){
         console.log("Turning typing indicator off");
         
@@ -54,15 +48,9 @@ module.exports = {
             return response;
         });
 
-    }
-};
-
-/*
- * Turn typing indicator on
- *
- */
-module.exports = {
-
+    }, 
+    
+    // Turn typing indicator on
     sendTypingOn: function(recipientId){
         console.log("Turning typing indicator on");
         
@@ -77,4 +65,5 @@ module.exports = {
             return response;
         });
     }
+    
 };
