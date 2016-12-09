@@ -130,7 +130,7 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped");
+    chats.sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
 
@@ -193,10 +193,10 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);//messageText);
+        chats.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);//messageText);
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received");
+    chats.sendTextMessage(senderID, "Message with attachment received");
   }
 }
 
@@ -248,7 +248,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  chats.sendTextMessage(senderID, "Postback called");
 }
 
 /*
