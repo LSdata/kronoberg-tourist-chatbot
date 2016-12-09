@@ -249,7 +249,7 @@ function receivedMessage(event) {
         break;        
 
       case 'account linking':
-        sendAccountLinking(senderID);
+        chats.sendAccountLinking(senderID);
         break;
 
       default:
@@ -715,32 +715,6 @@ function sendTypingOff(recipientId) {
   callSendAPI(messageData);
 }
 
-/*
- * Send a message with the account linking call-to-action
- *
- */
-function sendAccountLinking(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "button",
-          text: "Welcome. Link your account.",
-          buttons:[{
-            type: "account_link",
-            url: appJS.server_url + "/authorize"
-          }]
-        }
-      }
-    }
-  };  
-
-  callSendAPI(messageData);
-}
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
