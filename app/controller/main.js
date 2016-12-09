@@ -38,7 +38,7 @@ var data = req.body;
       // Iterate over each messaging event
       pageEntry.messaging.forEach(function(messagingEvent) {
         if (messagingEvent.optin) {
-          chats.receivedAuthentication(messagingEvent);
+          receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {
           receivedMessage(messagingEvent);
         } else if (messagingEvent.delivery) {
