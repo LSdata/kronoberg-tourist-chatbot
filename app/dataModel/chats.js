@@ -89,6 +89,10 @@ module.exports = {
               "content_type":"text",
               "title":"Drama",
               "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+            },
+            {
+              "content_type":"location",
+              "title": "share my location"
             }
           ]
         }
