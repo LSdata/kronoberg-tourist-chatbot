@@ -4,8 +4,9 @@
  */
 
 var path = require('path');
+var appJS = require('../../app.js');
 var appJS = require(path.join(__dirname, '/../../app.js'))
-var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
+
 
 const 
     crypto = require('crypto'), 
@@ -82,6 +83,37 @@ var accountLinkingToken = req.query.account_linking_token;
     redirectURISuccess: redirectURISuccess
   });
     
+}
+
+
+/*
+ * Verify that the callback came from Facebook. Using the App Secret from 
+ * the App Dashboard, we can verify the signature that is sent with each 
+ * callback in the x-hub-signature field, located in the header.
+ *
+ * https://developers.facebook.com/docs/graph-api/webhooks#setup
+ *
+ */
+function verifyRequestSignature(req, res, buf) {
+  var signature = req.headers["x-hub-signature"];
+
+  if (!signature) {
+    // For testing, let's log an error. In production, you should throw an 
+    // error.
+    console.error("Couldn't validate the signature.");
+  } else {
+    var elements = signature.split('=');
+    var method = elements[0];
+    var signatureHash = elements[1];
+
+    var expectedHash = crypto.createHmac('sha1', appJS.app_secret)
+                        .update(buf)
+                        .digest('hex');
+
+    if (signatureHash != expectedHash) {
+      throw new Error("Couldn't validate the request signature.");
+    }
+  }
 }
 
 /*
@@ -212,11 +244,11 @@ function receivedMessage(event) {
         break;        
 
       case 'typing off':
-        chats.sendTypingOff(senderID);
+        sendTypingOff(senderID);
         break;        
 
       case 'account linking':
-        chats.sendAccountLinking(senderID)
+        sendAccountLinking(senderID);
         break;
 
       default:
@@ -665,6 +697,49 @@ function sendTypingOn(recipientId) {
   callSendAPI(messageData);
 }
 
+/*
+ * Turn typing indicator off
+ *
+ */
+function sendTypingOff(recipientId) {
+  console.log("Turning typing indicator off");
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    sender_action: "typing_off"
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send a message with the account linking call-to-action
+ *
+ */
+function sendAccountLinking(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "Welcome. Link your account.",
+          buttons:[{
+            type: "account_link",
+            url: appJS.server_url + "/authorize"
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
