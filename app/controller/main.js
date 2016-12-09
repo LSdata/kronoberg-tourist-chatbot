@@ -4,9 +4,9 @@
  */
 
 var path = require('path');
-var appJS = require('../../app.js');
 var appJS = require(path.join(__dirname, '/../../app.js'))
 var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
+var events = require(path.join(__dirname, 'chats.js'))
 
 
 const 
@@ -50,7 +50,7 @@ var data = req.body;
         } else if (messagingEvent.read) {
           receivedMessageRead(messagingEvent);
         } else if (messagingEvent.account_linking) {
-          receivedAccountLink(messagingEvent);
+          events.receivedAccountLink(messagingEvent);
         } else {
           console.log("Webhook received unknown messagingEvent: ", messagingEvent);
         }
@@ -330,23 +330,6 @@ function receivedMessageRead(event) {
     "number %d", watermark, sequenceNumber);
 }
 
-/*
- * Account Link Event
- *
- * This event is called when the Link Account or UnLink Account action has been
- * tapped.
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/account-linking
- * 
- */
-function receivedAccountLink(event) {
-  var senderID = event.sender.id;
-  var recipientID = event.recipient.id;
 
-  var status = event.account_linking.status;
-  var authCode = event.account_linking.authorization_code;
-
-  console.log("Received account link event with for user %d with status %s " +
-    "and auth code %s ", senderID, status, authCode);
-}
 
 
