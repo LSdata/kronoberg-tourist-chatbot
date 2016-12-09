@@ -249,7 +249,7 @@ function receivedMessage(event) {
         break;        
 
       case 'account linking':
-        chats.sendAccountLinking(senderID);
+        sendAccountLinking(senderID);
         break;
 
       default:
@@ -711,6 +711,33 @@ function sendTypingOff(recipientId) {
     },
     sender_action: "typing_off"
   };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send a message with the account linking call-to-action
+ *
+ */
+function sendAccountLinking(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "Welcome. Link your account.",
+          buttons:[{
+            type: "account_link",
+            url: appJS.server_url + "/authorize"
+          }]
+        }
+      }
+    }
+  };  
 
   callSendAPI(messageData);
 }
