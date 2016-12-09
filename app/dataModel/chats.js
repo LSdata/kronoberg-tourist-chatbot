@@ -39,21 +39,20 @@ module.exports = {
  * Turn typing indicator off
  *
  */
-/*
 module.exports = {
     sendTypingOff: function(recipientId){
-
         console.log("Turning typing indicator off");
-    
+        
         var messageData = {
             recipient: {
                 id: recipientId
             },
-            sender_action: "typing_off"
+        sender_action: "typing_off"
         };
+        
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
+
     }
 }
-*/
