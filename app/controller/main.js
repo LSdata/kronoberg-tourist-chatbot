@@ -241,11 +241,11 @@ function receivedMessage(event) {
         break;        
 
       case 'typing on':
-        sendTypingOn(senderID);
+        chats.sendTypingOn(senderID);
         break;        
 
       case 'typing off':
-        sendTypingOff(senderID);
+        chats.sendTypingOff(senderID);
         break;        
 
       case 'account linking':
@@ -680,42 +680,6 @@ function sendReadReceipt(recipientId) {
 
   callSendAPI(messageData);
 }
-
-/*
- * Turn typing indicator on
- *
- */
-function sendTypingOn(recipientId) {
-  console.log("Turning typing indicator on");
-
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    sender_action: "typing_on"
-  };
-
-  callSendAPI(messageData);
-}
-
-/*
- * Turn typing indicator off
- *
- */
- 
-function sendTypingOff(recipientId) {
-  console.log("Turning typing indicator off");
-
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    sender_action: "typing_off"
-  };
-
-  callSendAPI(messageData);
-}
-
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 

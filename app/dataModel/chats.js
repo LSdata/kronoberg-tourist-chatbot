@@ -33,13 +33,12 @@ module.exports = {
             return response;
         });
     }
-}
+};
 
 /*
  * Turn typing indicator off
  *
  */
- /*
 module.exports = {
     sendTypingOff: function(recipientId){
         console.log("Turning typing indicator off");
@@ -56,4 +55,26 @@ module.exports = {
         });
 
     }
-}*/
+};
+
+/*
+ * Turn typing indicator on
+ *
+ */
+module.exports = {
+
+    sendTypingOn: function(recipientId){
+        console.log("Turning typing indicator on");
+        
+        var messageData = {
+            recipient: {
+                id: recipientId
+            },
+            sender_action: "typing_on"
+        };
+        
+        fbGraph.callSendAPI(messageData,function(response){
+            return response;
+        });
+    }
+};
