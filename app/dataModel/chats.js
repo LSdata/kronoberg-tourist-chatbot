@@ -4,7 +4,6 @@ var appJS = require(path.join(__dirname, '/../../app.js'))
 
 const request = require('request');
 
-
 /*
  * Send a message with the account linking call-to-action
  *
@@ -40,7 +39,7 @@ module.exports = {
  * Turn typing indicator off
  *
  */
- /*
+
 module.exports = {
     sendTypingOff: function(recipientId){
 
@@ -57,4 +56,3 @@ module.exports = {
         });
     }
 }
-*/

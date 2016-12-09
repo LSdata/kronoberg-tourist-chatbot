@@ -245,7 +245,7 @@ function receivedMessage(event) {
         break;        
 
       case 'typing off':
-        sendTypingOff(senderID);
+        chats.sendTypingOff(senderID);
         break;        
 
       case 'account linking':
@@ -697,24 +697,6 @@ function sendTypingOn(recipientId) {
 
   callSendAPI(messageData);
 }
-
-/*
- * Turn typing indicator off
- *
- */
-function sendTypingOff(recipientId) {
-  console.log("Turning typing indicator off");
-
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    sender_action: "typing_off"
-  };
-
-  callSendAPI(messageData);
-}
-
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
