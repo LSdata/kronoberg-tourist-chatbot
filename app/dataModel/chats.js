@@ -5,6 +5,27 @@ var appJS = require(path.join(__dirname, '/../../app.js'))
 const request = require('request');
 
 
+/*
+ * Send a text message using the Send API.
+ *
+ */
+module.exports = {
+    sendTextMessage: function(recipientId, messageText){
+        var messageData = {
+            recipient: {
+                id: recipientId
+            },
+            message: {
+                text: messageText,
+                metadata: "DEVELOPER_DEFINED_METADATA"
+            }
+        };
+        
+        fbGraph.callSendAPI(messageData,function(response){
+            return response;
+        });
+    }
+}
 
 /*
  * Send a message with the account linking call-to-action
