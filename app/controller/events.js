@@ -1,5 +1,6 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'))
+var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
 //var appJS = require(path.join(__dirname, '/../../app.js'))
 
 //const request = require('request');
@@ -31,6 +32,6 @@ module.exports = {
         
         // When an authentication is received, we'll send a message back to the sender
         // to let them know it was successful.
-        sendTextMessage(senderID, "Authentication successful");
+        chats.sendTextMessage(senderID, "Authentication successful");
     }
 }
