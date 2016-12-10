@@ -53,69 +53,10 @@ module.exports = {
       }
     
       if (messageText) {
-    
-        // If we receive a text message, check to see if it matches any special
-        // keywords and send back the corresponding example. Otherwise, just echo
-        // the text we received.
-        switch (messageText) {
-          case 'image':
-            chat_info.sendImageMessage(senderID);
-            break;
-    
-          case 'gif':
-            chat_info.sendGifMessage(senderID);
-            break;
-    
-          case 'audio':
-            chat_info.sendAudioMessage(senderID);
-            break;
-    
-          case 'video':
-            chat_info.sendVideoMessage(senderID);
-            break;
-    
-          case 'file':
-            chat_info.sendFileMessage(senderID);
-            break;
-    
-          case 'button':
-            chat_info.sendButtonMessage(senderID);
-            break;
-    
-          case 'generic':
-            chat_info.sendGenericMessage(senderID);
-            break;
-    
-          case 'receipt':
-            chat_info.sendReceiptMessage(senderID);
-            break;
-    
-          case 'quick reply':
-            chat_info.sendQuickReply(senderID);
-            break;        
-    
-          case 'read receipt':
-            chat_info.sendReadReceipt(senderID);
-            break;        
-    
-          case 'typing on':
-            chat_info.sendTypingOn(senderID);
-            break;        
-    
-          case 'typing off':
-            chat_info.sendTypingOff(senderID);
-            break;        
-    
-          case 'account linking':
-            chat_info.sendAccountLinking(senderID);
-            break;
-    
-          default:
-            //chat_info.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);
-            var botReply = chitchat.semEval(messageText);
-            chat_info.sendTextMessage(senderID, botReply)
-        }
-      } else if (messageAttachments) {
+        var botReply = chitchat.semEval(messageText);
+        chat_info.sendTextMessage(senderID, botReply)
+      } 
+      else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Message with attachment received");
       }
     }, 
