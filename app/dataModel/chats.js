@@ -5,10 +5,10 @@ module.exports = {
     semEval: function(messageText){
         var capitalTxt = messageText.toUpperCase();
 
-        if ( (messageText.indexOf('room') > -1) || (messageText.indexOf('accomodation') > -1) ||
-            (messageText.indexOf('hotel') > -1) || (messageText.indexOf('place to stay') > -1) ||
-            (messageText.indexOf('sleep') > -1) || (messageText.indexOf('sleep over') > -1) ||
-            (messageText.indexOf('spend the night') > -1)) {
+        if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
+            (capitalTxt.indexOf('HOTEL') > -1) || (capitalTxt.indexOf('PLACE TO STAY') > -1) ||
+            (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
+            (capitalTxt.indexOf('SPEND THE NIGHT') > -1)) {
             return "Are you looking for accomodations? ";
         } 
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
