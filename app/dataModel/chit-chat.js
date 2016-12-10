@@ -3,6 +3,7 @@ var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 
 module.exports = {
     semEval: function(messageText){
+        var capitalTxt = messageText.toUpperCase();
 
         if ( (messageText.indexOf('room') > -1) || (messageText.indexOf('accomodation') > -1) ||
             (messageText.indexOf('hotel') > -1) || (messageText.indexOf('place to stay') > -1) ||
@@ -10,6 +11,9 @@ module.exports = {
             (messageText.indexOf('spend the night') > -1)) {
           return "Are you looking for accomodations? ";
         } 
+        if(capitalTxt.indexOf('food'.toUpperCase())){
+            return ("do you want suggestions on were to eat?")
+        }
         if ((messageText == "hi") || (messageText == "Hi") || (messageText == "Hi!")|| (messageText == "hi!") || 
             (messageText == "hello")|| (messageText == "Hello")|| (messageText == "Hello!") || 
             (messageText == "hello!") || (messageText == "hey") || (messageText == "Hey") || 
