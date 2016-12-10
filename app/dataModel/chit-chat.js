@@ -8,7 +8,7 @@ module.exports = {
           return "Are you looking for accomodations? ";
         } 
         if ((messageText = "hi") || (messageText="Hi")){
-            return "Hi :)";
+            return "Hi! :)";
         }
         else {
           return "I didn't understand that. Here is a list of common topics many visitors are searching for: ";
