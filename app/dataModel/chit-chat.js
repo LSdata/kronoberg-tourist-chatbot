@@ -7,7 +7,7 @@ module.exports = {
         if (messageText.indexOf('room') > -1) {
           return "Are you looking for accomodations? ";
         } 
-        if ((messageText = "hi") || (messageText="Hi")){
+        if ((messageText == "hi") || (messageText == "Hi")){
             return "Hi! :)";
         }
         else {
