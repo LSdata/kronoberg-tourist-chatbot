@@ -289,9 +289,9 @@ module.exports = {
       }
     };
   
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
+    fbGraph.callSendAPI(messageData,function(response){
+      return response;
+    });
   },
 
   //Send a button message using the Send API.

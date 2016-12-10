@@ -112,7 +112,8 @@ module.exports = {
     
           default:
             //chat_info.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);
-            chitchat.semEval(senderID, messageText);
+            var botReply = chitchat.semEval(messageText);
+            chat_info.sendTextMessage(senderID, botReply)
         }
       } else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Message with attachment received");
