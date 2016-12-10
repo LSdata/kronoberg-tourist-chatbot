@@ -9,8 +9,11 @@ module.exports = {
             (messageText.indexOf('hotel') > -1) || (messageText.indexOf('place to stay') > -1) ||
             (messageText.indexOf('sleep') > -1) || (messageText.indexOf('sleep over') > -1) ||
             (messageText.indexOf('spend the night') > -1)) {
-          return "Are you looking for accomodations? ";
+            return "Are you looking for accomodations? ";
         } 
+        if(messageText.indexOf('food') > -1){
+            return "do you want suggestions of where to eat?"
+        }
         if ((messageText == "hi") || (messageText == "Hi") || (messageText == "Hi!")|| (messageText == "hi!") || 
             (messageText == "hello")|| (messageText == "Hello")|| (messageText == "Hello!") || 
             (messageText == "hello!") || (messageText == "hey") || (messageText == "Hey") || 
