@@ -133,8 +133,105 @@ module.exports = {
       } else if (messageAttachments) {
         chats.sendTextMessage(senderID, "Message with attachment received");
       }
-    }
-            
-        
+    }, 
     
+    
+/*
+ * Authorization Event
+ *
+ * The value for 'optin.ref' is defined in the entry point. For the "Send to 
+ * Messenger" plugin, it is the 'data-ref' field. Read more at 
+ * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
+ *
+ */
+    receivedAuthentication: function(event){
+      var senderID = event.sender.id;
+      var recipientID = event.recipient.id;
+      var timeOfAuth = event.timestamp;
+    
+      // The 'ref' field is set in the 'Send to Messenger' plugin, in the 'data-ref'
+      // The developer can set this to an arbitrary value to associate the 
+      // authentication callback with the 'Send to Messenger' click event. This is
+      // a way to do account linking when the user clicks the 'Send to Messenger' 
+      // plugin.
+      var passThroughParam = event.optin.ref;
+    
+      console.log("Received authentication for user %d and page %d with pass " +
+        "through param '%s' at %d", senderID, recipientID, passThroughParam, 
+        timeOfAuth);
+    
+      // When an authentication is received, we'll send a message back to the sender
+      // to let them know it was successful.
+      chats.sendTextMessage(senderID, "Authentication successful");
+    },
+
+
+
+/*
+ * Delivery Confirmation Event
+ *
+ * This event is sent to confirm the delivery of a message. Read more about 
+ * these fields at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered
+ *
+ */
+    receivedDeliveryConfirmation: function(event){
+      var senderID = event.sender.id;
+      var recipientID = event.recipient.id;
+      var delivery = event.delivery;
+      var messageIDs = delivery.mids;
+      var watermark = delivery.watermark;
+      var sequenceNumber = delivery.seq;
+    
+      if (messageIDs) {
+        messageIDs.forEach(function(messageID) {
+          console.log("Received delivery confirmation for message ID: %s", 
+            messageID);
+        });
+      }
+    
+      console.log("All message before %d were delivered.", watermark);
+    },
+
+/*
+ * Postback Event
+ *
+ * This event is called when a postback is tapped on a Structured Message. 
+ * https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received
+ * 
+ */
+    receivedPostback: function(event){
+      var senderID = event.sender.id;
+      var recipientID = event.recipient.id;
+      var timeOfPostback = event.timestamp;
+    
+      // The 'payload' param is a developer-defined field which is set in a postback 
+      // button for Structured Messages. 
+      var payload = event.postback.payload;
+    
+      console.log("Received postback for user %d and page %d with payload '%s' " + 
+        "at %d", senderID, recipientID, payload, timeOfPostback);
+    
+      // When a postback is called, we'll send a message back to the sender to 
+      // let them know it was successful
+      chats.sendTextMessage(senderID, "Postback called");
+    },
+
+/*
+ * Message Read Event
+ *
+ * This event is called when a previously-sent message has been read.
+ * https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-read
+ * 
+ */
+    receivedMessageRead: function(event){
+      var senderID = event.sender.id;
+      var recipientID = event.recipient.id;
+    
+      // All messages before watermark (a timestamp) or sequence have been seen.
+      var watermark = event.read.watermark;
+      var sequenceNumber = event.read.seq;
+    
+      console.log("Received message read event for watermark %d and sequence " +
+        "number %d", watermark, sequenceNumber);
+    }
 };
