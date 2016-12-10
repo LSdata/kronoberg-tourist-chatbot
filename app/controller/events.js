@@ -1,5 +1,5 @@
 var path = require('path');
-var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
+var chats = require(path.join(__dirname, '/../dataModel/chat-info.js'))
 
 module.exports = {
 
@@ -110,7 +110,8 @@ module.exports = {
             break;
     
           default:
-            chats.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);//messageText);
+            chats.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);
+            //chit-chat.semEval(senderID);
         }
       } else if (messageAttachments) {
         chats.sendTextMessage(senderID, "Message with attachment received");
