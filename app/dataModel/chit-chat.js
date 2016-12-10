@@ -4,7 +4,10 @@ var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 module.exports = {
     semEval: function(messageText){
 
-        if ( (messageText.indexOf(('room') || ('accomodation') || ('hotel') ) > -1)  ) {
+        if ( (messageText.indexOf('room') > -1) || (messageText.indexOf('accomodation') > -1) ||
+            (messageText.indexOf('hotel') > -1) || (messageText.indexOf('place to stay') > -1) ||
+            (messageText.indexOf('sleep') > -1) || (messageText.indexOf('sleep over') > -1) ||
+            (messageText.indexOf('spend the night') > -1)) {
           return "Are you looking for accomodations? ";
         } 
         if ((messageText == "hi") || (messageText == "Hi") || (messageText == "Hi!")|| (messageText == "hi!") || 
