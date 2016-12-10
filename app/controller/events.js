@@ -2,25 +2,7 @@ var path = require('path');
 var chats = require(path.join(__dirname, '/../dataModel/chats.js'))
 
 module.exports = {
-/*
- * Account Link Event
- *
- * This event is called when the Link Account or UnLink Account action has been
- * tapped.
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/account-linking
- * 
- */
-     receivedAccountLink: function(event){
 
-        var senderID = event.sender.id;
-        var recipientID = event.recipient.id;
-        
-        var status = event.account_linking.status;
-        var authCode = event.account_linking.authorization_code;
-        
-        console.log("Received account link event with for user %d with status %s " +
-        "and auth code %s ", senderID, status, authCode);
-    }, 
     /*
  * Message Event
  *
@@ -135,15 +117,34 @@ module.exports = {
       }
     }, 
     
+    /*
+     * Account Link Event
+     *
+     * This event is called when the Link Account or UnLink Account action has been
+     * tapped.
+     * https://developers.facebook.com/docs/messenger-platform/webhook-reference/account-linking
+     * 
+     */
+     receivedAccountLink: function(event){
+
+        var senderID = event.sender.id;
+        var recipientID = event.recipient.id;
+        
+        var status = event.account_linking.status;
+        var authCode = event.account_linking.authorization_code;
+        
+        console.log("Received account link event with for user %d with status %s " +
+        "and auth code %s ", senderID, status, authCode);
+    }, 
     
-/*
- * Authorization Event
- *
- * The value for 'optin.ref' is defined in the entry point. For the "Send to 
- * Messenger" plugin, it is the 'data-ref' field. Read more at 
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
- *
- */
+    /*
+     * Authorization Event
+     *
+     * The value for 'optin.ref' is defined in the entry point. For the "Send to 
+     * Messenger" plugin, it is the 'data-ref' field. Read more at 
+     * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
+     *
+     */
     receivedAuthentication: function(event){
       var senderID = event.sender.id;
       var recipientID = event.recipient.id;
