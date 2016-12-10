@@ -11,7 +11,7 @@ module.exports = {
             (messageText.indexOf('spend the night') > -1)) {
             return "Are you looking for accomodations? ";
         } 
-        if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf('EAT') > -1) || 
+        if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || 
             (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat?"
         }
