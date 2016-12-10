@@ -23,6 +23,7 @@ module.exports = {
                 'hi!! :)',
                 'hi there! :)',
                 'hi!! :) what do you want to visit in Kronoberg?',
+                'hello!! :) what do you want to visit in Kronoberg?',
                 'Hi :) How can I help you?'
             ];
             
