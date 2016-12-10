@@ -5,7 +5,7 @@ module.exports = {
             id: recipientId
           },
           message: {
-            text: "Welcome! Your text was: " + messageText,
+            text: "Welcome! Your text was: " + messageText
           }
         };
       
