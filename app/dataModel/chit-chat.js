@@ -11,7 +11,7 @@ module.exports = {
             (messageText.indexOf('spend the night') > -1)) {
           return "Are you looking for accomodations? ";
         } 
-        if(capitalTxt.indexOf('food'.toUpperCase() > -1) ){
+        if(capitalTxt.indexOf(('food').toUpperCase() > -1) ){
             return ("do you want suggestions on were to eat?");
         }
         if ((messageText == "hi") || (messageText == "Hi") || (messageText == "Hi!")|| (messageText == "hi!") || 
