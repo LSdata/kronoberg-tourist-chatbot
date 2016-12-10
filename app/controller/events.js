@@ -1,5 +1,6 @@
 var path = require('path');
-var chats = require(path.join(__dirname, '/../dataModel/chat-info.js'))
+var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'))
+var chitchat = require(path.join(__dirname, '/../dataModel/chit-chat.js'))
 
 module.exports = {
 
@@ -47,7 +48,7 @@ module.exports = {
         console.log("Quick reply for message %s with payload %s",
           messageId, quickReplyPayload);
     
-        chats.sendTextMessage(senderID, "Quick reply tapped");
+        chat_info.sendTextMessage(senderID, "Quick reply tapped");
         return;
       }
     
@@ -58,63 +59,63 @@ module.exports = {
         // the text we received.
         switch (messageText) {
           case 'image':
-            chats.sendImageMessage(senderID);
+            chat_info.sendImageMessage(senderID);
             break;
     
           case 'gif':
-            chats.sendGifMessage(senderID);
+            chat_info.sendGifMessage(senderID);
             break;
     
           case 'audio':
-            chats.sendAudioMessage(senderID);
+            chat_info.sendAudioMessage(senderID);
             break;
     
           case 'video':
-            chats.sendVideoMessage(senderID);
+            chat_info.sendVideoMessage(senderID);
             break;
     
           case 'file':
-            chats.sendFileMessage(senderID);
+            chat_info.sendFileMessage(senderID);
             break;
     
           case 'button':
-            chats.sendButtonMessage(senderID);
+            chat_info.sendButtonMessage(senderID);
             break;
     
           case 'generic':
-            chats.sendGenericMessage(senderID);
+            chat_info.sendGenericMessage(senderID);
             break;
     
           case 'receipt':
-            chats.sendReceiptMessage(senderID);
+            chat_info.sendReceiptMessage(senderID);
             break;
     
           case 'quick reply':
-            chats.sendQuickReply(senderID);
+            chat_info.sendQuickReply(senderID);
             break;        
     
           case 'read receipt':
-            chats.sendReadReceipt(senderID);
+            chat_info.sendReadReceipt(senderID);
             break;        
     
           case 'typing on':
-            chats.sendTypingOn(senderID);
+            chat_info.sendTypingOn(senderID);
             break;        
     
           case 'typing off':
-            chats.sendTypingOff(senderID);
+            chat_info.sendTypingOff(senderID);
             break;        
     
           case 'account linking':
-            chats.sendAccountLinking(senderID);
+            chat_info.sendAccountLinking(senderID);
             break;
     
           default:
-            chats.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);
-            //chit-chat.semEval(senderID);
+            //chat_info.sendTextMessage(senderID, "Hi and welcome! \n\nExample of chat words you can send to the bot: generic, button, receipt and quick reply. For example type the word 'generic'. \n\nEcho of you text: "+messageText);
+            chitchat.semEval(senderID);
         }
       } else if (messageAttachments) {
-        chats.sendTextMessage(senderID, "Message with attachment received");
+        chat_info.sendTextMessage(senderID, "Message with attachment received");
       }
     }, 
     
@@ -164,7 +165,7 @@ module.exports = {
     
       // When an authentication is received, we'll send a message back to the sender
       // to let them know it was successful.
-      chats.sendTextMessage(senderID, "Authentication successful");
+      chat_info.sendTextMessage(senderID, "Authentication successful");
     },
 
 
@@ -215,7 +216,7 @@ module.exports = {
     
       // When a postback is called, we'll send a message back to the sender to 
       // let them know it was successful
-      chats.sendTextMessage(senderID, "Postback called");
+      chat_info.sendTextMessage(senderID, "Postback called");
     },
 
 /*
