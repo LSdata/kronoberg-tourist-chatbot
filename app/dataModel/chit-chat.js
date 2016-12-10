@@ -11,14 +11,13 @@ module.exports = {
             (messageText.indexOf('spend the night') > -1)) {
             return "Are you looking for accomodations? ";
         } 
-        if(capitalTxt.indexOf('FOOD') > -1){
-            return "do you want suggestions of where to eat?"
+        if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf('EAT') > -1) || 
+            (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
+                return "do you want suggestions of where to eat?"
         }
-        if ((messageText == "hi") || (messageText == "Hi") || (messageText == "Hi!")|| (messageText == "hi!") || 
-            (messageText == "hello")|| (messageText == "Hello")|| (messageText == "Hello!") || 
-            (messageText == "hello!") || (messageText == "hey") || (messageText == "Hey") || 
-            (messageText == "hey!") || (messageText == "Hey!") || (messageText == "Hi there!") || 
-            (messageText == "hi there") || (messageText == "hi :)") || (messageText == "hi there!")){
+        if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HELLO") || (capitalTxt == "HELLO!") || 
+            (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HI THERE!") || 
+            (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
             return "Hi! :)";
         }
         else {
