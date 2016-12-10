@@ -15,9 +15,9 @@ module.exports = {
             (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat?"
         }
-        if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HELLO") || (capitalTxt == "HELLO!") || 
-            (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HI THERE!") || 
-            (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
+        if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
+            (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!!") || 
+            (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
             return "Hi! :)";
         }
         else {
