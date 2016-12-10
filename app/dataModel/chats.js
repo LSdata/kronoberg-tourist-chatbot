@@ -16,9 +16,19 @@ module.exports = {
                 return "do you want suggestions of where to eat?"
         }
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
-            (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!!") || 
+            (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
             (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
-            return "Hi! :)";
+            
+            var greetings = [
+                'hi!! :)',
+                'hi there! :)',
+                'hi!! :) what do you want to visit in Kronoberg?',
+                'Hi :) How can I help you?'
+            ];
+            
+            var randomNr = Math.floor(Math.random()*greetings.length);
+        
+            return greetings[randomNr];
         }
         else {
           return "I'm sorry I didn't quite get that. \nBut here is a list of common topics many visitors are searching for: ";
