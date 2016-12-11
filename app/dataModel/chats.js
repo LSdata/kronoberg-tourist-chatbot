@@ -14,7 +14,8 @@ module.exports = {
             return "Are you looking for accomodations? ";
         } 
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
-            (capitalTxt == "EATINGS") || (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
+            (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
+            (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat?"
         }
         if( (capitalTxt.indexOf('MY LOCATION') > -1)  ){
