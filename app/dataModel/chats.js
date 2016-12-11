@@ -11,12 +11,12 @@ module.exports = {
             (capitalTxt.indexOf('HOTEL') > -1) || (capitalTxt.indexOf('PLACE TO STAY') > -1) ||
             (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
             (capitalTxt.indexOf('SPEND THE NIGHT') > -1)) {
-            return "Are you looking for accomodations? ";
+            return "Are you looking for accomodations? (..not implemented yet) ";
         } 
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
-                return "do you want suggestions of where to eat?"
+                return "do you want suggestions of where to eat? (..not implemented yet)"
         }
         if( (capitalTxt.indexOf('MY LOCATION') > -1)  ){
                 return chat_info.sendQuickReply(senderID)

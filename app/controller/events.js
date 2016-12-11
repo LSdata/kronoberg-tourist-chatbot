@@ -168,7 +168,6 @@ module.exports = {
       else if (payload =="attraction"){
           chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
-
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
     },
