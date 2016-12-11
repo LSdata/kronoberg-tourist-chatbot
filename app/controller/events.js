@@ -57,7 +57,7 @@ module.exports = {
         chat_info.sendTextMessage(senderID, botReply)
       } 
       else if (messageAttachments) {
-        chat_info.sendTextMessage(senderID, "Message with attachment received");
+        chat_info.sendTextMessage(senderID, "Thank you!");
       }
     }, 
     
