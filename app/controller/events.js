@@ -161,13 +161,13 @@ module.exports = {
           chat_info.pers_startmenu();
           chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
-      if (payload =="accomodation"){
+      else if (payload =="accomodation"){
           chat_info.sendTextMessage(senderID, "ok! Here are some suggestions of accomodations that I would recommed:..(not developed yet)");
       }
-      if (payload =="eat"){
+      else if (payload =="eat"){
           chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
       }
-      if (payload =="attraction"){
+      else if (payload =="attraction"){
           chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
       else
