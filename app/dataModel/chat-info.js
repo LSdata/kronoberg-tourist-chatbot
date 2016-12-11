@@ -106,12 +106,13 @@ module.exports = {
     //set the get started button 
     startBtn: function(){
       var messageData = {
-        setting_type:"call_to_actions",
-        thread_state:"new_thread",
-        call_to_actions:[{
-          type:"postback",
-          payload: "start"
-        }]
+        "setting_type":"call_to_actions",
+        "thread_state":"new_thread",
+        "call_to_actions":[
+        {
+          "payload":"start"
+        }
+        ]
       };
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
