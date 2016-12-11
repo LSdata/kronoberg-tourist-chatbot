@@ -91,9 +91,9 @@ module.exports = {
     //Set start greetings
     startGreetings: function(){
       var messageData = {
-        "setting_type":"greeting",
-        "greeting":{
-          "text":"Hi {{user_first_name}}!! :) Welcome to this bot! :) "
+        setting_type:"greeting",
+        greeting:{
+          text:"Hi {{user_first_name}}!! :) Welcome to this bot! :) "
         }
       };
       
