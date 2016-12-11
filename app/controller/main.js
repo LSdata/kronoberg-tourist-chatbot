@@ -6,6 +6,7 @@
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'))
 var events = require(path.join(__dirname, 'events.js'))
+var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'))
 
 const 
     crypto = require('crypto'), 
@@ -25,7 +26,7 @@ module.exports.get_webhook = function(req,res){
 }
 
 module.exports.post_webhook = function(req,res){
-var data = req.body;
+  var data = req.body;
 
   // Make sure this is a page subscription
   if (data.object == 'page') {
@@ -54,7 +55,9 @@ var data = req.body;
         }
       });
     });
-
+    
+    chat_info.startBtn();
+    
     // Assume all went well.
     //
     // You must send back a 200, within 20 seconds, to let us know you've 

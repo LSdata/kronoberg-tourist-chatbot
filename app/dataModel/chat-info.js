@@ -87,7 +87,22 @@ module.exports = {
             return response;
         });
     },
+    
+    //Set startbutton
+    startBtn: function(recipientId){
+      var messageData = {
+        setting_type: "call_to_actions",
+        thread_state: "new_thread",
+        call_to_actions:[{
+          payload: "USER_DEFINED_PAYLOAD"
+        }]
+      };
+      fbGraph.callSendAPI(messageData,function(response){
+        return response;
+      });
 
+    },
+    
     //Send a read receipt to indicate the message has been read
     sendReadReceipt: function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
