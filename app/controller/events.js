@@ -155,9 +155,7 @@ module.exports = {
       // button for Structured Messages. 
       var payload = event.postback.payload;
       
-      chat_info.pers_startmenu();
-      
-      if (payload =="start"){
+      if (payload =="USER_DEFINED_PAYLOAD"){
           chat_info.pers_startmenu();
           chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
@@ -170,9 +168,7 @@ module.exports = {
       else if (payload =="attraction"){
           chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
-      else
-        chat_info.sendTextMessage(senderID, payload);
-        
+
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
     },
