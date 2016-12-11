@@ -123,18 +123,14 @@ module.exports = {
         setting_type: "call_to_actions",
         thread_state: "existing_thread",
         call_to_actions:[{
-          type:"message",
-          title:"accomodations",
+          type:"postback",
+          title:"HELP",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
         }, {
-          type:"message",
-          title:"eatings",
+          type:"postback",
+          title:"Start all over",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
-        }, {
-          type:"message",
-          title:"places to visit",
-          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
-        }, {
+        },{
           type:"web_url",
           title:"View my Website",
           url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
