@@ -73,7 +73,7 @@ module.exports = {
           id: recipientId
         },
         message: {
-          text: "Please share your location so I can direct you to the place",
+          text: "Ok! Please share your location so I can give suggestions of nearby accomodation places?",
           quick_replies: [
             {
               "content_type":"location",
