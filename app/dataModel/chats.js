@@ -38,7 +38,7 @@ module.exports = {
             return greetings[randomNr];
         }
         else {
-          return "I'm sorry I didn't quite get that. \nThe icon with the three caret lines below next to the text input field contains the main menu with common topics";
+          return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below the most common topics. It is in the icon with the three caret lines next to the text input field.";
         }
     }
 };
