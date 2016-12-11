@@ -164,7 +164,7 @@ module.exports = {
       // let them know it was successful
       setTimeout(function() {
         chat_info.sendTextMessage(senderID, "How can I help you today? What are you looking for in Kronoberg?");
-      }, 1000);
+      }, 3000);
         chat_info.sendTextMessage(senderID, "Hi!! :) Welcome to this bot! The icon with the three caret lines is a button next to the text field contains the main menu of common topics");
     },
 
