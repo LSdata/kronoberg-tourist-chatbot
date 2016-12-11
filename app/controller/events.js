@@ -160,7 +160,13 @@ module.exports = {
           chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
       else if (payload =="accomodation"){
-          chat_info.sendQuickReply(senderID);
+          chat_info.sendQuickReply(senderID,function(response){
+            return response;
+        });
+          
+           chat_info.sendGenericMessage(recipientID,function(response){
+            return response;
+        });
       }
       else if (payload =="eat"){
           chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");

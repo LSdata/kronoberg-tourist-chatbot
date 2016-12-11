@@ -86,11 +86,6 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-        
-        this.sendGenericMessage(recipientId,function(response){
-            return response;
-        });
-
     },
     
     //Set start greetings
