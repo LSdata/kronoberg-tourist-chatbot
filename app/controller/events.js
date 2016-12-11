@@ -111,7 +111,6 @@ module.exports = {
       chat_info.startGreetings();
       chat_info.startBtn();
       chat_info.pers_startmenu();
-      chat_info.pers_startmenu();
     },
 
 
@@ -157,7 +156,7 @@ module.exports = {
       // button for Structured Messages. 
       var payload = event.postback.payload;
       if (payload =="eat"){
-                chat_info.sendTextMessage(senderID, "Are you looking for a place to eat?");
+          chat_info.sendTextMessage(senderID, "Are you looking for a place to eat?");
       }
     
       console.log("Received postback for user %d and page %d with payload '%s' " + 
@@ -166,6 +165,7 @@ module.exports = {
       // When a postback is called, we'll send a message back to the sender to 
       // let them know it was successful
         chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
+          chat_info.pers_startmenu();
     },
 
 /*
