@@ -1,8 +1,10 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
+var chat_info = require(path.join(__dirname, 'chat-info.js'))
+
 
 module.exports = {
-    semEval: function(messageText){
+    semEval: function(senderID, messageText){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -14,6 +16,9 @@ module.exports = {
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat?"
+        }
+        if( (capitalTxt.indexOf('my location') > -1)  ){
+                return chat_info.sendQuickReply(senderID)
         }
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 

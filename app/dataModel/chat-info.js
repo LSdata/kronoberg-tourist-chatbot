@@ -73,23 +73,8 @@ module.exports = {
           id: recipientId
         },
         message: {
-          text: "What's your favorite movie genre?",
+          text: "Please share your location so I can direct you to the place",
           quick_replies: [
-            {
-              "content_type":"text",
-              "title":"Action",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
-            },
-            {
-              "content_type":"text",
-              "title":"Comedy",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
-            },
-            {
-              "content_type":"text",
-              "title":"Drama",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
-            },
             {
               "content_type":"location",
               "title": "share my location"
