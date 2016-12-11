@@ -124,11 +124,15 @@ module.exports = {
         thread_state: "existing_thread",
         call_to_actions:[{
           type:"postback",
-          title:"HELP",
+          title:"Accomodation",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
         }, {
           type:"postback",
-          title:"Start all over",
+          title:"Eatings",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+        },{
+          type:"postback",
+          title:"Places to visit",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
         },{
           type:"web_url",
