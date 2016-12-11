@@ -129,7 +129,7 @@ module.exports = {
         }, {
           type:"postback",
           title:"PLACES TO EAT",
-          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+          payload:"eat"
         },{
           type:"postback",
           title:"Places to visit",

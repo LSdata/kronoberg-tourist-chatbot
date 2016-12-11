@@ -156,6 +156,9 @@ module.exports = {
       // The 'payload' param is a developer-defined field which is set in a postback 
       // button for Structured Messages. 
       var payload = event.postback.payload;
+      if (payload =="eat"){
+                chat_info.sendTextMessage(senderID, "Are you looking for a place to eat?");
+      }
     
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
