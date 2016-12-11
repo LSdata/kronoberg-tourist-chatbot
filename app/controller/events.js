@@ -108,6 +108,8 @@ module.exports = {
       // When an authentication is received, we'll send a message back to the sender
       // to let them know it was successful.
       chat_info.sendTextMessage(senderID, "Hi :) Welcome! How can I help you?");
+      chat_info.startBtn();
+
     },
 
 
