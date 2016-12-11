@@ -123,17 +123,21 @@ module.exports = {
         setting_type: "call_to_actions",
         thread_state: "existing_thread",
         call_to_actions:[{
-          type:"postback",
-          title:"Help",
+          type:"message",
+          title:"accomodations",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
         }, {
-          type:"postback",
-          title:"Start a New Order",
+          type:"message",
+          title:"eatings",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
-        },{
+        }, {
+          type:"message",
+          title:"places to visit",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+        }, {
           type:"web_url",
-          title:"View Website",
-          url:"http://petersapparel.parseapp.com/"
+          title:"View my Website",
+          url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
         }]
       };
 
