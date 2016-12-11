@@ -138,7 +138,7 @@ module.exports = {
           payload:"attraction"
           },{
             type:"web_url",
-            title:"View my Website",
+            title:"Link to my Website",
             url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
         }]
       };

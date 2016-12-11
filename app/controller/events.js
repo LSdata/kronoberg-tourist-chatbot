@@ -171,7 +171,8 @@ module.exports = {
           chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
       else
-        chat_info.sendTextMessage(senderID, "payload not identifyed..");
+        chat_info.sendTextMessage(senderID, payload);
+        
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
     },
