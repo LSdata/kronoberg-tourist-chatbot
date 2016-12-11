@@ -146,10 +146,8 @@ module.exports = {
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
+    },
 
-    }
-
-    
     //Send a read receipt to indicate the message has been read
     sendReadReceipt: function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
