@@ -110,6 +110,7 @@ module.exports = {
       chat_info.sendTextMessage(senderID, "Hi :) You are now authenticated to this site. Welcome! How can I help you?");
       chat_info.startGreetings();
       chat_info.startBtn();
+      chat_info.pers_startmenu();
 
     },
 

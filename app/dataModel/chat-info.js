@@ -117,6 +117,39 @@ module.exports = {
       });
     },
     
+    //persistent start menu 
+    pers_startmenu: function(){
+      var messageData = {
+        setting_type: "call_to_actions",
+        thread_state: "existing_thread",
+        call_to_actions:[{
+          type:"postback",
+          title:"Help",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+        }, {
+          type:"postback",
+          title:"Start a New Order",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+        },{
+          "type":"web_url",
+          "title":"Checkout",
+          "url":"http://petersapparel.parseapp.com/checkout",
+          "webview_height_ratio": "full",
+          "messenger_extensions": true
+        }, {
+          "type":"web_url",
+          "title":"View Website",
+          "url":"http://petersapparel.parseapp.com/"
+        }]
+      };
+
+      fbGraph.sendAPI_setThread(messageData,function(response){
+        return response;
+      });
+
+    }
+
+    
     //Send a read receipt to indicate the message has been read
     sendReadReceipt: function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
