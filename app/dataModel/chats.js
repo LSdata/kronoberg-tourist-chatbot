@@ -17,7 +17,7 @@ module.exports = {
             (capitalTxt.indexOf('RESTAURANT') > -1) || (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat?"
         }
-        if( (capitalTxt.indexOf('my location') > -1)  ){
+        if( (capitalTxt.indexOf('MY LOCATION') > -1)  ){
                 return chat_info.sendQuickReply(senderID)
         }
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
