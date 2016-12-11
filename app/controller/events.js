@@ -161,8 +161,7 @@ module.exports = {
     
       // When a postback is called, we'll send a message back to the sender to 
       // let them know it was successful
-      //chat_info.sendTextMessage(senderID, "Postback called");
-      chat_info.sendTextMessage( senderID, chat_info.startGreetings() );
+      chat_info.sendTextMessage(senderID, "Hi {{user_first_name}}!! :) Welcome to this bot! :)");
     },
 
 /*
