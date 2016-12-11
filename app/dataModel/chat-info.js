@@ -91,12 +91,12 @@ module.exports = {
     //Set startbutton
     startBtn: function(recipientId){
       var messageData = {
-        setting_type: "call_to_actions",
-        thread_state: "new_thread",
-        call_to_actions:[{
-          payload: "USER_DEFINED_PAYLOAD"
-        }]
-      };
+        "setting_type":"greeting",
+        "greeting":{
+          "text":"Hi {{user_first_name}}, welcome to this bot! :) "
+        }
+      }
+      
       fbGraph.callSendAPI(messageData,function(response){
         return response;
       });
