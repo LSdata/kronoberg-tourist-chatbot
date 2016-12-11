@@ -38,7 +38,7 @@ module.exports = {
             return greetings[randomNr];
         }
         else {
-          return "I'm sorry I didn't quite get that. \nBut here is a list of common topics many visitors are searching for: ";
+          return "I'm sorry I didn't quite get that. \nThe icon with the three caret lines below next to the text input field contains the main menu with common topics";
         }
     }
 };
