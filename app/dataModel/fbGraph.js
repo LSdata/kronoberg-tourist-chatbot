@@ -37,8 +37,7 @@ module.exports = {
     
     sendAPI_setThread: function(messageData){
       request({
-        uri: 'https://graph.facebook.com/v2.6/me/thread_settings',
-        qs: { access_token: appJS.page_access_token },
+        uri: 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='+appJS.page_access_token,
         method: 'POST',
         json: messageData
     
