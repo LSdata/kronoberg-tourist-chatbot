@@ -88,19 +88,33 @@ module.exports = {
         });
     },
     
-    //Set startbutton
-    startBtn: function(recipientId){
+    //Set start greetings
+    startGreetings: function(recipientId){
       var messageData = {
         "setting_type":"greeting",
         "greeting":{
           "text":"Hi {{user_first_name}}!! :) Welcome to this bot! :) "
         }
-      }
+      };
       
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
 
+    },
+    
+    //set the get started button 
+    startBtn: function(recipientId){
+      var messageData = {
+        setting_type:"call_to_actions",
+        thread_state:"new_thread",
+        call_to_actions:[{
+          payload: "USER_DEFINED_PAYLOAD"
+        }]
+      };
+      fbGraph.sendAPI_setThread(messageData,function(response){
+        return response;
+      });
     },
     
     //Send a read receipt to indicate the message has been read
