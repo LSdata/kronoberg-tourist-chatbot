@@ -110,7 +110,6 @@ module.exports = {
       chat_info.sendTextMessage(senderID, "Hi :) You are now authenticated to this site. Welcome! How can I help you?");
       chat_info.startGreetings();
       chat_info.startBtn();
-      chat_info.pers_startmenu();
     },
 
 
@@ -155,17 +154,21 @@ module.exports = {
       // The 'payload' param is a developer-defined field which is set in a postback 
       // button for Structured Messages. 
       var payload = event.postback.payload;
-      if (payload =="eat"){
-          chat_info.sendTextMessage(senderID, "Are you looking for a place to eat?");
+       if (payload =="start"){
+          chat_info.pers_startmenu();
+          chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
-    
+      if (payload =="accomodation"){
+          chat_info.sendTextMessage(senderID, "ok! Here are some suggestions of accomodations that I would recommed:..(not developed yet)");
+      }
+      if (payload =="eat"){
+          chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
+      }
+      if (payload =="attraction"){
+          chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
+      }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
-    
-      // When a postback is called, we'll send a message back to the sender to 
-      // let them know it was successful
-        chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
-          chat_info.pers_startmenu();
     },
 
 /*

@@ -109,7 +109,7 @@ module.exports = {
         setting_type:"call_to_actions",
         thread_state:"new_thread",
         call_to_actions:[{
-          payload: "USER_DEFINED_PAYLOAD"
+          payload: "start"
         }]
       };
       fbGraph.sendAPI_setThread(messageData,function(response){
@@ -124,16 +124,16 @@ module.exports = {
         thread_state: "existing_thread",
         call_to_actions:[{
           type:"postback",
-          title:"Accomodation",
-          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+          title:"Accomodations",
+          payload:"accomodation"
         }, {
           type:"postback",
-          title:"PLACES TO EAT",
+          title:"Eatings",
           payload:"eat"
         },{
           type:"postback",
           title:"Places to visit",
-          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+          payload:"attraction"
         },{
           type:"web_url",
           title:"View my Website",
