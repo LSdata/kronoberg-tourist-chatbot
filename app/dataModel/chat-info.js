@@ -109,6 +109,7 @@ module.exports = {
         setting_type:"call_to_actions",
         thread_state:"new_thread",
         call_to_actions:[{
+          type:"postback",
           payload: "start"
         }]
       };
@@ -122,22 +123,23 @@ module.exports = {
       var messageData = {
         setting_type: "call_to_actions",
         thread_state: "existing_thread",
-        call_to_actions:[{
-          type:"postback",
-          title:"Accomodations",
-          payload:"accomodation"
-        }, {
-          type:"postback",
-          title:"Eatings",
-          payload:"eat"
-        },{
-          type:"postback",
-          title:"Places to visit",
+        call_to_actions:[
+          {
+            type:"postback",
+            title:"Accomodations",
+            payload:"accomodation"
+          }, {
+            type:"postback",
+            title:"Eatings",
+            payload:"eat"
+          },{
+            type:"postback",
+            title:"Places to visit",
           payload:"attraction"
-        },{
-          type:"web_url",
-          title:"View my Website",
-          url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
+          },{
+            type:"web_url",
+            title:"View my Website",
+            url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
         }]
       };
 
