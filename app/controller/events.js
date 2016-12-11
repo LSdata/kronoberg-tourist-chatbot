@@ -164,7 +164,7 @@ module.exports = {
             return response;
         });
           
-           chat_info.sendGenericMessage(recipientID,function(response){
+        chat_info.sendGenericMessage(senderID,function(response){
             return response;
         });
       }
