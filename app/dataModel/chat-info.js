@@ -93,7 +93,7 @@ module.exports = {
       var messageData = {
         setting_type:"greeting",
         greeting:{
-          text:"Hi {{user_first_name}}!! :) Welcome to this bot! :) "
+          text:"Hi {{user_first_name}}!! :) Welcome to this bot! :)  "
         }
       };
       
