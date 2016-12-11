@@ -132,12 +132,6 @@ module.exports = {
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
         },{
           type:"web_url",
-          title:"Checkout",
-          url:"http://petersapparel.parseapp.com/checkout",
-          webview_height_ratio: "full",
-          messenger_extensions: true
-        }, {
-          type:"web_url",
           title:"View Website",
           url:"http://petersapparel.parseapp.com/"
         }]
