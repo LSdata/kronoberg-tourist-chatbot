@@ -162,7 +162,9 @@ module.exports = {
     
       // When a postback is called, we'll send a message back to the sender to 
       // let them know it was successful
-      chat_info.sendTextMessage(senderID, "Hi!! :) Welcome to this bot! The icon at the button with the three caret lines is a button to the main menu of common topics");
+      setTimeout(function() {
+        chat_info.sendTextMessage(senderID, "Hi!! :) Welcome to this bot! The icon with the three caret lines is a button next to the text field contains the main menu of common topics");
+      }, 500);
       chat_info.sendTextMessage(senderID, "How can I help you today? What are you looking for in Kronoberg?");
     },
 
