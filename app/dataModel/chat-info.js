@@ -130,7 +130,7 @@ module.exports = {
           //type:"postback",
           content_type:"location",
           title: "share my location",
-          title:"Eatings",
+          //title:"Eatings",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
         },{
           type:"postback",
