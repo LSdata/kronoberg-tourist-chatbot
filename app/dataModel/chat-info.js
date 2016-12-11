@@ -97,7 +97,7 @@ module.exports = {
         }
       }
       
-      fbGraph.callSendAPI(messageData,function(response){
+      fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
 
