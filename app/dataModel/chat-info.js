@@ -89,7 +89,7 @@ module.exports = {
     },
     
     //Set start greetings
-    startGreetings: function(recipientId){
+    startGreetings: function(){
       var messageData = {
         "setting_type":"greeting",
         "greeting":{
@@ -104,7 +104,7 @@ module.exports = {
     },
     
     //set the get started button 
-    startBtn: function(recipientId){
+    startBtn: function(){
       var messageData = {
         setting_type:"call_to_actions",
         thread_state:"new_thread",
