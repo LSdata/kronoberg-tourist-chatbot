@@ -127,10 +127,8 @@ module.exports = {
           title:"Accomodation",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
         }, {
-          //type:"postback",
-          content_type:"location",
-          title: "share my location",
-          //title:"Eatings",
+          type:"postback",
+          title:"Eatings!",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
         },{
           type:"postback",
