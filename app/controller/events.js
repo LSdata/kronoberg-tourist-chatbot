@@ -111,6 +111,7 @@ module.exports = {
       chat_info.startGreetings();
       chat_info.startBtn();
       chat_info.pers_startmenu();
+      chat_info.pers_startmenu();
     },
 
 
@@ -162,7 +163,7 @@ module.exports = {
       // When a postback is called, we'll send a message back to the sender to 
       // let them know it was successful
       chat_info.sendTextMessage(senderID, "Hi!! Welcome to this bot! :)");
-
+      chat_info.pers_startmenu();
     },
 
 /*
