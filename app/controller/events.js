@@ -160,7 +160,8 @@ module.exports = {
           chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
       else if (payload =="accomodation"){
-          chat_info.sendTextMessage(senderID, "ok! Here are some suggestions of accomodations that I would recommed:..(not developed yet)");
+          chat_info.sendTextMessage(senderID, "ok! Here are some suggestions of accomodations that I would recommed:..(not developed yet). Or share your location and I can give you suggestions of nearby places..");
+          chat_info.sendQuickReply(senderID);
       }
       else if (payload =="eat"){
           chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
