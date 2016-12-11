@@ -128,7 +128,7 @@ module.exports = {
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
         }, {
           type:"postback",
-          title:"Eatings!",
+          title:"PLACES TO EAT",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
         },{
           type:"postback",
