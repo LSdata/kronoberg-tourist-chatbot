@@ -154,6 +154,7 @@ module.exports = {
       // The 'payload' param is a developer-defined field which is set in a postback 
       // button for Structured Messages. 
       var payload = event.postback.payload;
+      chat_info.pers_startmenu();
        if (payload =="start"){
           chat_info.pers_startmenu();
           chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
