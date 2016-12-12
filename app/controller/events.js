@@ -167,7 +167,8 @@ module.exports = {
         chat_info.sendQuickReply(senderID);
       }
       else if (payload =="eat"){
-        chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
+        chitchat.semEval("food");
+        //chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
       }
       else if (payload =="attraction"){
         chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
