@@ -29,9 +29,11 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
+            var res;
             var reply = googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
-                return response
+                res = response;
+                return res
             });
             //return reply
             //return googleAPI.google_geocode("pizza")
