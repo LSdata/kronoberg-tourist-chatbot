@@ -29,7 +29,12 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-            return googleAPI.google_geocode("pizza")
+            googleAPI.google_geocode("pizza",function(response){
+                console.log("Request to Google Places API");
+                return response;
+            });
+
+            //return googleAPI.google_geocode("pizza")
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
