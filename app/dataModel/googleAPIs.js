@@ -8,8 +8,7 @@ var googleMapsClient = require('@google/maps').createClient({
 // Geocode an address.
 module.exports = {
   google_geocode: function(){
-    return "ok here google_geocode()"
-/*
+    
     googleMapsClient.geocode({
         
         address: '1600 Amphitheatre Parkway, Mountain View, CA'
@@ -19,6 +18,6 @@ module.exports = {
             return response.json.results
           }
           
-        });*/
+        });
     }
 }
