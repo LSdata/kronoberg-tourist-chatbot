@@ -29,14 +29,13 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-            var res = "ok";
+
             var result = googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
                 chat_info.sendTextMessage(senderID, response)
             });
             return ""
-            //return googleAPI.google_geocode("pizza")
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
