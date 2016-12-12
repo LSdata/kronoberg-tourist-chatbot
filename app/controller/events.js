@@ -159,6 +159,10 @@ module.exports = {
         chat_info.pers_startmenu();
         chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
+      else if (payload =="start"){
+        chat_info.sendTextMessage(senderID, "Hi and welcome!! :)");
+      }
+
       else if (payload =="accomodation"){
         chat_info.sendQuickReply(senderID);
       }
