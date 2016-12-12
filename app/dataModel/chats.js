@@ -16,12 +16,12 @@ module.exports = {
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
-                return "do you want suggestions of where to eat? (..not implemented yet)"
+                return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend:..(not developed yet)"
         }
-        if( (capitalTxt.indexOf('ATTRACTIONS') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
+        if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
             (capitalTxt.indexOf('VIEWS') > -1) ){
-                return "do you want suggestions of historical places to visit? (..not implemented yet)"
+                return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
         }
         if(capitalTxt == 'MY LOCATION'){
                 return chat_info.sendQuickReply(senderID)

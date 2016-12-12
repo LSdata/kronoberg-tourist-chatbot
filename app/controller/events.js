@@ -169,11 +169,12 @@ module.exports = {
       else if (payload =="eat"){
         var botReply = chitchat.semEval(senderID, "food");
         chat_info.sendTextMessage(senderID, botReply)
-
-        //chat_info.sendTextMessage(senderID, "ah let me give you some eatings suggestions:..(not developed yet)");
       }
       else if (payload =="attraction"){
-        chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
+        var botReply = chitchat.semEval(senderID, "attraction");
+        chat_info.sendTextMessage(senderID, botReply)
+
+        //chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
