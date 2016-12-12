@@ -30,7 +30,8 @@ module.exports = {
       response.on('end', function() {
       var parsed = JSON.parse(data);
       console.log(parsed['results'][0].formatted_address);
-        return callback(data); //json format
+        return parsed['results'][0].formatted_address
+        //return callback(data); //json format
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
