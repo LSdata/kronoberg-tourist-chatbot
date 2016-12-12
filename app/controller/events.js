@@ -160,7 +160,7 @@ module.exports = {
         chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
       }
       else if (payload =="start"){
-        chat_info.sendTextMessage(senderID, "Hi and welcome!! :)");
+        chat_info.sendTextMessage(senderID, "Hi and welcome!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
       }
 
       else if (payload =="accomodation"){
@@ -173,8 +173,6 @@ module.exports = {
       else if (payload =="attraction"){
         var botReply = chitchat.semEval(senderID, "attraction");
         chat_info.sendTextMessage(senderID, botReply)
-
-        //chat_info.sendTextMessage(senderID, "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)");
       }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
