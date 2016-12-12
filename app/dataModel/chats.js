@@ -29,7 +29,7 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-            return googleAPI.google_geocode(senderID)
+            return googleAPI.google_geocode()
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
