@@ -108,10 +108,6 @@ module.exports = {
       var messageData = {
         "setting_type":"call_to_actions",
         "thread_state":"new_thread",
-        "call_to_actions":[{
-            "type": "postback",
-            "payload":"start"
-        }],
         "postback":{
           "payload": "start",
           "referral": {
