@@ -32,7 +32,7 @@ module.exports = {
             var reply = googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
             });
-            return reply;
+            return reply
             //return googleAPI.google_geocode("pizza")
         }
 
