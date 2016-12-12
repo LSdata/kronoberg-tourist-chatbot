@@ -35,7 +35,8 @@ module.exports = {
                 console.log(response);
                 return response;
             });
-            //return result
+            console.log("RESULT: "+result);
+            return res
             //return googleAPI.google_geocode("pizza")
         }
 
