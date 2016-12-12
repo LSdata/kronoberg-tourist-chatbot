@@ -32,6 +32,8 @@ module.exports = {
             var res = "ok";
             googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
+                console.log(response);
+
                 res = response;
             });
             return res

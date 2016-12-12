@@ -33,7 +33,7 @@ module.exports = {
       var parsed = JSON.parse(data);
       console.log(parsed['results'][0].formatted_address);
         //return "API RESULTS: "+parsed['results'][0].formatted_address
-        return callback(JSON.parse(data)['results'][0].formatted_address); //json format
+        return callback(parsed['results'][0].formatted_address); //json format
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
