@@ -19,7 +19,7 @@ module.exports = {
         }, function(err, response) {
           if (!err) {
             console.log(response.json.results);
-            return response.json.results
+            return "okok"
           }
           
         });
