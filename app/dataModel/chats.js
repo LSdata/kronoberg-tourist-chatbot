@@ -31,7 +31,7 @@ module.exports = {
         if(capitalTxt == 'GEO'){
             googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
-                return response;
+                return "ok";
             });
 
             //return googleAPI.google_geocode("pizza")
