@@ -1,6 +1,7 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 var chat_info = require(path.join(__dirname, 'chat-info.js'))
+var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 
 module.exports = {
@@ -18,8 +19,11 @@ module.exports = {
             (capitalTxt.indexOf('HUNGRY') > -1) ){
                 return "do you want suggestions of where to eat? (..not implemented yet)"
         }
-        if( (capitalTxt.indexOf('MY LOCATION') > -1)  ){
+        if (capitalTxt == 'MY LOCATION'){
                 return chat_info.sendQuickReply(senderID)
+        }
+        if (capitalTxt == 'GEO' ){
+                return googleAPI.google_geocode()
         }
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 

@@ -56,6 +56,11 @@ const SERVER_URL = (process.env.SERVER_URL) ?
   config.get('serverURL');
 module.exports.server_url = SERVER_URL;
 
+//Google API
+const GOOGLE_API_KEY = (process.env.GOOGLE_API_KEY) ?
+  (process.env.GOOGLE_API_KEY) :
+  config.get('googleAPIkey');
+module.exports.google_api_key = GOOGLE_API_KEY;
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   console.error("Missing config values");
