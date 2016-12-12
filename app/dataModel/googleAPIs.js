@@ -18,7 +18,8 @@ module.exports = {
   google_geocode: function(searchquery, callback){
     
     //var searchquery = 'ramlosa wok'; //not åäö --> aao as Vaxjo
-    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery;
+    var type = 'restaurant'
+    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
 
     https.get(url, function(response) {
       var data ='';
