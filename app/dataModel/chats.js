@@ -28,7 +28,7 @@ module.exports = {
         if(capitalTxt == 'MY LOCATION'){
             return chat_info.sendQuickReply(senderID)
         }
-        if(capitalTxt == 'geo'){
+        if(capitalTxt == 'GEO'){
             return googleAPI.google_geocode(senderID)
         }
 
