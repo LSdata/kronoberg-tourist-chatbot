@@ -10,7 +10,7 @@ var googleMapsClient = require('@google/maps').createClient({
   clientId: '552041030436-6efdtnunvlgle915es42jeubmoaphgoh.apps.googleusercontent.com',
   clientSecret: 'pbeO_72C4z-8IJGWH2YBWXd7',
 });*/
-var key = 'AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw';
+var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
 
 // Geocode an address.
 module.exports = {
