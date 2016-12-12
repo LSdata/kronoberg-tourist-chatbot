@@ -34,8 +34,7 @@ module.exports = {
       console.log(parsed['results'][0].formatted_address);
         //return callback(data)
         //return "API RESULTS: "+parsed['results'][0].formatted_address
-        //return callback(parsed['results'][0].formatted_address); //json format
-        return callback("googleAPIs return")
+        return callback(parsed['results'][0].formatted_address); //json format
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
