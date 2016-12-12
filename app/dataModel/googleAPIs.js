@@ -32,6 +32,7 @@ module.exports = {
       response.on('end', function() {
       var parsed = JSON.parse(data);
       console.log(parsed['results'][0].formatted_address);
+        //return callback(data)
         //return "API RESULTS: "+parsed['results'][0].formatted_address
         return callback(parsed['results'][0].formatted_address); //json format
       });

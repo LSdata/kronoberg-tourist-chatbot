@@ -4,7 +4,7 @@ var chat_info = require(path.join(__dirname, 'chat-info.js'))
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 module.exports = {
-    semEval: function(senderID, messageText){
+    semEval: function(senderID, messageText, callback){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -33,9 +33,8 @@ module.exports = {
             var result = googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
-                return response;
+                return callback(response);
             });
-            console.log("RESULT: "+result);
             return res
             //return googleAPI.google_geocode("pizza")
         }
