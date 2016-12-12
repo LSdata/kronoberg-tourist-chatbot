@@ -1,7 +1,7 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 var chat_info = require(path.join(__dirname, 'chat-info.js'))
-
+var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 module.exports = {
     semEval: function(senderID, messageText){
@@ -26,8 +26,12 @@ module.exports = {
                 return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
         }
         if(capitalTxt == 'MY LOCATION'){
-                return chat_info.sendQuickReply(senderID)
+            return chat_info.sendQuickReply(senderID)
         }
+        if(capitalTxt == 'geo'){
+            return googleAPI.google_geocode(senderID)
+        }
+
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
             (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){

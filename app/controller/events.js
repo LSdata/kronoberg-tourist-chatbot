@@ -162,7 +162,6 @@ module.exports = {
       else if (payload =="start"){
         chat_info.sendTextMessage(senderID, "Hi and welcome!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
       }
-
       else if (payload =="accomodation"){
         chat_info.sendQuickReply(senderID);
       }

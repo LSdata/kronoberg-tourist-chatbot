@@ -15,6 +15,7 @@ module.exports = {
           if (!err) {
             console.log(response.json.results);
             //chat_info.sendTextMessage(senderID,response.json.results );
+            return response.json.results
           }
         });
     }
