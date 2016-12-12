@@ -116,8 +116,6 @@ module.exports = {
           "payload": "start",
           "referral": {
             "ref": "start",
-            "source": "SHORTLINK",
-            "type": "OPEN_THREAD",
           }
         }
       };
