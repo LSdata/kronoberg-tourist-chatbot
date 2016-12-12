@@ -5,8 +5,8 @@ var googleMapsClient = require('@google/maps').createClient({
   key: appJS.google_api_key
 });*/
 var googleMapsClient = require('@google/maps').createClient({
-  clientId: '862360386930-n7h6v499sosui80buvcptho54n898sqt.apps.googleusercontent.com',
-  clientSecret: '5Zf7cqa6H3t3pBaIzIIbDXEi',
+  clientId: '552041030436-6efdtnunvlgle915es42jeubmoaphgoh.apps.googleusercontent.com',
+  clientSecret: 'pbeO_72C4z-8IJGWH2YBWXd7',
 });
 
 // Geocode an address.
