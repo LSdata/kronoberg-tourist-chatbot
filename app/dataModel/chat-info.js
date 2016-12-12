@@ -108,9 +108,14 @@ module.exports = {
       var messageData = {
         "setting_type":"call_to_actions",
         "thread_state":"new_thread",
-        "call_to_actions":[{
-          "payload":"start"
-        }]
+        "postback":{
+          "payload": "start",
+          "referral": {
+            "ref": "none",
+            "source": "SHORTLINK",
+            "type": "OPEN_THREAD",
+          }
+        }
       };
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
