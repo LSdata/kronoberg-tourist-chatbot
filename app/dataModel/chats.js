@@ -36,7 +36,10 @@ module.exports = {
                 chat_info.sendTextMessage(senderID, response);
             });        
             return ""*/
-            return cbFkn();
+            var bar = cbFkn(function(res){
+                return res                
+            });
+            return bar;
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
