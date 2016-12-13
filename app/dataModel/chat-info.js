@@ -234,7 +234,7 @@ module.exports = {
                 image_url: parsed['results'][0].icon,
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.oculus.com/en-us/rift/",
+                  url: parsed['results'][0].url,
                   title: "Open Web URL"
                 }, {
                   type: "postback",
