@@ -232,7 +232,7 @@ module.exports = {
                 subtitle: parsed['results'][0].formatted_address,
                 buttons: [{
                   type: "web_url",
-                  url: parsed['results'][0].website,
+                  url: "https://www.oculus.com/en-us/rift/",
                   title: "Open Web URL"
                 }],
               }, {
