@@ -5,10 +5,10 @@ const https = require('https');
 // Geocode an address.
 module.exports = {
 
-  google_geocode: function(searchquery, callback){
+  google_geocode: function(callback){
     var key = appJS.google_api_key;
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-    var type = 'lodging'
+    var type = 'bakery|restaurant|cafe'
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
 
     https.get(url, function(response) {
@@ -20,10 +20,9 @@ module.exports = {
 
       response.on('end', function() {
       var parsed = JSON.parse(data);
-      console.log(parsed['results'][0].formatted_address);
-        //return callback(data)
-        //return "API RESULTS: "+parsed['results'][0].formatted_address
-        return callback(parsed['results'][0].icon); //json format
+      console.log(parsed['results'][0].name);
+        //return callback(data) //json format
+        return callback(parsed['results'][0].name); 
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);

@@ -30,10 +30,11 @@ module.exports = {
         }
         if(capitalTxt == 'GEO'){
 
-            googleAPI.google_geocode("pizza",function(response){
+            googleAPI.google_geocode(function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
                 chat_info.sendTextMessage(senderID, response);
+                //chat_info.sendList(senderID, resArr)
             });        
             return ""
         }
