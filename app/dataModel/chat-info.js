@@ -231,7 +231,7 @@ module.exports = {
                 title: parsed['results'][0].name,
                 subtitle: "Next-generation virtual reality",
                 item_url: "https://www.oculus.com/en-us/rift/",               
-                image_url: appJS.server_url + "/assets/rift.png",
+                image_url: parsed['results'][0].icon,
                 buttons: [{
                   type: "web_url",
                   url: "https://www.oculus.com/en-us/rift/",
