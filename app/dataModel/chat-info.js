@@ -229,12 +229,12 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][0].name,
-                subtitle: "Next-generation virtual reality",
+                subtitle: parsed['results'][0].formatted_address,
                 item_url: "https://www.oculus.com/en-us/rift/",               
                 image_url: parsed['results'][0].icon,
                 buttons: [{
                   type: "web_url",
-                  url: parsed['results'][0].url,
+                  url: "https://www.oculus.com/en-us/rift/",
                   title: "Open Web URL"
                 }, {
                   type: "postback",
