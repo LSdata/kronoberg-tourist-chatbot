@@ -219,7 +219,7 @@ module.exports = {
       console.log(data);
      
       var gmaps = parsed['results'][18].photos[0].html_attributions[0]
-      gmaps = gmaps.replace(/^"+/, "");
+      gmaps = gmaps.replace(/^\"+/, "");
       
       
       var messageData = {
