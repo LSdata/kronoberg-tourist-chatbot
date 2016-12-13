@@ -12,13 +12,12 @@ var googleMapsClient = require('@google/maps').createClient({
 });*/
 //var key = 'AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw';
 //var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
-var key = appJS.google_api_key;
 
 // Geocode an address.
 module.exports = {
 
   google_geocode: function(searchquery, callback){
-    
+    var key = appJS.google_api_key;
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
     var type = 'lodging'
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
