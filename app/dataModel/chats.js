@@ -33,8 +33,8 @@ module.exports = {
             googleAPI.google_eatings(function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
-                chat_info.sendTextMessage(senderID, response);
-                //chat_info.generic(senderID, resArr)
+                //chat_info.sendTextMessage(senderID, response);
+                chat_info.generic(senderID, response)
             });        
             return ""
         }

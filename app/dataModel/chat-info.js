@@ -214,7 +214,7 @@ module.exports = {
     },
     
     //Send a Structured Message (Generic Message type) using the Send API.
-    generic: function(recipientId, resArr){
+    generic: function(recipientId, data){
       var messageData = {
         recipient: {
           id: recipientId
