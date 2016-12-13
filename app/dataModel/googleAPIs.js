@@ -38,7 +38,7 @@ module.exports = {
         //return callback(data)
         //return "API RESULTS: "+parsed['results'][0].formatted_address
         //return callback(parsed['results'][0].formatted_address); //json format
-        return callback(parsed['results'][0].name); //json format
+        return callback(parsed['results'][0].formatted_address); //json format
 
       });
     }).on('error', function(e) {
