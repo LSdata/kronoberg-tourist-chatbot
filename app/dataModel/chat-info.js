@@ -232,7 +232,7 @@ module.exports = {
                 subtitle: parsed['results'][0].formatted_address,
                 buttons: [{
                   type: "web_url",
-                  url: parsed['results'][1].url,
+                  url: parsed['results'][2].url,
                   title: "Open Web URL"
                 }],
               }, {
