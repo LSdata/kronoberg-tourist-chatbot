@@ -11,9 +11,7 @@ var googleMapsClient = require('@google/maps').createClient({
   clientSecret: 'pbeO_72C4z-8IJGWH2YBWXd7',
 });*/
 //var key = 'AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw';
-//var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
-var key  = appJS.google_api_key;
-
+var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
 
 // Geocode an address.
 module.exports = {
@@ -21,10 +19,9 @@ module.exports = {
   google_geocode: function(searchquery, callback){
     
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-    var query = "kronoberg";
-    var type = 'restaurant';
+    var type = 'restaurant'
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
-    //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query"+query+"&type="+type;
+
     https.get(url, function(response) {
       var data ='';
       
@@ -37,9 +34,7 @@ module.exports = {
       console.log(parsed['results'][0].formatted_address);
         //return callback(data)
         //return "API RESULTS: "+parsed['results'][0].formatted_address
-        //return callback(parsed['results'][0].formatted_address); //json format
         return callback(parsed['results'][0].formatted_address); //json format
-
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
