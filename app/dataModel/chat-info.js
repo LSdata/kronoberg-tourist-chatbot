@@ -216,7 +216,7 @@ module.exports = {
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, data){
       var parsed = JSON.parse(data);
-      //console.log(parsed['results'][0].name);
+      console.log(data);
       
       var messageData = {
         recipient: {
