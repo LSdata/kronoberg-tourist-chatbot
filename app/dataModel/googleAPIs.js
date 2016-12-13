@@ -11,8 +11,8 @@ var googleMapsClient = require('@google/maps').createClient({
   clientSecret: 'pbeO_72C4z-8IJGWH2YBWXd7',
 });*/
 //var key = 'AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw';
-var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
-//var key = appJS.google_api_key;
+//var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
+var key = appJS.google_api_key;
 
 // Geocode an address.
 module.exports = {
