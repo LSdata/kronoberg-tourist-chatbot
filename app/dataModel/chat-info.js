@@ -232,7 +232,7 @@ module.exports = {
                 subtitle: parsed['results'][19].formatted_address,
                 buttons: [{
                   type: "see on map",
-                  url: parsed['results'][19].url,
+                  url: "https://www.oculus.com/en-us/touch/",
                   title: "Open Web URL"
                 }],
               }, {
