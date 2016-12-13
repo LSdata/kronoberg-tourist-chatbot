@@ -229,7 +229,7 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][19].name,
-                subtitle: parsed['results'][19].photos[0].html_attributions[0],
+                subtitle: parsed['results'][18].photos[0].html_attributions[0],
                 item_url: "https://www.oculus.com/en-us/rift/",               
                 buttons: [{
                   type: "web_url",
