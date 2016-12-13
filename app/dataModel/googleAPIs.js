@@ -21,7 +21,7 @@ module.exports = {
   google_geocode: function(searchquery, callback){
     
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-    var query = "hotel accomodation in Kronoberg"
+    var query = "kronoberg"
     var type = 'lodging'
     //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query=accomodation+in+kronoberg&type="+type;
