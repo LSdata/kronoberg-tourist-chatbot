@@ -231,8 +231,8 @@ module.exports = {
                 title: parsed['results'][19].name,
                 subtitle: parsed['results'][0].formatted_address,
                 buttons: [{
-                  type: "web_url",
-                  url: parsed['results'][19].url,
+                  type: "see on map",
+                  url: parsed['results'][19].website,
                   title: "Open Web URL"
                 }],
               }, {
