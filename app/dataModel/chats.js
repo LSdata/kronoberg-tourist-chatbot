@@ -30,8 +30,11 @@ module.exports = {
         }
         if(capitalTxt == 'GEO'){
 
-            callbackFkn(function(geo){
-              return cb(geo); // this is where you get the return value
+           return googleAPI.google_geocode("pizza",function(response){
+                console.log("Request to Google Places API");
+                console.log(response);
+                //chat_info.sendTextMessage(senderID, response);
+                return response;
             });        
             
         }
@@ -58,12 +61,3 @@ module.exports = {
     }
 };
 
-function callbackFkn(callback){
-
-  googleAPI.google_geocode("pizza",function(response){
-    console.log("Request to Google Places API");
-    console.log(response);
-    //chat_info.sendTextMessage(senderID, response);
-    callback(response);
- });
-}
