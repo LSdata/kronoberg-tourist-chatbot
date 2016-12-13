@@ -22,20 +22,21 @@ module.exports = {
         }
         if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
-            (capitalTxt.indexOf('VIEWS') > -1) ){
+            (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
                 return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
         }
         if(capitalTxt == 'MY LOCATION'){
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-
+/*
             googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
                 chat_info.sendTextMessage(senderID, response);
             });        
-            return ""
+            return ""*/
+            return cbFkn();
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
@@ -60,3 +61,11 @@ module.exports = {
     }
 };
 
+function cbFkn(cb){
+    googleAPI.google_geocode("pizza",function(response){
+        console.log("Request to Google Places API");
+        console.log(response);
+        //chat_info.sendTextMessage(senderID, response);
+        return cb(response)
+    });   
+}
