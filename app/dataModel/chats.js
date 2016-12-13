@@ -10,7 +10,7 @@ module.exports = {
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
             (capitalTxt.indexOf('HOTEL') > -1) || (capitalTxt.indexOf('PLACE TO STAY') > -1) ||
             (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
-            (capitalTxt.indexOf('SPEND THE NIGHT') > -1)) {
+            (capitalTxt.indexOf('SPEND THE NIGHT') > -1) ||(capitalTxt.indexOf('LODGING') > -1)) {
               
             return chat_info.sendQuickReply(senderID);
 

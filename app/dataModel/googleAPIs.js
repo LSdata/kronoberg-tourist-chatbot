@@ -11,7 +11,9 @@ var googleMapsClient = require('@google/maps').createClient({
   clientSecret: 'pbeO_72C4z-8IJGWH2YBWXd7',
 });*/
 //var key = 'AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw';
-var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
+//var key = 'AIzaSyC3NLfEx9mW-CMBymzLAjrxJByQzzxN1mg';
+var key  = appJS.google_api_key;
+
 
 // Geocode an address.
 module.exports = {
@@ -19,9 +21,10 @@ module.exports = {
   google_geocode: function(searchquery, callback){
     
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-    var type = 'restaurant'
-    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
-
+    var query = "hotel accomodation in Kronoberg"
+    var type = 'lodging'
+    //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
+    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+query+ "&type="+type;
     https.get(url, function(response) {
       var data ='';
       
