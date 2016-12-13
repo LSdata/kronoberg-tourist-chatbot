@@ -230,10 +230,15 @@ module.exports = {
               elements: [{
                 title: parsed['results'][19].name,
                 subtitle: parsed['results'][19].formatted_address,
+                item_url: "https://www.oculus.com/en-us/rift/",               
                 buttons: [{
-                  type: "see on map",
-                  url: "https://www.oculus.com/en-us/touch/",
+                  type: "web_url",
+                  url: "https://www.oculus.com/en-us/rift/",
                   title: "Open Web URL"
+                }, {
+                  type: "postback",
+                  title: "Call Postback",
+                  payload: "Payload for first bubble",
                 }],
               }, {
                 title: "touch",
