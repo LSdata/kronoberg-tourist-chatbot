@@ -23,7 +23,7 @@ module.exports = {
       console.log(parsed['results'][0].formatted_address);
         //return callback(data)
         //return "API RESULTS: "+parsed['results'][0].formatted_address
-        return callback(parsed['results'][0].name); //json format
+        return callback(parsed['results'][0].icon); //json format
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
