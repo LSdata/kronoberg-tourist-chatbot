@@ -34,7 +34,7 @@ module.exports = {
                 console.log("Request to Google Places API");
                 console.log(response);
                 chat_info.sendTextMessage(senderID, response);
-                //chat_info.sendList(senderID, resArr)
+                //chat_info.generic(senderID, resArr)
             });        
             return ""
         }
