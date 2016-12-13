@@ -22,7 +22,7 @@ module.exports = {
     
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
     var query = "kronoberg";
-    var type = 'lodging';
+    var type = 'restaurant';
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
     //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query"+query+"&type="+type;
     https.get(url, function(response) {
