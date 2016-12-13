@@ -29,17 +29,13 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-/*
+
             googleAPI.google_geocode("pizza",function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
                 chat_info.sendTextMessage(senderID, response);
             });        
-            return ""*/
-            var bar = cbFkn(function(res){
-                return res                
-            });
-            return bar;
+            return ""
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
@@ -63,12 +59,3 @@ module.exports = {
         }
     }
 };
-
-function cbFkn(cb){
-    googleAPI.google_geocode("pizza",function(response){
-        console.log("Request to Google Places API");
-        console.log(response);
-        //chat_info.sendTextMessage(senderID, response);
-        return cb(response)
-    });   
-}
