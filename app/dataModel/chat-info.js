@@ -215,6 +215,9 @@ module.exports = {
     
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, data){
+      var parsed = JSON.parse(data);
+      //console.log(parsed['results'][0].name);
+      
       var messageData = {
         recipient: {
           id: recipientId
@@ -225,7 +228,7 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: "rift",
+                title: parsed['results'][0].name,
                 subtitle: "Next-generation virtual reality",
                 item_url: "https://www.oculus.com/en-us/rift/",               
                 image_url: appJS.server_url + "/assets/rift.png",
