@@ -232,7 +232,7 @@ module.exports = {
                 subtitle: parsed['results'][0].formatted_address,
                 buttons: [{
                   type: "see on map",
-                  url: parsed['results'][19].website,
+                  url: parsed['results'][19].url,
                   title: "Open Web URL"
                 }],
               }, {
