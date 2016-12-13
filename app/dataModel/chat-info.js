@@ -228,7 +228,7 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: parsed['results'][0].name,
+                title: parsed['results'][19].name,
                 subtitle: parsed['results'][0].formatted_address,
                 buttons: [{
                   type: "web_url",
