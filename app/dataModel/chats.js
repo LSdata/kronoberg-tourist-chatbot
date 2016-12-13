@@ -4,7 +4,7 @@ var chat_info = require(path.join(__dirname, 'chat-info.js'))
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 module.exports = {
-    semEval: function(senderID, messageText){
+    semEval: function(senderID, messageText, cb){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -31,7 +31,7 @@ module.exports = {
         if(capitalTxt == 'GEO'){
 
             callbackFkn(function(geo){
-              return geo; // this is where you get the return value
+              return cb(geo); // this is where you get the return value
             });        
             
         }
