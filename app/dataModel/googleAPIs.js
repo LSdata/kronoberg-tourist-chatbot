@@ -5,7 +5,7 @@ const https = require('https');
 // Geocode an address.
 module.exports = {
 
-  google_geocode: function(callback){
+  google_eatings: function(callback){
     var key = appJS.google_api_key;
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
     var type = 'bakery|restaurant|cafe'
