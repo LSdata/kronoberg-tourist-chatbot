@@ -229,7 +229,7 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][19].name,
-                subtitle: parsed['results'][0].formatted_address,
+                subtitle: parsed['results'][19].formatted_address,
                 buttons: [{
                   type: "see on map",
                   url: parsed['results'][19].url,
