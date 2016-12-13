@@ -24,7 +24,7 @@ module.exports = {
     var query = "kronoberg"
     var type = 'lodging'
     //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
-    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query=accomodation+in+kronoberg&type="+type;
+    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query"+query+"&type="+type;
     https.get(url, function(response) {
       var data ='';
       
