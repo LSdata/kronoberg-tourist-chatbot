@@ -247,15 +247,15 @@ module.exports = {
                   url: gmapsURL1,
                   title: parsed['results'][0].formatted_address
                 }]
-              }/*, {
-                title: parsed['results'][1].name,
-                subtitle: types2,
+              }, {
+                title: parsed['results'][0].name,
+                subtitle: types1,
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL2,
-                  title: parsed['results'][1].formatted_address
+                  url: gmapsURL1,
+                  title: parsed['results'][0].formatted_address
                 }]
-                }, {
+                }/*, {
                 title: parsed['results'][2].name,
                 subtitle: types3,
                 buttons: [{
