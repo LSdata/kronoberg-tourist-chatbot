@@ -532,6 +532,11 @@ module.exports = {
 function getAllTypes(typesArr){
   
   if(typesArr.length != null){
-        console.log(typesArr.length);
-      }
+    console.log(typesArr.length);
+    var len = typesArr.length;
+    for(var i=0; i<len; i++){
+      console.log(typesArr[i])
+    }
+  }
+
 }
