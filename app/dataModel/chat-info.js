@@ -535,7 +535,7 @@ function getAllTypes(typesArr){
     for(var i=0; i<len; i++){
       typesTxt += typesArr[i] +", ";
     }
-    typesTxt = typesTxt.substring(0, typesTxt.length - 1); //remove last ', '
+    typesTxt = typesTxt.substring(0, typesTxt.length - 2); //remove last ', '
     return typesTxt;
   } else
     return "(This place is in an undefined category)";
