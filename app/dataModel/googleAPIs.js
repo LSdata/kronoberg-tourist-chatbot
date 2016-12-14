@@ -34,8 +34,48 @@ module.exports = {
 
 function generatePlaceArr(data){
   var placeArr = [];
+  var parsed = JSON.parse(data);
+  var len = ['results'].len;
+
+  //get 10 google place items. Place in array.
+  for(var i=0; i<len; i++){
+    if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos[i] != 'undefined') ){
+      console.log("PLACE "+i+" OK! PLACE LEN="+len);
+    }
+  }
+  //extract the maps url
+  var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
+  var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
+  var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
+
+  //get all types of 5 places
+  var types1 = getAllTypes(parsed['results'][0].types);
+  var types2 = getAllTypes(parsed['results'][1].types);
+  var types3 = getAllTypes(parsed['results'][2].types);
   
   return data
+}
+
+
+function getAllTypes(typesArr){
+  
+  if(typesArr.length != null){
+    var len = typesArr.length;
+    var typesTxt = "Categories: ";
+    for(var i=0; i<len; i++){
+      typesTxt += typesArr[i] +", ";
+    }
+    typesTxt = typesTxt.substring(0, typesTxt.length - 2); //remove last ', '
+    return typesTxt;
+  } else
+    return "(This place is in an undefined category)";
+}
+
+function getGmapsURL(gmapsURL){
+    gmapsURL = gmapsURL.replace(/['"]+/g, '');
+    gmapsURL = gmapsURL.slice(8);
+    gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
+    return gmapsURL;
 }
 
 
