@@ -31,11 +31,12 @@ module.exports = {
         if(capitalTxt == 'GEO'){
             var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
             var type = 'bakery|restaurant|cafe';
-            googleAPI.google_eatings(searchquery, type, function(response){
+            googleAPI.google_eatings(searchquery, type, function(response, next){
                 //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
                 //chat_info.generic(senderID, response);
                 chat_info.sendGenericMessage(senderID);
+                next();
             });        
             return ""
         }
