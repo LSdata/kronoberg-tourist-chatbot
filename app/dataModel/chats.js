@@ -34,8 +34,7 @@ module.exports = {
             googleAPI.google_eatings(searchquery, type, function(response){
                 //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
-                //chat_info.generic(senderID, response);
-                chat_info.sendGenericMessage(senderID);
+                chat_info.generic(senderID, response);
             });        
             return "ok"
         }
