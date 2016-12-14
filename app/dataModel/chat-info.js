@@ -281,7 +281,7 @@ module.exports = {
                 },{
                 title: parsed['results'][5].name,
                 subtitle: types5,
-                //item_url: gmapsURL,               
+                item_url: parsed['results'][5].formatted_address,               
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL5,
