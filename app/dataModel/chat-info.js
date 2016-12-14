@@ -218,10 +218,12 @@ module.exports = {
       var parsed = JSON.parse(data);
       //console.log(data);
      
+      //extract the maps url
       var gmapsURL = parsed['results'][10].photos[0].html_attributions[0]
       gmapsURL = gmapsURL.replace(/['"]+/g, '');
       gmapsURL = gmapsURL.slice(8);
-      
+      gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
+
       //getPhoto(photoRef);
       
       var messageData = {
