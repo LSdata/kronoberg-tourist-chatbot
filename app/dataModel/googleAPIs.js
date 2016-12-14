@@ -40,7 +40,7 @@ function generatePlaceArr(data){
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     //if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos[i] != 'undefined') ){
-    if( (parsed['results'][i].name != 'undefined')){
+    if( parsed['results'][i].name != 'undefined'){
 
       console.log("PLACE "+i+" OK! PLACE LEN="+len);
     }
