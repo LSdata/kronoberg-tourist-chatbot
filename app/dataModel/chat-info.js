@@ -225,9 +225,7 @@ module.exports = {
       gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
       
       //get all types
-      if(parsed['results'][10].types[0] !==0){
-        
-      }
+      var types = getAllTypes(parsed['results'][10].types);
 
       //getPhoto(photoRef);
       
@@ -530,3 +528,10 @@ module.exports = {
       });  
     }
 };
+
+function getAllTypes(typesArr){
+  
+  if(typesArr.length != null){
+        console.log("NOT NULL TYPES");
+      }
+}
