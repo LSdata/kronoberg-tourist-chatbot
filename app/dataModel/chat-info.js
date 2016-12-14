@@ -247,7 +247,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL1,
-                  title: "view on map"
+                  title: parsed['results'][0].formatted_address
                 }]
               }, {
                 title: parsed['results'][1].name,
@@ -255,7 +255,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL2,
-                  title: "view on map"
+                  title: parsed['results'][1].formatted_address
                 }]
                 }, {
                 title: parsed['results'][2].name,
@@ -263,7 +263,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL3,
-                  title: parsed['results'][2].formatted_address+"on map"
+                  title: parsed['results'][2].formatted_address
                 }]
                 },{
                 title: parsed['results'][3].name,
@@ -272,7 +272,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL4,
-                  title: "view on map"
+                  title: parsed['results'][3].formatted_address
                 }]
                 }
               ]
