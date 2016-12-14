@@ -220,7 +220,7 @@ module.exports = {
      
       var gmapsURL = parsed['results'][10].photos[0].html_attributions[0]
       gmapsURL = gmapsURL.replace(/['"]+/g, '');
-      var href = "<a href=";
+      gmapsURL = gmapsURL.slice(8);
       
       //getPhoto(photoRef);
       
