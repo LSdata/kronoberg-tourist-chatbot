@@ -219,13 +219,20 @@ module.exports = {
       //console.log(data);
      
       //extract the maps url
-      var gmapsURL = parsed['results'][10].photos[0].html_attributions[0]
-      gmapsURL = gmapsURL.replace(/['"]+/g, '');
-      gmapsURL = gmapsURL.slice(8);
-      gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
+      var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
+      var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
+      var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
+      var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
+      var gmapsURL5 = getGmapsURL(parsed['results'][4].photos[0].html_attributions[0]);
+
       
-      //get all types
-      var types = getAllTypes(parsed['results'][10].types);
+      //get all types of 5 places
+      var types1 = getAllTypes(parsed['results'][0].types);
+      var types2 = getAllTypes(parsed['results'][1].types);
+      var types3 = getAllTypes(parsed['results'][2].types);
+      var types4 = getAllTypes(parsed['results'][3].types);
+      var types5 = getAllTypes(parsed['results'][4].types);
+
 
       //getPhoto(photoRef);
       
@@ -239,27 +246,45 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: parsed['results'][10].name,
-                subtitle: types,
+                title: parsed['results'][0].name,
+                subtitle: types1,
                 //item_url: gmapsURL,               
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL,
+                  url: gmapsURL1,
                   title: "view on map"
                 }],
               }, {
-                title: "touch",
-                subtitle: "Your Hands, Now in VR",
-                item_url: "https://www.oculus.com/en-us/touch/",               
-                image_url: appJS.server_url + "/assets/touch.png",
+                title: parsed['results'][1].name,
+                subtitle: types2,
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.oculus.com/en-us/touch/",
-                  title: "Open Web URL"
+                  url: gmapsURL2,
+                  title: "view on map"
+                }],
                 }, {
-                  type: "postback",
-                  title: "Call Postback",
-                  payload: "Payload for second bubble",
+                  title: parsed['results'][2].name,
+                subtitle: types3,
+                buttons: [{
+                  type: "web_url",
+                  url: gmapsURL3,
+                  title: "view on map"
+                }],
+                title: parsed['results'][3].name,
+                subtitle: types4,
+                //item_url: gmapsURL,               
+                buttons: [{
+                  type: "web_url",
+                  url: gmapsURL4,
+                  title: "view on map"
+                }],
+                title: parsed['results'][4].name,
+                subtitle: types5,
+                //item_url: gmapsURL,               
+                buttons: [{
+                  type: "web_url",
+                  url: gmapsURL5,
+                  title: "view on map"
                 }]
               }]
             }
@@ -539,4 +564,11 @@ function getAllTypes(typesArr){
     return typesTxt;
   } else
     return "(This place is in an undefined category)";
+}
+
+function getGmapsURL(gmapsURL){
+    gmapsURL = gmapsURL.replace(/['"]+/g, '');
+    gmapsURL = gmapsURL.slice(8);
+    gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
+    return gmapsURL;
 }
