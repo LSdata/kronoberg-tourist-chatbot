@@ -223,7 +223,6 @@ module.exports = {
       var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
       var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
       var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
-
       
       //get all types of 5 places
       var types1 = getAllTypes(parsed['results'][0].types);
@@ -264,7 +263,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL3,
-                  title: "view on map"
+                  title: parsed['results'][2].formatted_address+"on map"
                 }]
                 },{
                 title: parsed['results'][3].name,
