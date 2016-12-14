@@ -259,11 +259,11 @@ module.exports = {
           }
         }
       };  
-    
+                console.log("GMAPS: "+gmaps);
+
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-            console.log("GMAPS: "+gmaps);
 
     },
 
