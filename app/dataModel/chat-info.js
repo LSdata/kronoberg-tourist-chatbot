@@ -534,9 +534,10 @@ function getAllTypes(typesArr){
     var len = typesArr.length;
     var typesTxt = "This place is in the categories:"
     for(var i=1; i<=len; i++){
-      //console.log("TYPE: "+typesArr[i])
+      console.log("TYPE: "+typesArr[i])
       typesTxt += " "+typesArr[i];
     }
-  }
-  return typesTxt;
+      return typesTxt;
+  } else
+    return "(This place is in an undefined category)";
 }
