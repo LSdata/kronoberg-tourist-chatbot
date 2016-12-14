@@ -29,8 +29,9 @@ module.exports = {
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
-
-            googleAPI.google_eatings(function(response){
+            var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
+            var type = 'bakery|restaurant|cafe';
+            googleAPI.google_eatings(searchquery, type, function(response){
                 console.log("Request to Google Places API");
                 console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
