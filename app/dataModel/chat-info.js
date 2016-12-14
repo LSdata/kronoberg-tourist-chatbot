@@ -219,12 +219,12 @@ module.exports = {
       //console.log(data);
      
       //extract the maps url
-      var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
+      //var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
       //var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
       //var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
 
       //get all types of 5 places
-      var types1 = getAllTypes(parsed['results'][0].types);
+      //var types1 = getAllTypes(parsed['results'][0].types);
      // var types2 = getAllTypes(parsed['results'][1].types);
       //var types3 = getAllTypes(parsed['results'][2].types);
 
@@ -241,18 +241,18 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][0].name,
-                subtitle: types1,
+                subtitle: parsed['results'][0].types[0],
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL1,
+                  url: "https://www.google.com",
                   title: parsed['results'][0].formatted_address
                 }]
               }, {
                 title: parsed['results'][0].name,
-                subtitle: types1,
+                subtitle: parsed['results'][0].types[0],
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL1,
+                  url: "https://www.google.com",
                   title: parsed['results'][0].formatted_address
                 }]
                 }/*, {
