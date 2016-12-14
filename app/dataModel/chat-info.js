@@ -281,7 +281,6 @@ module.exports = {
                 },{
                 title: parsed['results'][5].name,
                 subtitle: types5,
-                item_url: parsed['results'][5].formatted_address,               
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL5,
@@ -558,7 +557,7 @@ function getAllTypes(typesArr){
   
   if(typesArr.length != null){
     var len = typesArr.length;
-    var typesTxt = "This place is in the categories: ";
+    var typesTxt = "Categories: ";
     for(var i=0; i<len; i++){
       typesTxt += typesArr[i] +", ";
     }
