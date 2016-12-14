@@ -40,11 +40,11 @@ function generatePlaceArr(data){
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     //if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos[i] != 'undefined') ){
-    /*
+    console.log("OK! PLACE LEN="+len);
     if( parsed['results'][i].name != 'undefined'){
 
-      console.log("PLACE "+i+" OK! PLACE LEN="+len);
-    }*/
+      console.log("PLACE "+i);
+    }
   }
   //extract the maps url
   /*
@@ -57,7 +57,7 @@ function generatePlaceArr(data){
   var types2 = getAllTypes(parsed['results'][1].types);
   var types3 = getAllTypes(parsed['results'][2].types);
   */
-  return data
+  return data;
 }
 
 
