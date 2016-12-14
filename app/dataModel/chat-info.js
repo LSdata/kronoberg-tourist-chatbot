@@ -238,10 +238,10 @@ module.exports = {
               elements: [{
                 title: parsed['results'][10].name,
                 subtitle: gmapsURL,
-                item_url: "https://www.oculus.com/en-us/rift/",               
+                item_url: gmapsURL,               
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.oculus.com/en-us/rift/",
+                  url: gmapsURL,
                   title: "view on map"
                 }],
               }, {
