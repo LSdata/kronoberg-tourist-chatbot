@@ -44,6 +44,7 @@ function generatePlaceArr(data){
     }
   }
   //extract the maps url
+  /*
   var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
   var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
   var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
@@ -52,7 +53,7 @@ function generatePlaceArr(data){
   var types1 = getAllTypes(parsed['results'][0].types);
   var types2 = getAllTypes(parsed['results'][1].types);
   var types3 = getAllTypes(parsed['results'][2].types);
-  
+  */
   return data
 }
 
