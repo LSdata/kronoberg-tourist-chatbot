@@ -35,15 +35,13 @@ module.exports = {
 function generatePlaceArr(data){
   var placeArr = [];
   var parsed = JSON.parse(data);
-  var len = ['results'].len;
-    console.log("OK! PLACE LEN="+len);
+  var len = parsed['results'].len;
+    console.log("PLACE LEN="+len);
 
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
-    //if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos[i] != 'undefined') ){
-    console.log("OK! PLACE LEN="+len);
-    if( parsed['results'][i].name != 'undefined'){
-
+    if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos[i] != 'undefined') ){
+    //if( parsed['results'][i].name != 'undefined'){
       console.log("PLACE "+i);
     }
   }
