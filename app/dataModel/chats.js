@@ -37,7 +37,7 @@ module.exports = {
                 //chat_info.generic(senderID, response);
                 chat_info.sendGenericMessage(senderID);
             });        
-            return ""
+            return "ok"
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
