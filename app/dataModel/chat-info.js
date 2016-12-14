@@ -259,7 +259,8 @@ module.exports = {
           }
         }
       };  
-                console.log("GMAPS: "+gmaps);
+      
+      console.log(parsed['results'][10].photo[0]);
 
       fbGraph.callSendAPI(messageData,function(response){
             return response;
