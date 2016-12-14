@@ -237,7 +237,7 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][10].name,
-                subtitle: gmapsURL,
+                subtitle: parsed['results'][10].types,
                 item_url: gmapsURL,               
                 buttons: [{
                   type: "web_url",
