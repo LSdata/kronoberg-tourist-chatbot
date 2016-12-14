@@ -24,7 +24,7 @@ module.exports = {
       //console.log(parsed['results'][0].name);
         //return callback(data) //json format
         var placeArr = generatePlaceArr(data);
-        return placeArr;
+        return callback(placeArr);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
