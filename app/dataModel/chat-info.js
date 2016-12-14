@@ -240,7 +240,7 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][10].name,
-                subtitle: parsed['results'][10].types[0],
+                subtitle: types,
                 //item_url: gmapsURL,               
                 buttons: [{
                   type: "web_url",
@@ -532,10 +532,10 @@ function getAllTypes(typesArr){
   if(typesArr.length != null){
     console.log("ARR LENGTH: "+typesArr.length);
     var len = typesArr.length;
-    var typesTxt = "This place is in the categories "
+    var typesTxt = "This place is in the categories:"
     for(var i=1; i<=len; i++){
       //console.log("TYPE: "+typesArr[i])
-      typesTxt += typesArr[i];
+      typesTxt += " "+typesArr[i];
     }
   }
   return typesTxt;
