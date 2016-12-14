@@ -260,7 +260,7 @@ module.exports = {
         }
       };  
       
-      console.log(parsed['results'][10].photo);
+      console.log("PHOTO: "+parsed['results'][10].photo);
 
       fbGraph.callSendAPI(messageData,function(response){
             return response;
