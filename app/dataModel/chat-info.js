@@ -250,7 +250,7 @@ module.exports = {
                   url: gmapsURL1,
                   title: "view on map"
                 }]
-              }, {
+              }/*, {
                 title: parsed['results'][1].name,
                 subtitle: types2,
                 buttons: [{
@@ -275,7 +275,7 @@ module.exports = {
                   url: gmapsURL4,
                   title: "view on map"
                 }]
-                }
+                }*/
               ]
             }
           }
