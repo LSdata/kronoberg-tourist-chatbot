@@ -262,7 +262,7 @@ module.exports = {
         }
       };  
       
-      console.log(gmaps);
+      console.log(gmapsURL);
 
       fbGraph.callSendAPI(messageData,function(response){
             return response;
