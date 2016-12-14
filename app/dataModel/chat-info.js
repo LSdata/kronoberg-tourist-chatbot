@@ -219,7 +219,6 @@ module.exports = {
       //console.log(data);
      
       var gmaps = parsed['results'][18].photos[0].html_attributions[0]
-      console.log("GMAPS: "+gmaps);
       //gmaps = gmaps.replace(/^"+/, "");
       
       
@@ -264,6 +263,8 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
+            console.log("GMAPS: "+gmaps);
+
     },
 
     //Send a receipt message using the Send API.
