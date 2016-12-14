@@ -44,7 +44,7 @@ function generatePlaceArr(data){
       var one = parsed['results'][i].types;
       var two = parsed['results'][i].photos[0];
     } catch(err) {
-      console.log("Place property is missing");
+      console.log("Place property is missing i="+i);
     }
   }
 
