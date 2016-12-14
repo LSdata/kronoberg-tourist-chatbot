@@ -35,8 +35,8 @@ module.exports = {
 function generatePlaceArr(data){
   var placeArr = [];
   var parsed = JSON.parse(data);
-  var len = parsed['results'].len;
-    console.log("PLACE LEN="+len);
+  var len = parsed['results'].length;
+  console.log("PLACE LEN="+len);
 
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
