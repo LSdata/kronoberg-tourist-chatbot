@@ -240,44 +240,38 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: parsed['results'][0].name,
-                subtitle: parsed['results'][0].types[0],
+                title: "rift",
+                subtitle: "Next-generation virtual reality",
+                item_url: "https://www.oculus.com/en-us/rift/",               
+                image_url: appJS.server_url + "/assets/rift.png",
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.google.com",
-                  title: parsed['results'][0].formatted_address
-                }]
+                  url: "https://www.oculus.com/en-us/rift/",
+                  title: "Open Web URL"
+                }, {
+                  type: "postback",
+                  title: "Call Postback",
+                  payload: "Payload for first bubble",
+                }],
               }, {
-                title: parsed['results'][0].name,
-                subtitle: parsed['results'][0].types[0],
+                title: "touch",
+                subtitle: "Your Hands, Now in VR",
+                item_url: "https://www.oculus.com/en-us/touch/",               
+                image_url: appJS.server_url + "/assets/touch.png",
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.google.com",
-                  title: parsed['results'][0].formatted_address
+                  url: "https://www.oculus.com/en-us/touch/",
+                  title: "Open Web URL"
+                }, {
+                  type: "postback",
+                  title: "Call Postback",
+                  payload: "Payload for second bubble",
                 }]
-                }/*, {
-                title: parsed['results'][2].name,
-                subtitle: types3,
-                buttons: [{
-                  type: "web_url",
-                  url: gmapsURL3,
-                  title: parsed['results'][2].formatted_address
-                }]
-                },{
-                title: parsed['results'][3].name,
-                subtitle: types4,
-                //item_url: gmapsURL,               
-                buttons: [{
-                  type: "web_url",
-                  url: gmapsURL4,
-                  title: parsed['results'][3].formatted_address
-                }]
-                }*/
-              ]
+              }]
             }
           }
         }
-      };  
+        };  
       
       fbGraph.callSendAPI(messageData,function(response){
             return response;
