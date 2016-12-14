@@ -40,11 +40,14 @@ function generatePlaceArr(data){
 
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
-    if( (parsed['results'][i].types != 'undefined') && (parsed['results'][i].photos) ){
-    //if( parsed['results'][i].name != 'undefined'){
-      console.log("PLACE "+i);
+    try{
+      var one = parsed['results'][i].types;
+      var two = parsed['results'][i].photos[0];
+    } catch(err) {
+      console.log("Place property is missing");
     }
   }
+
   //extract the maps url
   /*
   var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
