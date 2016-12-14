@@ -530,14 +530,13 @@ module.exports = {
 function getAllTypes(typesArr){
   
   if(typesArr.length != null){
-    console.log("ARR LENGTH: "+typesArr.length);
     var len = typesArr.length;
-    var typesTxt = "This place is in the categories:"
+    var typesTxt = "This place is in the categories: "
     for(var i=0; i<len; i++){
-      console.log("TYPE: "+typesArr[i])
-      typesTxt += " "+typesArr[i];
+      typesTxt += typesArr[i] +", ";
     }
-      return typesTxt;
+    typesTxt = typesTxt.substring(0, typesTxt.length - 1); //remove last ', '
+    return typesTxt;
   } else
     return "(This place is in an undefined category)";
 }
