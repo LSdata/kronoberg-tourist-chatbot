@@ -223,7 +223,7 @@ module.exports = {
       var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
       var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
       var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
-      var gmapsURL5 = getGmapsURL(parsed['results'][4].photos[0].html_attributions[0]);
+      var gmapsURL5 = getGmapsURL(parsed['results'][18].photos[0].html_attributions[0]);
 
       
       //get all types of 5 places
@@ -231,7 +231,7 @@ module.exports = {
       var types2 = getAllTypes(parsed['results'][1].types);
       var types3 = getAllTypes(parsed['results'][2].types);
       var types4 = getAllTypes(parsed['results'][3].types);
-      var types5 = getAllTypes(parsed['results'][4].types);
+      var types5 = getAllTypes(parsed['results'][18].types);
 
 
       //getPhoto(photoRef);
@@ -279,7 +279,7 @@ module.exports = {
                   title: "view on map"
                 }]
                 },{
-                title: parsed['results'][4].name,
+                title: parsed['results'][18].name,
                 subtitle: types5,
                 //item_url: gmapsURL,               
                 buttons: [{
