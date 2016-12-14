@@ -231,7 +231,7 @@ module.exports = {
       var types2 = getAllTypes(parsed['results'][1].types);
       var types3 = getAllTypes(parsed['results'][2].types);
       var types4 = getAllTypes(parsed['results'][3].types);
-      var types5 = getAllTypes(parsed['results'][18].types);
+      var types5 = types1;
 
 
       //getPhoto(photoRef);
