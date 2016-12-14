@@ -218,9 +218,11 @@ module.exports = {
       var parsed = JSON.parse(data);
       //console.log(data);
      
-      var gmaps = parsed['results'][10].photos[0].html_attributions[0]
-      //gmaps = gmaps.replace(/^"+/, "");
+      var gmapsURL = parsed['results'][10].photos[0].html_attributions[0]
+      gmapsURL = gmapsURL.replace(/['"]+/g, '');
+      var href = "<a href=";
       
+      //getPhoto(photoRef);
       
       var messageData = {
         recipient: {
@@ -233,12 +235,12 @@ module.exports = {
               template_type: "generic",
               elements: [{
                 title: parsed['results'][10].name,
-                subtitle: gmaps,
+                subtitle: gmapsURL,
                 item_url: "https://www.oculus.com/en-us/rift/",               
                 buttons: [{
                   type: "web_url",
                   url: "https://www.oculus.com/en-us/rift/",
-                  title: "Open Web URL"
+                  title: "view on map"
                 }],
               }, {
                 title: "touch",
@@ -260,7 +262,7 @@ module.exports = {
         }
       };  
       
-      console.log("PHOTO: "+parsed['results'][10].photo);
+      console.log(gmaps);
 
       fbGraph.callSendAPI(messageData,function(response){
             return response;
