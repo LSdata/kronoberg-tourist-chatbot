@@ -267,8 +267,6 @@ module.exports = {
         }
       };  
       
-      console.log(gmapsURL);
-
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
@@ -535,7 +533,7 @@ function getAllTypes(typesArr){
     console.log("ARR LENGTH: "+typesArr.length);
     var len = typesArr.length;
     for(var i=0; i<len; i++){
-      console.log("TYPE: "+typesArr[i])
+      //console.log("TYPE: "+typesArr[i])
     }
   }
 
