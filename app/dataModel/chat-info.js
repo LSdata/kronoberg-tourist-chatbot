@@ -220,16 +220,16 @@ module.exports = {
      
       //extract the maps url
       var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
-      var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
-      var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
-      var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
+      //var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
+      //var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
+      //var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
 
       
       //get all types of 5 places
       var types1 = getAllTypes(parsed['results'][0].types);
-      var types2 = getAllTypes(parsed['results'][1].types);
-      var types3 = getAllTypes(parsed['results'][2].types);
-      var types4 = getAllTypes(parsed['results'][3].types);
+      //var types2 = getAllTypes(parsed['results'][1].types);
+      //var types3 = getAllTypes(parsed['results'][2].types);
+      //var types4 = getAllTypes(parsed['results'][3].types);
 
       //getPhoto(photoRef);
       
