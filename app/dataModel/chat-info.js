@@ -219,14 +219,14 @@ module.exports = {
       //console.log(data);
      
       //extract the maps url
-      //var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
-      //var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
-      //var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
+      var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
+      var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
+      var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
 
       //get all types of 5 places
-      //var types1 = getAllTypes(parsed['results'][0].types);
-     // var types2 = getAllTypes(parsed['results'][1].types);
-      //var types3 = getAllTypes(parsed['results'][2].types);
+      var types1 = getAllTypes(parsed['results'][0].types);
+      var types2 = getAllTypes(parsed['results'][1].types);
+      var types3 = getAllTypes(parsed['results'][2].types);
 
       //getPhoto(photoRef);
       
@@ -240,38 +240,35 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: "rift",
-                subtitle: "Next-generation virtual reality",
-                item_url: "https://www.oculus.com/en-us/rift/",               
-                image_url: appJS.server_url + "/assets/rift.png",
+                title: parsed['results'][0].name,
+                subtitle: types1,
                 buttons: [{
                   type: "web_url",
-                  url: "https://www.oculus.com/en-us/rift/",
-                  title: "Open Web URL"
-                }, {
-                  type: "postback",
-                  title: "Call Postback",
-                  payload: "Payload for first bubble",
-                }],
-              }, {
-                title: "touch",
-                subtitle: "Your Hands, Now in VR",
-                item_url: "https://www.oculus.com/en-us/touch/",               
-                image_url: appJS.server_url + "/assets/touch.png",
-                buttons: [{
-                  type: "web_url",
-                  url: "https://www.oculus.com/en-us/touch/",
-                  title: "Open Web URL"
-                }, {
-                  type: "postback",
-                  title: "Call Postback",
-                  payload: "Payload for second bubble",
+                  url: gmapsURL1,
+                  title: parsed['results'][0].formatted_address
                 }]
-              }]
+              }, {
+                title: parsed['results'][1].name,
+                subtitle: types2,
+                buttons: [{
+                  type: "web_url",
+                  url: gmapsURL2,
+                  title: parsed['results'][1].formatted_address
+                }]
+                }, {
+                title: parsed['results'][2].name,
+                subtitle: types3,
+                buttons: [{
+                  type: "web_url",
+                  url: gmapsURL3,
+                  title: parsed['results'][2].formatted_address
+                }]
+                }
+              ]
             }
           }
         }
-        };  
+      };  
       
       fbGraph.callSendAPI(messageData,function(response){
             return response;
