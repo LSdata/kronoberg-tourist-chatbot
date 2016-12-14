@@ -532,6 +532,6 @@ module.exports = {
 function getAllTypes(typesArr){
   
   if(typesArr.length != null){
-        console.log("NOT NULL TYPES");
+        console.log(typesArr.length);
       }
 }
