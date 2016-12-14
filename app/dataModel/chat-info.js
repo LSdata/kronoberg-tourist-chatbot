@@ -221,14 +221,14 @@ module.exports = {
       //extract the maps url
       var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
       var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
-      //var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
+      var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
       //var gmapsURL4 = getGmapsURL(parsed['results'][3].photos[0].html_attributions[0]);
 
       
       //get all types of 5 places
       var types1 = getAllTypes(parsed['results'][0].types);
       var types2 = getAllTypes(parsed['results'][1].types);
-      //var types3 = getAllTypes(parsed['results'][2].types);
+      var types3 = getAllTypes(parsed['results'][2].types);
       //var types4 = getAllTypes(parsed['results'][3].types);
 
       //getPhoto(photoRef);
@@ -258,7 +258,7 @@ module.exports = {
                   url: gmapsURL2,
                   title: "view on map"
                 }]
-                }/*, {
+                }, {
                 title: parsed['results'][2].name,
                 subtitle: types3,
                 buttons: [{
@@ -266,7 +266,7 @@ module.exports = {
                   url: gmapsURL3,
                   title: "view on map"
                 }]
-                },{
+                }/*,{
                 title: parsed['results'][3].name,
                 subtitle: types4,
                 //item_url: gmapsURL,               
@@ -546,7 +546,7 @@ function getAllTypes(typesArr){
   
   if(typesArr.length != null){
     var len = typesArr.length;
-    var typesTxt = "This place is in the categories: ";
+    var typesTxt = "Categories: ";
     for(var i=0; i<len; i++){
       typesTxt += typesArr[i] +", ";
     }
