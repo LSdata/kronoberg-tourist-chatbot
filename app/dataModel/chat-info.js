@@ -219,8 +219,8 @@ module.exports = {
       //console.log(data);
      
       var gmaps = parsed['results'][18].photos[0].html_attributions[0]
-      console.log("GMAPS: "+gmaps)
-      gmaps = gmaps.replace(/^"+/, "");
+      console.log("GMAPS: "+gmaps);
+      //gmaps = gmaps.replace(/^"+/, "");
       
       
       var messageData = {
