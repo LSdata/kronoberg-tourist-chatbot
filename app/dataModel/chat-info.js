@@ -532,9 +532,11 @@ function getAllTypes(typesArr){
   if(typesArr.length != null){
     console.log("ARR LENGTH: "+typesArr.length);
     var len = typesArr.length;
-    for(var i=0; i<len; i++){
+    var typesTxt = "This place is in the categories "
+    for(var i=1; i<=len; i++){
       //console.log("TYPE: "+typesArr[i])
+      typesTxt += typesArr[i];
     }
   }
-
+  return typesTxt;
 }
