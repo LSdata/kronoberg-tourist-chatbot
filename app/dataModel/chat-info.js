@@ -232,7 +232,7 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: parsed['results'][19].name,
+                title: parsed['results'][10].name,
                 subtitle: gmaps,
                 item_url: "https://www.oculus.com/en-us/rift/",               
                 buttons: [{
