@@ -253,7 +253,7 @@ module.exports = {
                   type: "web_url",
                   url: gmapsURL1,
                   title: "view on map"
-                }],
+                }]
               }, {
                 title: parsed['results'][1].name,
                 subtitle: types2,
@@ -261,15 +261,16 @@ module.exports = {
                   type: "web_url",
                   url: gmapsURL2,
                   title: "view on map"
-                }],
+                }]
                 }, {
-                  title: parsed['results'][2].name,
+                title: parsed['results'][2].name,
                 subtitle: types3,
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL3,
                   title: "view on map"
-                }],
+                }]
+                },{
                 title: parsed['results'][3].name,
                 subtitle: types4,
                 //item_url: gmapsURL,               
@@ -277,7 +278,8 @@ module.exports = {
                   type: "web_url",
                   url: gmapsURL4,
                   title: "view on map"
-                }],
+                }]
+                },{
                 title: parsed['results'][4].name,
                 subtitle: types5,
                 //item_url: gmapsURL,               
