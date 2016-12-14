@@ -216,10 +216,11 @@ module.exports = {
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, data){
       var parsed = JSON.parse(data);
-      console.log(data);
+      //console.log(data);
      
       var gmaps = parsed['results'][18].photos[0].html_attributions[0]
-      gmaps = gmaps.replace(/^\"+/, "");
+      console.log("GMAPS: "+gmaps)
+      gmaps = gmaps.replace(/^"+/, "");
       
       
       var messageData = {
