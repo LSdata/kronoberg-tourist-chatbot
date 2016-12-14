@@ -32,8 +32,7 @@ module.exports = {
             var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
             var type = 'bakery|restaurant|cafe';
             googleAPI.google_eatings(searchquery, type, function(response){
-                console.log("Request to Google Places API");
-                console.log(response);
+                //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
                 chat_info.generic(senderID, response)
             });        
