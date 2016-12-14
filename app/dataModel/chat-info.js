@@ -534,6 +534,8 @@ function getAllTypes(typesArr){
     var len = typesArr.length;
     var typesTxt = "This place is in the categories:"
     for(var i=1; i<=len; i++){
+      if(typesArr[i] =="undefined")
+        continue
       console.log("TYPE: "+typesArr[i])
       typesTxt += " "+typesArr[i];
     }
