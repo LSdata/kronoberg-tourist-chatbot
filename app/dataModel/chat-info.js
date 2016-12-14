@@ -556,7 +556,7 @@ function getAllTypes(typesArr){
   
   if(typesArr.length != null){
     var len = typesArr.length;
-    var typesTxt = "This place is in the categories: "
+    var typesTxt = "This place is in the categories: ";
     for(var i=0; i<len; i++){
       typesTxt += typesArr[i] +", ";
     }
