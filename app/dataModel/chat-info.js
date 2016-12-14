@@ -231,7 +231,6 @@ module.exports = {
       var types3 = getAllTypes(parsed['results'][2].types);
       var types4 = getAllTypes(parsed['results'][3].types);
 
-
       //getPhoto(photoRef);
       
       var messageData = {
