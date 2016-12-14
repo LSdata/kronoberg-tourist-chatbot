@@ -223,6 +223,11 @@ module.exports = {
       gmapsURL = gmapsURL.replace(/['"]+/g, '');
       gmapsURL = gmapsURL.slice(8);
       gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
+      
+      //get all types
+      if(parsed['results'][10].types[0] !==0){
+        
+      }
 
       //getPhoto(photoRef);
       
@@ -238,7 +243,7 @@ module.exports = {
               elements: [{
                 title: parsed['results'][10].name,
                 subtitle: parsed['results'][10].types[0],
-                item_url: gmapsURL,               
+                //item_url: gmapsURL,               
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL,
