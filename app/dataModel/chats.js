@@ -25,7 +25,7 @@ module.exports = {
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
                 return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
         }
-        if(capitalTxt == 'MY LOCATION'){
+        if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I')) ){
             return chat_info.sendQuickReply(senderID)
         }
         if(capitalTxt == 'GEO'){
