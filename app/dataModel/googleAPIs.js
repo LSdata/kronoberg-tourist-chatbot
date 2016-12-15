@@ -36,7 +36,8 @@ function generatePlaceArr(data){
   var placeArr = [];
   var parsed = JSON.parse(data);
   var len = parsed['results'].length;
-  var counter = 22; //init
+  var counter = 0; //init
+  var flagFirst = 0;
 
   //get 7 google place items. Place in array.
   for(var i=0; i<len; i++){
@@ -50,7 +51,7 @@ function generatePlaceArr(data){
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
-          if(counter==22)
+          if(flagFirst==0)
             counter=0;
           else
             counter++;
