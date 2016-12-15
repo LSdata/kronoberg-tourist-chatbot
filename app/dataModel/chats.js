@@ -11,10 +11,7 @@ module.exports = {
             (capitalTxt.indexOf('HOTEL') > -1) || (capitalTxt.indexOf('PLACE TO STAY') > -1) ||
             (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
             (capitalTxt.indexOf('SPEND THE NIGHT') > -1) ||(capitalTxt.indexOf('LODGING') > -1)) {
-              
-            return "Alright! Let me give you some suggestions of accomodations!..(not developed yet)"
-;
-
+            return "Alright! Let me give you some suggestions of accomodations!..(not developed yet)";
         } 
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
@@ -22,7 +19,7 @@ module.exports = {
                 var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
                 //var type = 'bakery|restaurant|cafe';
                 var type = 'restaurant';
-                googleAPI.google_eatings(searchquery, type, function(response){
+                googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
             return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see the place on a map and zoom to Kronoberg)";

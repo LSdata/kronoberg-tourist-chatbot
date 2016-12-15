@@ -6,9 +6,9 @@ const https = require('https');
 // Geocode an address.
 module.exports = {
 
-  google_eatings: function(searchquery, type, callback){
+  getPlaces: function(type, callback){
     var key = appJS.google_api_key;
-    //var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
+    var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
     //var type = 'bakery|restaurant|cafe'
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
 
