@@ -245,7 +245,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL1,
-                  title: parsed['results'][0].formatted_address
+                  title: parsed['results'][0].vicinity
                 }]
               }, {
                 title: parsed['results'][0].name,
@@ -261,7 +261,7 @@ module.exports = {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL1,
-                  title: parsed['results'][1].formatted_address
+                  title: parsed['results'][2].formatted_address
                 }]
                 }
               ]
