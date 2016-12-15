@@ -37,7 +37,7 @@ module.exports = {
                     chat_info.generic(senderID, response);
                 }); 
 
-                return "Of course! Let me give you some suggestions of places you must see!!"
+                return "Historical places? Of course, let me give you some suggestions of great museums and beautiful churches"
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
