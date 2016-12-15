@@ -55,7 +55,7 @@ module.exports = {
       if (messageText) {
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
-          chat_info.sendTextMessage(senderID, botReply)
+          chat_info.sendTextMessage(senderID, botReply);
       } 
       else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Thank you!");
