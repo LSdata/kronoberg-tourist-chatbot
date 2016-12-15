@@ -38,7 +38,7 @@ function generatePlaceArr(data){
   var len = parsed['results'].length;
   var counter = -1;
 
-  //get 7 google place items. Place in array.
+  //get 7 google place items. Place in array
   for(var i=0; i<len; i++){
     try{
       var name = parsed['results'][i].name;
