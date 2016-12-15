@@ -17,7 +17,7 @@ module.exports = {
       
       response.on('data', function(d) {
         data += d;
-      });
+      }); //
 
       response.on('end', function() {
       //var parsed = JSON.parse(data);
