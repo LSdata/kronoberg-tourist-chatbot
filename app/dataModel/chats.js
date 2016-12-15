@@ -36,7 +36,7 @@ module.exports = {
                 //chat_info.sendTextMessage(senderID, response);
                 chat_info.generic(senderID, response);
             });        
-            return "";
+            return "";//causes invalid request warning because it is null, but that's ok it shouldn't return anyting
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
