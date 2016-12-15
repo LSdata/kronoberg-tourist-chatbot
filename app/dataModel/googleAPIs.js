@@ -49,7 +49,7 @@ function generatePlaceArr(data){
       var photo = "photo"; //getPlacePhoto();
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
-      && (photo_ref != 'undefined') ){
+      && (photo_ref != 'undefined') && (counter < 3 ) ){
           counter = counter + 1;
           placeArr[counter] = []; //place nr
           for(var j=0; j<5; j++){
@@ -62,18 +62,6 @@ function generatePlaceArr(data){
         console.log("Place property is missing i="+i);
       }
   }
-
-  //extract the maps url
-  /*
-  var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
-  var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
-  var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
-
-  //get all types of 5 places
-  var types1 = getAllTypes(parsed['results'][0].types);
-  var types2 = getAllTypes(parsed['results'][1].types);
-  var types3 = getAllTypes(parsed['results'][2].types);
-  */
   return data;
 }
 
