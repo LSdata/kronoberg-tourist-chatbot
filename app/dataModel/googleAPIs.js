@@ -17,7 +17,7 @@ module.exports = {
       
       response.on('data', function(d) {
         data += d;
-      }); //
+      });
 
       response.on('end', function() {
       //var parsed = JSON.parse(data);
@@ -38,7 +38,7 @@ function generatePlaceArr(data){
   var len = parsed['results'].length;
   var counter = -1;
 
-  //get google place items. Place in array
+  //get 7 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
       var name = parsed['results'][i].name;
@@ -46,7 +46,7 @@ function generatePlaceArr(data){
       var address = parsed['results'][i].formatted_address;
       var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
       var photo_ref = parsed['results'][i].photos[0].photo_reference;
-      var photo = "photo"; //getPlacePhoto();
+      var photo = "photo"; // getPlacePhoto();
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
