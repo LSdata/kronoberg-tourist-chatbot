@@ -164,7 +164,8 @@ module.exports = {
         chat_info.sendTextMessage(senderID, "Hi and welcome!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
       }
       else if (payload =="accomodation"){
-        chat_info.sendQuickReply(senderID);
+        var botReply = chitchat.semEval(senderID, "accomodation");
+        chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="eat"){
         var botReply = chitchat.semEval(senderID, "food");
