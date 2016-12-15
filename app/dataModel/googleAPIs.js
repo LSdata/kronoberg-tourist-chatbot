@@ -57,7 +57,7 @@ function generatePlaceArr(data){
           }
           else
             counter=counter+1;
-          placeArr[counter] = []; //place nr
+          placeArr[counter] = []; //place nr.
           placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
         
       }else
