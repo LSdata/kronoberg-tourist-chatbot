@@ -53,8 +53,12 @@ module.exports = {
       }
     
       if (messageText) {
-        var botReply = chitchat.semEval(senderID, messageText);
-        chat_info.sendTextMessage(senderID, botReply)
+        //var botReply = chitchat.semEval(senderID, messageText);
+        chitchat.semEval(senderID, messageText, function(response){
+                //chat_info.generic(senderID, response);
+                chat_info.sendTextMessage(senderID, response);
+            });      
+        //chat_info.sendTextMessage(senderID, botReply);
       } 
       else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Thank you!");
