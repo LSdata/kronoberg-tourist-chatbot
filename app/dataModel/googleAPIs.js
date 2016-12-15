@@ -40,15 +40,20 @@ function generatePlaceArr(data){
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
-      if((parsed['results'][i].formatted_address != 'undefined') &&
-      (parsed['results'][i].photos[0].html_attributions[0] != 'undefined'))
-        console.log("PLACE NR "+i+". PHOTO: "+parsed['results'][i].photos[0].html_attributions[0]+
-        ". ADDRESS: "+parsed['results'][i].formatted_address );
       var type = parsed['results'][i].types;
-      var photo_htmlattr = parsed['results'][i].photos[0];
+      var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
       var photo_ref = parsed['results'][i].photos[0].photo_reference;
-      //var address = parsed['results'][i].formatted_address;
+      var address = parsed['results'][i].formatted_address;
       var name = parsed['results'][i].name;
+      
+      if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
+      && (photo_ref != 'undefined') ){
+        console.log("PLACE NR "+i+". PHOTO: "+parsed['results'][i].photos[0].html_attributions[0]);
+        
+      }else
+        continue;
+      
+
 /*
       for(var i=0; i<len; i++){
         placeArr[i] = []; //place nr
