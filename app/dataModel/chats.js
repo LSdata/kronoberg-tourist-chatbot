@@ -23,7 +23,7 @@ module.exports = {
                 googleAPI.google_eatings(searchquery, type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
-            return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend:";
+            return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend. Tap on the adress to see the place on a map";
         }
         else if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
