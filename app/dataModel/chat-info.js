@@ -133,8 +133,8 @@ module.exports = {
             payload:"eat"
           },{
             type:"postback",
-            title:"Places to visit",
-            payload:"attraction"
+            title:"Historical places",
+            payload:"historicPlaces"
           },{
             type:"postback",
             title:"Your position on map",

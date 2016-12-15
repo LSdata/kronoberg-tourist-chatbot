@@ -22,7 +22,6 @@ module.exports = {
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
-                //var type = 'bakery|restaurant|cafe';
                 var type = 'restaurant';
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
@@ -32,7 +31,12 @@ module.exports = {
         else if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
-                return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
+                var type = 'museum|art_gallery|church|city_hall|mosque|hindu_temple|library';
+                googleAPI.getPlaces(type, function(response){
+                    chat_info.generic(senderID, response);
+                }); 
+
+                return "Of course! Let me give you some suggestions of places you must see!!"
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
