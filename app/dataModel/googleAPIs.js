@@ -38,7 +38,7 @@ function generatePlaceArr(data){
   var len = parsed['results'].length;
   var counter = -1;
 
-  //get 10 google place items. Place in array.
+  //get 7 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
       var name = parsed['results'][i].name;
@@ -52,7 +52,7 @@ function generatePlaceArr(data){
       && (photo_ref != 'undefined') && (counter < 4 ) ){
           counter = counter + 1;
           placeArr[counter] = []; //place nr
-          for(var j=0; j<5; j++){
+          for(var j=0; j<7; j++){
             placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
           }
       }else
