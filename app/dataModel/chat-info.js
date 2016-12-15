@@ -220,7 +220,13 @@ module.exports = {
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, placeArr){
       //placeArr[placeNr] = [name, type, address, Gmaps url, photo];
-      console.log(placeArr[0][0])
+      try{
+          console.log(placeArr[0][0]);
+      }catch(err) {
+        console.log("0 0");
+        placeArr[0][0] = "missing title";
+      }
+      console.log(placeArr[0][0]);
       
       var messageData = {
         recipient: {
