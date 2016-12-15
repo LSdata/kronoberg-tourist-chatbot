@@ -36,7 +36,6 @@ module.exports = {
                 //chat_info.sendTextMessage(senderID, response);
                 chat_info.generic(senderID, response);
             });        
-            return "";
         }
 
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
