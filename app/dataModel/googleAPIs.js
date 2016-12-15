@@ -29,6 +29,25 @@ module.exports = {
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
     });
+  },
+  getPlacePhoto: function(ref, callback){
+    var key = appJS.google_api_key;
+    //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
+    var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+ref+"&key="+key;
+    https.get(url, function(response) {
+      var photo ='';
+      
+      response.on('data', function(d) {
+        photo += d;
+      }); //
+
+      response.on('end', function() {
+        console.log(photo);
+        return callback(photo);
+      });
+    }).on('error', function(e) {
+      console.log("Got error: " + e.message);
+    });
   }
 };
 
@@ -46,7 +65,8 @@ function generatePlaceArr(data){
       var address = parsed['results'][i].formatted_address;
       var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
       var photo_ref = parsed['results'][i].photos[0].photo_reference;
-      var photo = "photo"; //getPlacePhoto();
+      var photo = "photo";
+      //this.getPlacePhoto(photo_ref);
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
