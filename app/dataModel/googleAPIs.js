@@ -40,19 +40,19 @@ function generatePlaceArr(data){
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
-      if(parsed['results'][i].formatted_address && (parsed['results'][i].formatted_address != 'undefined'))
+      if((parsed['results'][i].formatted_address) && (parsed['results'][i].formatted_address != 'undefined'))
         console.log("formatted_address at: "+i);
       var type = parsed['results'][i].types;
       var photo = parsed['results'][i].photos[0];
-      var address = parsed['results'][i].formatted_address;
+      //var address = parsed['results'][i].formatted_address;
       var name = parsed['results'][i].name;
-
+/*
       for(var i=0; i<len; i++){
         placeArr[i] = []; //place nr
         for(var j=0; j<4; j++){
           placeArr[i] = [type, photo, address, name];
         }
-      }
+      }*/
     } catch(err) {
       console.log("Place property is missing i="+i);
     }
