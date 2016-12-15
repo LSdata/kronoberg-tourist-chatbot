@@ -134,7 +134,7 @@ module.exports = {
           },{
             type:"postback",
             title:"Historical places",
-            payload:"histplace"
+            payload:"attraction"
           },{
             type:"postback",
             title:"Your position on map",

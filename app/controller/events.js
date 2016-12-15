@@ -171,8 +171,8 @@ module.exports = {
         var botReply = chitchat.semEval(senderID, "food");
         chat_info.sendTextMessage(senderID, botReply)
       }
-      else if (payload =="histplace"){
-        var botReply = chitchat.semEval(senderID, "historical places");
+      else if (payload =="attraction"){
+        var botReply = chitchat.semEval(senderID, "attraction");
         chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="mylocation"){
