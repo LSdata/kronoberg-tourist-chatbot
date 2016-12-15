@@ -3,11 +3,8 @@ var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 var chat_info = require(path.join(__dirname, 'chat-info.js'))
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
-module.exports = function (req, res) {
-    var module = {};
-    
-    module.semEval = function(senderID, messageText){
-
+module.exports = {
+    semEval: function(senderID, messageText){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -61,6 +58,5 @@ module.exports = function (req, res) {
         else {
           return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.";
         }
-    };
-    return module;
+    }
 };
