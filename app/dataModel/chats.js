@@ -28,16 +28,16 @@ module.exports = {
         }
         if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1) ){
             return chat_info.sendQuickReply(senderID)
-        }
+        }*/
         if(capitalTxt == 'GEO'){
             var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
             var type = 'bakery|restaurant|cafe';
             googleAPI.google_eatings(searchquery, type, function(response){
                 //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
-                chat_info.generic(senderID, response);
+                return (callback(chat_info.generic(senderID, response)));
             });        
-            return "";//causes invalid request warning because it is null, but that's ok it shouldn't return anyting
+            //return "";//causes invalid request warning because it is null, but that's ok it shouldn't return anyting
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
@@ -54,8 +54,8 @@ module.exports = {
             
             var randomNr = Math.floor(Math.random()*greetings.length);
         
-            return greetings[randomNr];
-        }*/
+            return callback(greetings[randomNr]);
+        }
         else {
           return callback("..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.");
         }
