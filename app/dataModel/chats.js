@@ -18,7 +18,12 @@ module.exports = {
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
-                return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend:..(not developed yet)"
+                var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
+                var type = 'bakery|restaurant|cafe';
+                googleAPI.google_eatings(searchquery, type, function(response){
+                    chat_info.generic(senderID, response);
+                }); 
+            return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend:";
         }
         else if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
