@@ -53,7 +53,7 @@ function generatePlaceArr(data){
           counter = counter + 1;
           placeArr[counter] = []; //place nr
           for(var j=0; j<5; j++){
-            placeArr[i] = [name, type, address, photo_htmlattr, photo];
+            placeArr[counter] = [name, type, address, photo_htmlattr, photo];
           }
           console.log("PLACEARR LEN= "+placeArr.length)
       }else
