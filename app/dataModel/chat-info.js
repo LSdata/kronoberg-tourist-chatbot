@@ -270,22 +270,6 @@ module.exports = {
                   url: placeArr[4][3],
                   title: placeArr[4][2]
                 }]
-                }, {
-                title: placeArr[5][0],
-                subtitle: placeArr[5][1],
-                buttons: [{
-                  type: "web_url",
-                  url: placeArr[5][3],
-                  title: placeArr[5][2]
-                }]
-                }, {
-                title: placeArr[6][0],
-                subtitle: placeArr[6][1],
-                buttons: [{
-                  type: "web_url",
-                  url: placeArr[6][3],
-                  title: placeArr[6][2]
-                }]
                 }
               ]
             }
