@@ -40,30 +40,24 @@ function generatePlaceArr(data){
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
+      var name = parsed['results'][i].name;
       var type = parsed['results'][i].types;
+      var address = parsed['results'][i].formatted_address;
       var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
       var photo_ref = parsed['results'][i].photos[0].photo_reference;
-      var address = parsed['results'][i].formatted_address;
-      var name = parsed['results'][i].name;
+      var photo = "photo"; //getPlacePhoto();
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') ){
-        console.log("PLACE NR "+i+". PHOTO: "+parsed['results'][i].photos[0].html_attributions[0]);
-        
+          placeArr[i] = []; //place nr
+          for(var j=0; j<5; j++){
+            placeArr[i] = [name, type, address, photo_htmlattr, photo];
+          }
       }else
         continue;
-      
-
-/*
-      for(var i=0; i<len; i++){
-        placeArr[i] = []; //place nr
-        for(var j=0; j<4; j++){
-          placeArr[i] = [type, photo, address, name];
-        }
-      }*/
-    } catch(err) {
-      console.log("Place property is missing i="+i);
-    }
+      } catch(err) {
+        console.log("Place property is missing i="+i);
+      }
   }
 
   //extract the maps url
