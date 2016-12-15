@@ -32,10 +32,10 @@ module.exports = {
         if(capitalTxt == 'GEO'){
             var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
             var type = 'bakery|restaurant|cafe';
-            var cb = googleAPI.google_eatings(searchquery, type, function(response){
+            googleAPI.google_eatings(searchquery, type, function(response){
                 //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
-                callback.send(chat_info.generic(senderID, response));
+                return (callback(chat_info.generic(senderID, response)));
             });        
             //return callback(cb);//causes invalid request warning because it is null, but that's ok it shouldn't return anyting
         }
