@@ -30,7 +30,8 @@ module.exports = {
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
                 return "Of course! Let me give you some suggestions of places you must see!!:..(not developed yet)"
         }
-        else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1) ){
+        else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
+            (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
             return chat_info.sendQuickReply(senderID)
         }
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 

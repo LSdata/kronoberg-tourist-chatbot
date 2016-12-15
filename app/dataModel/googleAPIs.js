@@ -55,7 +55,6 @@ function generatePlaceArr(data){
           for(var j=0; j<5; j++){
             placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
           }
-          console.log("PLACEARR LEN= "+placeArr.length)
       }else
         continue;
       } catch(err) {
