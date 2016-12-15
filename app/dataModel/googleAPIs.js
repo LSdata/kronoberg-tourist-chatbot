@@ -36,11 +36,12 @@ function generatePlaceArr(data){
   var placeArr = [];
   var parsed = JSON.parse(data);
   var len = parsed['results'].length;
-  console.log("PLACE LEN="+len);
 
   //get 10 google place items. Place in array.
   for(var i=0; i<len; i++){
     try{
+      if(parsed['results'][i].formatted_address && (parsed['results'][i].formatted_address != 'undefined'))
+        console.log("formatted_address at: "+i);
       var type = parsed['results'][i].types;
       var photo = parsed['results'][i].photos[0];
       var address = parsed['results'][i].formatted_address;
