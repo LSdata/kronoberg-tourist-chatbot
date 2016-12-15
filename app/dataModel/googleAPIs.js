@@ -62,7 +62,7 @@ function generatePlaceArr(data){
         console.log("Place property is missing i="+i);
       }
   }
-  return data;
+  return placeArr;
 }
 
 

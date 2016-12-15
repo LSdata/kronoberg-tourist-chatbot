@@ -214,21 +214,8 @@ module.exports = {
     },
     
     //Send a Structured Message (Generic Message type) using the Send API.
-    generic: function(recipientId, data){
-      var parsed = JSON.parse(data);
-      //console.log(data);
-     
-      //extract the maps url
-      var gmapsURL1 = getGmapsURL(parsed['results'][0].photos[0].html_attributions[0]);
-      //var gmapsURL2 = getGmapsURL(parsed['results'][1].photos[0].html_attributions[0]);
-      //var gmapsURL3 = getGmapsURL(parsed['results'][2].photos[0].html_attributions[0]);
-
-      //get all types of 5 places
-      var types1 = getAllTypes(parsed['results'][0].types);
-      //var types2 = getAllTypes(parsed['results'][1].types);
-      //var types3 = getAllTypes(parsed['results'][2].types);
-
-      //getPhoto(photoRef);
+    generic: function(recipientId, placeArr){
+      //placeArr[placeNr] = [name, type, address, Gmaps url, photo];
       
       var messageData = {
         recipient: {
@@ -240,28 +227,28 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: parsed['results'][0].name,
-                subtitle: types1,
+                title: placeArr[0][0],
+                subtitle: placeArr[0][1],
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL1,
-                  title: parsed['results'][0].formatted_address
+                  url: placeArr[0][3],
+                  title: placeArr[0][2]
                 }]
               }, {
-                title: parsed['results'][0].name,
-                subtitle: types1,
+               title: placeArr[1][0],
+                subtitle: placeArr[1][1],
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL1,
-                  title: parsed['results'][1].formatted_address
+                  url: placeArr[1][3],
+                  title: placeArr[1][2]
                 }]
                 }, {
-                title: parsed['results'][1].name,
-                subtitle: types1,
+                title: placeArr[2][0],
+                subtitle: placeArr[2][1],
                 buttons: [{
                   type: "web_url",
-                  url: gmapsURL1,
-                  title: parsed['results'][1].formatted_address
+                  url: placeArr[2][3],
+                  title: placeArr[2][2]
                 }]
                 }
               ]
@@ -529,24 +516,3 @@ module.exports = {
       });  
     }
 };
-
-function getAllTypes(typesArr){
-  
-  if(typesArr.length != null){
-    var len = typesArr.length;
-    var typesTxt = "Categories: ";
-    for(var i=0; i<len; i++){
-      typesTxt += typesArr[i] +", ";
-    }
-    typesTxt = typesTxt.substring(0, typesTxt.length - 2); //remove last ', '
-    return typesTxt;
-  } else
-    return "(This place is in an undefined category)";
-}
-
-function getGmapsURL(gmapsURL){
-    gmapsURL = gmapsURL.replace(/['"]+/g, '');
-    gmapsURL = gmapsURL.slice(8);
-    gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
-    return gmapsURL;
-}
