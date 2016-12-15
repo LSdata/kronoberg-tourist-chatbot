@@ -12,7 +12,8 @@ module.exports = {
             (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
             (capitalTxt.indexOf('SPEND THE NIGHT') > -1) ||(capitalTxt.indexOf('LODGING') > -1)) {
               
-            return chat_info.sendQuickReply(senderID);
+            return "Alright! Let me give you some suggestions of accomodations!..(not developed yet)"
+;
 
         } 
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
