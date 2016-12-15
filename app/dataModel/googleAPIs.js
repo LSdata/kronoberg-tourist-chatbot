@@ -32,14 +32,13 @@ module.exports = {
   },
   getPlacePhoto: function(ref, callback){
     var key = appJS.google_api_key;
-    //var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
     var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+ref+"&key="+key;
     https.get(url, function(response) {
       var photo ='';
       
       response.on('data', function(d) {
         photo += d;
-      }); //
+      }); 
 
       response.on('end', function() {
         console.log(photo);
@@ -75,6 +74,8 @@ function generatePlaceArr(data){
           for(var j=0; j<5; j++){
             placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
           }
+          if(counter==4)
+            break;
       }else
         continue;
       } catch(err) {
