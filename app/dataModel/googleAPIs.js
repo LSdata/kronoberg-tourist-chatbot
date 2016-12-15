@@ -49,7 +49,7 @@ function generatePlaceArr(data){
       var photo = "photo"; //getPlacePhoto();
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
-      && (photo_ref != 'undefined') && (counter < 3 ) ){
+      && (photo_ref != 'undefined') && (counter < 4 ) ){
           counter = counter + 1;
           placeArr[counter] = []; //place nr
           for(var j=0; j<5; j++){
