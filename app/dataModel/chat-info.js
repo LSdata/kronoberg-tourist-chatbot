@@ -8,8 +8,10 @@ const request = require('request');
  * Send a message with the account linking call-to-action
  *
  */
-module.exports = {
-    sendAccountLinking: function(recipientId){
+module.exports = function (req, res) {
+      var module = {};
+/*
+    module.sendAccountLinking = function(recipientId){
         var messageData = {
             recipient: {
                 id: recipientId
@@ -64,10 +66,10 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    },
+    },*/
     
     //Send a message with Quick Reply buttons.
-    sendQuickReply: function(recipientId){
+        module.sendQuickReply = function(recipientId){
       var messageData = {
         recipient: {
           id: recipientId
@@ -86,10 +88,10 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    },
+    };
     
     //Set start greetings
-    startGreetings: function(){
+    module.startGreetings = function(){
       var messageData = {
         setting_type:"greeting",
         greeting:{
@@ -101,10 +103,11 @@ module.exports = {
         return response;
       });
 
-    },
+    };
     
     //set the get started button 
-    startBtn: function(){
+        module.startBtn = function(){
+
       var messageData = {
         "setting_type":"call_to_actions",
         "thread_state":"new_thread",
@@ -115,10 +118,10 @@ module.exports = {
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
-    },
+    };
     
     //persistent start menu 
-    pers_startmenu: function(){
+    module.pers_startmenu = function(){
       var messageData = {
         setting_type: "call_to_actions",
         thread_state: "existing_thread",
@@ -145,10 +148,10 @@ module.exports = {
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
-    },
-
+    };
+/*
     //Send a read receipt to indicate the message has been read
-    sendReadReceipt: function(recipientId){
+        module.sendReadReceipt = function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
         
           var messageData = {
@@ -161,7 +164,7 @@ module.exports = {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    },
+    };
     
     //Send a Structured Message (Generic Message type) using the Send API.
     sendGenericMessage: function(recipientId){
@@ -211,10 +214,10 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-    },
+    },*/
     
     //Send a Structured Message (Generic Message type) using the Send API.
-    generic: function(recipientId, data){
+    module.generic = function(recipientId, data){
       var parsed = JSON.parse(data);
       //console.log(data);
      
@@ -274,8 +277,8 @@ module.exports = {
             return response;
       });
 
-    },
-
+    };
+/*
     //Send a receipt message using the Send API.
     sendReceiptMessage: function(recipientId){
   
@@ -382,10 +385,10 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-  },
+  },*/
 
   //Send a text message using the Send API.
-  sendTextMessage: function(recipientId, messageText){
+  module.sendTextMessage = function(recipientId, messageText){
     var messageData = {
       recipient: {
         id: recipientId
@@ -399,8 +402,8 @@ module.exports = {
     fbGraph.callSendAPI(messageData,function(response){
       return response;
     });
-  },
-
+  };
+/*
   //Send a button message using the Send API.
   sendButtonMessage: function(recipientId){
     var messageData = {
@@ -497,14 +500,14 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-  },
+  },*/
   
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
  * get the message id in a response 
  *
  */
-  callSendAPI: function(messageData){
+   module.callSendAPI = function(messageData){
       request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
         qs: { access_token: appJS.page_access_token },
@@ -527,7 +530,7 @@ module.exports = {
           console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
         }
       });  
-    }
+    };
 };
 
 function getAllTypes(typesArr){
