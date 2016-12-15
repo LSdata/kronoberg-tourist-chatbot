@@ -42,7 +42,8 @@ function generatePlaceArr(data){
     try{
       if((parsed['results'][i].formatted_address != 'undefined') &&
       (parsed['results'][i].photos[0].html_attributions[0] != 'undefined'))
-        console.log("formatted_address and photo at: "+i);
+        console.log("PLACE NR "+i+". PHOTO: "+parsed['results'][i].photos[0].html_attributions[0]+
+        ". ADDRESS: "+parsed['results'][i].formatted_address );
       var type = parsed['results'][i].types;
       var photo = parsed['results'][i].photos[0];
       //var address = parsed['results'][i].formatted_address;
