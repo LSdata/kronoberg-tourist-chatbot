@@ -8,10 +8,8 @@ const request = require('request');
  * Send a message with the account linking call-to-action
  *
  */
-module.exports = function (req, res) {
-      var module = {};
-/*
-    module.sendAccountLinking = function(recipientId){
+module.exports = {
+    sendAccountLinking: function(recipientId){
         var messageData = {
             recipient: {
                 id: recipientId
@@ -66,10 +64,10 @@ module.exports = function (req, res) {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    },*/
+    },
     
     //Send a message with Quick Reply buttons.
-        module.sendQuickReply = function(recipientId){
+    sendQuickReply: function(recipientId){
       var messageData = {
         recipient: {
           id: recipientId
@@ -88,10 +86,10 @@ module.exports = function (req, res) {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    };
+    },
     
     //Set start greetings
-    module.startGreetings = function(){
+    startGreetings: function(){
       var messageData = {
         setting_type:"greeting",
         greeting:{
@@ -103,11 +101,10 @@ module.exports = function (req, res) {
         return response;
       });
 
-    };
+    },
     
     //set the get started button 
-        module.startBtn = function(){
-
+    startBtn: function(){
       var messageData = {
         "setting_type":"call_to_actions",
         "thread_state":"new_thread",
@@ -118,10 +115,10 @@ module.exports = function (req, res) {
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
-    };
+    },
     
     //persistent start menu 
-    module.pers_startmenu = function(){
+    pers_startmenu: function(){
       var messageData = {
         setting_type: "call_to_actions",
         thread_state: "existing_thread",
@@ -148,10 +145,10 @@ module.exports = function (req, res) {
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
-    };
-/*
+    },
+
     //Send a read receipt to indicate the message has been read
-        module.sendReadReceipt = function(recipientId){
+    sendReadReceipt: function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
         
           var messageData = {
@@ -164,7 +161,7 @@ module.exports = function (req, res) {
         fbGraph.callSendAPI(messageData,function(response){
             return response;
         });
-    };
+    },
     
     //Send a Structured Message (Generic Message type) using the Send API.
     sendGenericMessage: function(recipientId){
@@ -214,10 +211,10 @@ module.exports = function (req, res) {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-    },*/
+    },
     
     //Send a Structured Message (Generic Message type) using the Send API.
-    module.generic = function(recipientId, data){
+    generic: function(recipientId, data){
       var parsed = JSON.parse(data);
       //console.log(data);
      
@@ -264,7 +261,7 @@ module.exports = function (req, res) {
                 buttons: [{
                   type: "web_url",
                   url: gmapsURL1,
-                  title: parsed['results'][2].formatted_address
+                  title: parsed['results'][1].formatted_address
                 }]
                 }
               ]
@@ -277,8 +274,8 @@ module.exports = function (req, res) {
             return response;
       });
 
-    };
-/*
+    },
+
     //Send a receipt message using the Send API.
     sendReceiptMessage: function(recipientId){
   
@@ -385,10 +382,10 @@ module.exports = function (req, res) {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-  },*/
+  },
 
   //Send a text message using the Send API.
-  module.sendTextMessage = function(recipientId, messageText){
+  sendTextMessage: function(recipientId, messageText){
     var messageData = {
       recipient: {
         id: recipientId
@@ -402,8 +399,8 @@ module.exports = function (req, res) {
     fbGraph.callSendAPI(messageData,function(response){
       return response;
     });
-  };
-/*
+  },
+
   //Send a button message using the Send API.
   sendButtonMessage: function(recipientId){
     var messageData = {
@@ -500,14 +497,14 @@ module.exports = function (req, res) {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-  },*/
+  },
   
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
  * get the message id in a response 
  *
  */
-   module.callSendAPI = function(messageData){
+  callSendAPI: function(messageData){
       request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
         qs: { access_token: appJS.page_access_token },
@@ -530,7 +527,7 @@ module.exports = function (req, res) {
           console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
         }
       });  
-    };
+    }
 };
 
 function getAllTypes(typesArr){
