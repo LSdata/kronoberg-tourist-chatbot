@@ -4,7 +4,7 @@ var chat_info = require(path.join(__dirname, 'chat-info.js'))
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 module.exports = {
-    semEval: function(senderID, messageText, callback){
+    semEval: function(senderID, messageText){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -12,10 +12,9 @@ module.exports = {
             (capitalTxt.indexOf('SLEEP') > -1) || (capitalTxt.indexOf('SLEEP OVER') > -1) ||
             (capitalTxt.indexOf('SPEND THE NIGHT') > -1) ||(capitalTxt.indexOf('LODGING') > -1)) {
               
-            return callback(chat_info.sendQuickReply(senderID));
+            return chat_info.sendQuickReply(senderID);
 
         } 
-        /*
         if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
@@ -28,16 +27,16 @@ module.exports = {
         }
         if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1) ){
             return chat_info.sendQuickReply(senderID)
-        }*/
+        }
         if(capitalTxt == 'GEO'){
             var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
             var type = 'bakery|restaurant|cafe';
             googleAPI.google_eatings(searchquery, type, function(response){
                 //console.log(response);
                 //chat_info.sendTextMessage(senderID, response);
-                return (callback(chat_info.generic(senderID, response)));
+                chat_info.generic(senderID, response);
             });        
-            //return callback(cb);//causes invalid request warning because it is null, but that's ok it shouldn't return anyting
+            return "";
         }
 
         if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
@@ -54,10 +53,11 @@ module.exports = {
             
             var randomNr = Math.floor(Math.random()*greetings.length);
         
-            return callback(greetings[randomNr]);
+            return greetings[randomNr];
         }
         else {
-          return callback("..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.");
+          return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.";
         }
     }
 };
+
