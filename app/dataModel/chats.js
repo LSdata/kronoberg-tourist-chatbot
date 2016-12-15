@@ -23,7 +23,7 @@ module.exports = {
                 googleAPI.google_eatings(searchquery, type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
-            return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend. Tap on the adress to see the place on a map";
+            return "ah do you want suggestions of where to eat? Here are some restaurants I would recommend. (Tap on the adress to see the place on a map)";
         }
         else if( (capitalTxt.indexOf('ATTRACTION') > -1) || (capitalTxt.indexOf('THINGS TO SEE') > -1) || 
             (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
@@ -33,14 +33,6 @@ module.exports = {
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1) ){
             return chat_info.sendQuickReply(senderID)
         }
-        else if(capitalTxt == 'GEO'){
-            var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-            var type = 'bakery|restaurant|cafe';
-            googleAPI.google_eatings(searchquery, type, function(response){
-                chat_info.generic(senderID, response);
-            });        
-        }
-
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
             (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){

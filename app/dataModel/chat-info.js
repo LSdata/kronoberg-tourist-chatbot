@@ -134,8 +134,12 @@ module.exports = {
           },{
             type:"postback",
             title:"Places to visit",
-          payload:"attraction"
+            payload:"attraction"
           },{
+            type:"postback",
+            title:"your position on map",
+            payload:"mylocation"
+          }, {
             type:"web_url",
             title:"Link to my Website",
             url:"https://kronoberg-tourist-chatbot.herokuapp.com/"

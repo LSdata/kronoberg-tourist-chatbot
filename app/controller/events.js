@@ -174,6 +174,10 @@ module.exports = {
         var botReply = chitchat.semEval(senderID, "attraction");
         chat_info.sendTextMessage(senderID, botReply)
       }
+      else if (payload =="mylocation"){
+        var botReply = chitchat.semEval(senderID, "my location");
+        chat_info.sendTextMessage(senderID, botReply)
+      }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
     },
