@@ -129,7 +129,7 @@ module.exports = {
             payload:"accomodation"
           }, {
             type:"postback",
-            title:"Eatings",
+            title:"Restaurants",
             payload:"eat"
           },{
             type:"postback",
@@ -137,7 +137,7 @@ module.exports = {
             payload:"attraction"
           },{
             type:"postback",
-            title:"your position on map",
+            title:"Your position on map",
             payload:"mylocation"
           }, {
             type:"web_url",

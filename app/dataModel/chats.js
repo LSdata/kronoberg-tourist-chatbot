@@ -19,7 +19,8 @@ module.exports = {
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
                 var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-                var type = 'bakery|restaurant|cafe';
+                //var type = 'bakery|restaurant|cafe';
+                var type = 'restaurant';
                 googleAPI.google_eatings(searchquery, type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
