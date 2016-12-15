@@ -52,9 +52,8 @@ function generatePlaceArr(data){
       && (photo_ref != 'undefined') && (counter < 4 ) ){
           counter = counter + 1;
           placeArr[counter] = []; //place nr
-          for(var j=0; j<5; j++){
-            placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
-          }
+          placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
+        
       }else
         continue;
       } catch(err) {
