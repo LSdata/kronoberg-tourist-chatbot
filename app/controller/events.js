@@ -58,7 +58,7 @@ module.exports = {
           chat_info.sendTextMessage(senderID, botReply);
       } 
       else if (messageAttachments) {
-        chat_info.sendTextMessage(senderID, "Thank you!");
+        chat_info.sendTextMessage(senderID, "You can tap on the map above to zoom or to enter directions to a place you like");
       }
     }, 
     
