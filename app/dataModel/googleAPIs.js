@@ -53,6 +53,7 @@ function generatePlaceArr(data){
           for(var j=0; j<5; j++){
             placeArr[i] = [name, type, address, photo_htmlattr, photo];
           }
+          console.log("PLACEARR LEN= "+placeArr.length)
       }else
         continue;
       } catch(err) {
