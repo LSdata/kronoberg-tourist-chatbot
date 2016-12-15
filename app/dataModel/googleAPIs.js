@@ -45,7 +45,8 @@ function generatePlaceArr(data){
         console.log("PLACE NR "+i+". PHOTO: "+parsed['results'][i].photos[0].html_attributions[0]+
         ". ADDRESS: "+parsed['results'][i].formatted_address );
       var type = parsed['results'][i].types;
-      var photo = parsed['results'][i].photos[0];
+      var photo_htmlattr = parsed['results'][i].photos[0];
+      var photo_ref = parsed['results'][i].photos[0].photo_reference;
       //var address = parsed['results'][i].formatted_address;
       var name = parsed['results'][i].name;
 /*
