@@ -412,6 +412,36 @@ module.exports = {
               return response;
         });
     }, 
+  //Send a button message using the Send API.
+  histplace_btns: function(recipientId){
+    var messageData = {
+      recipient: {
+        id: recipientId
+      },
+      message: {
+        attachment: {
+          type: "template",
+          payload: {
+            template_type: "button",
+            text: "What type of historical place?",
+            buttons:[{
+              type: "postback",
+              title: "museums",
+              payload: "museum"
+            }, {
+              type: "postback",
+              title: "churches",
+              payload: "church"
+              }]
+          }
+        }
+      }
+    };  
+  
+        fbGraph.callSendAPI(messageData,function(response){
+              return response;
+        });
+    }, 
     
   //Send an image using the Send API.
   sendImageMessage: function(recipientId){

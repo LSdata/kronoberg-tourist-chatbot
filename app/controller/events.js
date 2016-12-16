@@ -172,7 +172,16 @@ module.exports = {
         chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="histplace"){
-        var botReply = chitchat.semEval(senderID, "history");
+        //var botReply = chitchat.semEval(senderID, "history");
+        //chat_info.sendTextMessage(senderID, botReply);
+        chat_info.histplace_btns(senderID, botReply)
+      } 
+      else if (payload =="museum"){
+        var botReply = chitchat.semEval(senderID, "museum");
+        chat_info.sendTextMessage(senderID, botReply)
+      }
+       else if (payload =="church"){
+        var botReply = chitchat.semEval(senderID, "church");
         chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="mylocation"){
