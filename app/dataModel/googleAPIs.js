@@ -33,8 +33,6 @@ module.exports = {
 };
 
 function generatePlaceArr(data){
-  console.log("GENEREATE PLACE ARR FKN");//here 
-
   var placeArr = [];
   var parsed = JSON.parse(data);
   var len = parsed['results'].length;
@@ -56,16 +54,13 @@ function generatePlaceArr(data){
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
           if(flagFirst==0){
+            counter=0;
             flagFirst=1;
-            placeArr[0] = []; //Place nr
-            placeArr[0] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
-            console.log("FIRST ITEM 00 HERE");
           }
-          else{
+          else
             counter=counter+1;
-            placeArr[counter] = []; //Place nr
-            placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
-          }
+          placeArr[counter] = []; //place nr.
+          placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
           console.log("COUNTER: "+counter+". i="+i);
       }else
         continue;
