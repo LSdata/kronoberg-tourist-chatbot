@@ -25,7 +25,7 @@ module.exports = {
                 var type = 'restaurant';
                 googleAPI.getPlaces(type, function(response){
                     if(response)
-                        console.log("RESPONSE EXISTS")
+                        console.log(response)
                     chat_info.generic(senderID, response);
                 }); 
             return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)";
