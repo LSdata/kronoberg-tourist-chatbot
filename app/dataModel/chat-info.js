@@ -187,10 +187,8 @@ module.exports = {
     
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, placeArr){
-      //placeArr[placeNr] = [name, type, address, Gmaps url, photo];
       //placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
 
-      //http://maps.google.com/maps?q=loc:51.03841,-114.01679
       var messageData = {
         recipient: {
           id: recipientId
