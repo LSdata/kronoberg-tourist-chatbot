@@ -245,7 +245,7 @@ module.exports = {
                 subtitle: placeArr[1][1],
                 buttons: [{
                   type: "web_url",
-                  url: placeArr[1][3],
+                  url: "http://maps.google.com/maps?q=loc:"+placeArr[1][5] +","+placeArr[1][6],
                   title: placeArr[1][2]
                 }]
                 }, {
@@ -253,7 +253,7 @@ module.exports = {
                 subtitle: placeArr[2][1],
                 buttons: [{
                   type: "web_url",
-                  url: placeArr[2][3],
+                  url: "http://maps.google.com/maps?q=loc:"+placeArr[2][5] +","+placeArr[2][6],
                   title: placeArr[2][2]
                 }]
                 }, {
@@ -261,7 +261,7 @@ module.exports = {
                 subtitle: placeArr[3][1],
                 buttons: [{
                   type: "web_url",
-                  url: placeArr[3][3],
+                  url: "http://maps.google.com/maps?q=loc:"+placeArr[3][5] +","+placeArr[3][6],
                   title: placeArr[3][2]
                 }]
                 }, {
@@ -269,7 +269,7 @@ module.exports = {
                 subtitle: placeArr[4][1],
                 buttons: [{
                   type: "web_url",
-                  url: placeArr[4][3],
+                  url: "http://maps.google.com/maps?q=loc:"+placeArr[4][5] +","+placeArr[4][6],
                   title: placeArr[4][2]
                 }]
                 }
