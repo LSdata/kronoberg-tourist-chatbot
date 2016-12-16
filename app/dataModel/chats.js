@@ -32,7 +32,7 @@ module.exports = {
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
                 chat_info.histplace_btns(senderID);
-        }
+        }//kljl
          else if( (capitalTxt.indexOf('MUSEUM') > -1) ){
                 var type = 'museum';
                 googleAPI.getPlaces(type, function(response){
