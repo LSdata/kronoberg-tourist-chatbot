@@ -53,7 +53,7 @@ module.exports = {
       }
     
       if (messageText) {
-        chat_info.semEval(senderID, messageText, function(response){
+        chitchat.semEval(senderID, messageText, function(response){
           chat_info.sendTextMessage(senderID, response);
         }); 
         /*
