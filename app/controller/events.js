@@ -53,9 +53,14 @@ module.exports = {
       }
     
       if (messageText) {
+        chat_info.semEval(senderID, messageText, function(response){
+          chat_info.sendTextMessage(senderID, response);
+        }); 
+        /*
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
           chat_info.sendTextMessage(senderID, botReply);
+        */
       } 
       else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Great! 👍 You can now tap on the map above to zoom or to enter directions to a place if you like");
@@ -165,14 +170,14 @@ module.exports = {
       }
       else if (payload =="accomodation"){
         var botReply = chitchat.semEval(senderID, "accomodation");
-        chat_info.sendTextMessage(senderID, botReply)
+        chat_info.sendTextMessage(senderID, botReply);
       }
       else if (payload =="eat"){
-        var botReply = chitchat.semEval(senderID, "food");
-        chat_info.sendTextMessage(senderID, botReply)
+        botReply = chitchat.semEval(senderID, "food");
+        chat_info.sendTextMessage(senderID, botReply);
       }
       else if (payload =="histplace"){
-        chat_info.histplace_btns(senderID)
+        chat_info.histplace_btns(senderID);
       } 
       else if (payload =="museum"){
         var botReply = chitchat.semEval(senderID, "museum");
@@ -180,11 +185,11 @@ module.exports = {
       }
        else if (payload =="church"){
         var botReply = chitchat.semEval(senderID, "church");
-        chat_info.sendTextMessage(senderID, botReply)
+        chat_info.sendTextMessage(senderID, botReply);
       }
       else if (payload =="mylocation"){
         var botReply = chitchat.semEval(senderID, "my location");
-        chat_info.sendTextMessage(senderID, botReply)
+        chat_info.sendTextMessage(senderID, botReply);
       }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
