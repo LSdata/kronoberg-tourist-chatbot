@@ -59,7 +59,7 @@ function generatePlaceArr(data){
             flagFirst=1;
             placeArr[0] = []; //Place nr
             placeArr[0] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
-            console.log("FIRST ITEM 00 HERE");//here 
+            console.log("FIRST ITEM 00 HERE");
           }
           else{
             counter=counter+1;
