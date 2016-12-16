@@ -28,7 +28,8 @@ module.exports = {
                 }); 
             return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see the place on a map and zoom to Kronoberg)";
         }
-        else if( (capitalTxt == "PLACES TO VISIT") || (capitalTxt == "HISTORICAL PLACES") || (capitalTxt == "MUST SEE") ||
+        else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt.indexOf('HISTORICAL') > -1) || 
+            (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('MUSEUM') > -1) || 
             (capitalTxt.indexOf('CHURCH') > -1)){
                 var type = 'museum|church';
