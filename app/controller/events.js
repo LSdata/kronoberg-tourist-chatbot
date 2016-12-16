@@ -174,7 +174,7 @@ module.exports = {
       else if (payload =="histplace"){
         //var botReply = chitchat.semEval(senderID, "history");
         //chat_info.sendTextMessage(senderID, botReply);
-        chat_info.histplace_btns(senderID, botReply)
+        chat_info.histplace_btns(senderID)
       } 
       else if (payload =="museum"){
         var botReply = chitchat.semEval(senderID, "museum");
