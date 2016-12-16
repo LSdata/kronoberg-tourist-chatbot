@@ -172,8 +172,6 @@ module.exports = {
         chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="histplace"){
-        //var botReply = chitchat.semEval(senderID, "history");
-        //chat_info.sendTextMessage(senderID, botReply);
         chat_info.histplace_btns(senderID)
       } 
       else if (payload =="museum"){
