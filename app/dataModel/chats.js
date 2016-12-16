@@ -4,7 +4,7 @@ var chat_info = require(path.join(__dirname, 'chat-info.js'))
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'))
 
 module.exports = {
-    semEval: function(senderID, messageText, callback){
+    semEval: function(senderID, messageText){
         var capitalTxt = messageText.toUpperCase();
 
         if ( (capitalTxt.indexOf('ROOM') > -1) || (capitalTxt.indexOf('ACCOMODATION') > -1) ||
@@ -16,7 +16,7 @@ module.exports = {
             googleAPI.getPlaces(type, function(response){
                 chat_info.generic(senderID, response);
             }); 
-            return callback("Alright! Let me give you some suggestions of accomodations! 🛌 (Tap on the adress to see it on a map)");
+            return "Alright! Let me give you some suggestions of accomodations! 🛌 (Tap on the adress to see it on a map)";
             
         } 
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
@@ -26,12 +26,12 @@ module.exports = {
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
-            return callback("ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)");
+            return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)";
         }
         else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt == "HISTORICAL") ||
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
-                return callback(chat_info.histplace_btns(senderID));
+                chat_info.histplace_btns(senderID);
         }
          else if( (capitalTxt.indexOf('MUSEUM') > -1) ){
                 var type = 'museum';
@@ -39,7 +39,7 @@ module.exports = {
                     chat_info.generic(senderID, response);
                 }); 
 
-                return callback("Museums! Of course, let me give you some suggestions of great museums!");
+                return "Museums! Of course, let me give you some suggestions of great museums!"
         }
          else if( (capitalTxt.indexOf('CHURCH') > -1)){
                 var type = 'church';
@@ -47,11 +47,11 @@ module.exports = {
                     chat_info.generic(senderID, response);
                 }); 
 
-                return callback("Wonderful :) Let me give you some suggestions of some beautiful churches i Kronoberg");
+                return "Wonderful :) Let me give you some suggestions of some beautiful churches i Kronoberg"
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
-            return callback(chat_info.sendQuickReply(senderID));
+            return chat_info.sendQuickReply(senderID)
         }
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
@@ -67,10 +67,10 @@ module.exports = {
             
             var randomNr = Math.floor(Math.random()*greetings.length);
         
-            return callback(greetings[randomNr]);
+            return greetings[randomNr];
         }
         else {
-          return callback("..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.");
+          return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.";
         }
     }
 };

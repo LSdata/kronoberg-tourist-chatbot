@@ -53,14 +53,9 @@ module.exports = {
       }
     
       if (messageText) {
-        chitchat.semEval(senderID, messageText, function(response){
-          chat_info.sendTextMessage(senderID, response);
-        }); 
-        /* //org
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
           chat_info.sendTextMessage(senderID, botReply);
-        */
       } 
       else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Great! 👍 You can now tap on the map above to zoom or to enter directions to a place if you like");
