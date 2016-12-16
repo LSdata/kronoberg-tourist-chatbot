@@ -50,8 +50,7 @@ function generatePlaceArr(data){
       var photo = "photo"; //getPlacePhoto();
       var lat = parsed['results'][i].geometry.location.lat;
       var lng = parsed['results'][i].geometry.location.lng;
-      console.log("LNG: "+lng);
-      
+
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
           if(flagFirst==0){
@@ -61,7 +60,7 @@ function generatePlaceArr(data){
           else
             counter=counter+1;
           placeArr[counter] = []; //place nr.
-          placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo];
+          placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
         
       }else
         continue;
