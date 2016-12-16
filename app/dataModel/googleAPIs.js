@@ -48,6 +48,8 @@ function generatePlaceArr(data){
       var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
       var photo_ref = parsed['results'][i].photos[0].photo_reference;
       var photo = "photo"; //getPlacePhoto();
+      var lat = parsed['results'][i].geometry.location.lat;
+      var lng = parsed['results'][i].geometry.location.lng;
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
