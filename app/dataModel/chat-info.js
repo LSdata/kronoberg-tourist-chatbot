@@ -33,38 +33,6 @@ module.exports = {
             return response;
         });
     },
-     //Turn typing indicator off
-    sendTypingOff: function(recipientId){
-        console.log("Turning typing indicator off");
-        
-        var messageData = {
-            recipient: {
-                id: recipientId
-            },
-        sender_action: "typing_off"
-        };
-        
-        fbGraph.callSendAPI(messageData,function(response){
-            return response;
-        });
-
-    }, 
-    
-    // Turn typing indicator on
-    sendTypingOn: function(recipientId){
-        console.log("Turning typing indicator on");
-        
-        var messageData = {
-            recipient: {
-                id: recipientId
-            },
-            sender_action: "typing_on"
-        };
-        
-        fbGraph.callSendAPI(messageData,function(response){
-            return response;
-        });
-    },
     
     //Send a message with Quick Reply buttons.
     sendQuickReply: function(recipientId){
