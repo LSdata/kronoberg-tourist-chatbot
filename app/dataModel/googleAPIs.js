@@ -50,6 +50,7 @@ function generatePlaceArr(data){
       var photo = "photo"; //getPlacePhoto();
       var lat = parsed['results'][i].geometry.location.lat;
       var lng = parsed['results'][i].geometry.location.lng;
+      console.log("LNG: "+lng);
       
       if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
       && (photo_ref != 'undefined') && (counter < 4 ) ){
