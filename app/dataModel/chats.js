@@ -28,26 +28,16 @@ module.exports = {
                 }); 
             return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)";
         }
-        else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt == "HISTORICAL") ||
+        else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt.indexOf('HISTORICAL') > -1) || 
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
-            (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
-                chat_info.histplace_btns(senderID);
-        }
-         else if( (capitalTxt.indexOf('MUSEUM') > -1) ){
-                var type = 'museum';
+            (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('MUSEUM') > -1) || 
+            (capitalTxt.indexOf('CHURCH') > -1)){
+                var type = 'museum|church';
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
 
-                return "Museums! Of course, let me give you some suggestions of great museums!"
-        }
-         else if( (capitalTxt.indexOf('CHURCH') > -1)){
-                var type = 'church';
-                googleAPI.getPlaces(type, function(response){
-                    chat_info.generic(senderID, response);
-                }); 
-
-                return "Wonderful :) Let me give you some suggestions of some beautiful churches i Kronoberg"
+                return "Historical places? Of course, let me give you some suggestions of great museums and beautiful churches"
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){

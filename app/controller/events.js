@@ -165,26 +165,19 @@ module.exports = {
       }
       else if (payload =="accomodation"){
         var botReply = chitchat.semEval(senderID, "accomodation");
-        chat_info.sendTextMessage(senderID, botReply);
-      }
-      else if (payload =="eat"){
-        botReply = chitchat.semEval(senderID, "food");
-        chat_info.sendTextMessage(senderID, botReply);
-      }
-      else if (payload =="histplace"){
-        chat_info.histplace_btns(senderID);
-      } 
-      else if (payload =="museum"){
-        var botReply = chitchat.semEval(senderID, "museum");
         chat_info.sendTextMessage(senderID, botReply)
       }
-       else if (payload =="church"){
-        var botReply = chitchat.semEval(senderID, "church");
-        chat_info.sendTextMessage(senderID, botReply);
+      else if (payload =="eat"){
+        var botReply = chitchat.semEval(senderID, "food");
+        chat_info.sendTextMessage(senderID, botReply)
+      }
+      else if (payload =="attraction"){
+        var botReply = chitchat.semEval(senderID, "attraction");
+        chat_info.sendTextMessage(senderID, botReply)
       }
       else if (payload =="mylocation"){
         var botReply = chitchat.semEval(senderID, "my location");
-        chat_info.sendTextMessage(senderID, botReply);
+        chat_info.sendTextMessage(senderID, botReply)
       }
       console.log("Received postback for user %d and page %d with payload '%s' " + 
         "at %d", senderID, recipientID, payload, timeOfPostback);
