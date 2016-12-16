@@ -16,7 +16,7 @@ module.exports = {
             googleAPI.getPlaces(type, function(response){
                 chat_info.generic(senderID, response);
             }); 
-            return "Alright! Let me give you some suggestions of accomodations! 🛌 (Tap on the adress to see the place on a map and zoom to Kronoberg)";
+            return "Alright! Let me give you some suggestions of accomodations! 🛌 (Tap on the adress to see it on a map)";
             
         } 
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
@@ -26,7 +26,7 @@ module.exports = {
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
-            return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see the place on a map and zoom to Kronoberg)";
+            return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)";
         }
         else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt.indexOf('HISTORICAL') > -1) || 
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
