@@ -28,7 +28,7 @@ module.exports = {
                 }); 
             return "ah do you want suggestions of where to eat? 🍽  (Tap on the adress to see it on a map)";
         }
-        else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || 
+        else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt == "HISTORICAL") ||
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) ){
                 chat_info.histplace_btns(senderID);
