@@ -32,12 +32,23 @@ module.exports = {
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('MUSEUM') > -1) || 
             (capitalTxt.indexOf('CHURCH') > -1)){
-                var type = 'museum|church';
+                chat_info.histplace_btns(senderID);
+        }
+         else if( (capitalTxt.indexOf('MUSEUM') > -1) ){
+                var type = 'museum';
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
 
-                return "Historical places? Of course, let me give you some suggestions of great museums and beautiful churches"
+                return "Museums! Of course, let me give you some suggestions of great museums!"
+        }
+         else if( (capitalTxt.indexOf('CHURCH') > -1)){
+                var type = 'church';
+                googleAPI.getPlaces(type, function(response){
+                    chat_info.generic(senderID, response);
+                }); 
+
+                return "Wonderful :) Let me give you some suggestions of some beautiful churches i Kronoberg"
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
