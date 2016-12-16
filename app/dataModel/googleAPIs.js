@@ -33,6 +33,8 @@ module.exports = {
 };
 
 function generatePlaceArr(data){
+              console.log("GENEREATE PLACE ARR FKN");//here 
+
   var placeArr = [];
   var parsed = JSON.parse(data);
   var len = parsed['results'].length;
