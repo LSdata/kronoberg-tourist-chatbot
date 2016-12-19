@@ -71,9 +71,11 @@ function generatePlaceArr(data, callback){
       var images = parsed['results'][i].photos;
       var categTypes = parsed['results'][i].types;
       
-      var place_url = parsed['results'][i].url;
+      var place_url = parsed['results'][i].website;
       if(place_url)
-        console.log(place_url);   
+        console.log("WEBSITE: "+place_url); 
+      else
+        console.log("NO WEBSITE")
         
       if(images && categTypes && name && address && lat && lng && counter <4){
         counter++;
