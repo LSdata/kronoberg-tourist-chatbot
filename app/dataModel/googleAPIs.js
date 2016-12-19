@@ -7,10 +7,10 @@ const https = require('https');
 module.exports = {
 
   getPlaces: function(type, callback){
+
     var key = appJS.google_api_key;
-    //key2: AIzaSyDo-eLFaHyTTJR-Sgyvz2JJPOHc93LJ6MY
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
-    //var type = 'bakery|restaurant|cafe'
+    //var type = 'bakery|restaurant|cafe' //syntax for multiple categories
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
 
     https.get(url, function(response) {
@@ -21,8 +21,28 @@ module.exports = {
       });
 
       response.on('end', function() {
-        var placeArr = generatePlaceArr(data);
-        return callback(placeArr);
+        
+       generatePlaceArr(data, function(arr) {
+  
+          //5 callbacks to get photo and add to array
+          getPlacePhoto(arr[0][3], function(photo_ref0) {
+              arr[0][3] = photo_ref0;
+              getPlacePhoto(arr[1][3], function(photo_ref1) {
+                arr[1][3] = photo_ref1;
+                getPlacePhoto(arr[2][3], function(photo_ref2) {
+                  arr[2][3] = photo_ref2;
+                  getPlacePhoto(arr[3][3], function(photo_ref3) {
+                    arr[3][3] = photo_ref3;
+                    getPlacePhoto(arr[4][3], function(photo_ref4) {
+                      arr[4][3] = photo_ref4;
+                      callback(arr);
+                    });
+                  });
+                });
+              });
+          });
+        });
+        
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
@@ -30,65 +50,67 @@ module.exports = {
   }
 };
 
-function generatePlaceArr(data){
+function generatePlaceArr(data, callback){
   var placeArr = [];
   var parsed = JSON.parse(data);
   var len = parsed['results'].length;
-  var counter = 0; //init
+  var counter = -1; //init
   var flagFirst = 0;
 
   //get 7 google place items. Place in array.
   for(var i=0; i<len; i++){
-    try{
       var name = parsed['results'][i].name;
-      var type = parsed['results'][i].types;
+      var type="Categories: "
       var address = parsed['results'][i].formatted_address;
-      var photo_htmlattr = parsed['results'][i].photos[0].html_attributions[0];
-      var photo_ref = parsed['results'][i].photos[0].photo_reference;
       var photo = "photo"; //getPlacePhoto();
       var lat = parsed['results'][i].geometry.location.lat;
       var lng = parsed['results'][i].geometry.location.lng;
-
-      if( (address != 'undefined') && (photo_htmlattr!= 'undefined') && (name != 'undefined') 
-      && (photo_ref != 'undefined') && (counter < 4 ) ){
-          if(flagFirst==0){
-            counter=0;
-            flagFirst=1;
-          }
-          else
-            counter=counter+1;
-          placeArr[counter] = []; //place nr.
-          placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
-          console.log("COUNTER: "+counter+". i="+i);
-      }else
-        continue;
-      } catch(err) {
-        console.log("Place property is missing i="+i);
+      var ref ="ref";
+      var images = parsed['results'][i].photos;
+      var categTypes = parsed['results'][i].types;
+      
+      if(images && categTypes && name && address && lat && lng && counter <4){
+        counter++;
+        ref = parsed['results'][i].photos[0].photo_reference;
+        
+        //get place categories
+        var typesArr = parsed['results'][i].types;
+        var typesLen = typesArr.length;
+        
+        for(var k=0; k<typesLen; k++){
+          type += typesArr[k]+", ";
+        }
+        type = type.substring(0, type.length - 2); //remove last ', '
+        placeArr[counter] = [name, type, address, ref, lat, lng];
       }
-  }
-  return placeArr;
-}
-
-
-function getAllTypes(typesArr){
-  
-  if(typesArr.length != null){
-    var len = typesArr.length;
-    var typesTxt = "Categories: ";
-    for(var i=0; i<len; i++){
-      typesTxt += typesArr[i] +", ";
+      
     }
-    typesTxt = typesTxt.substring(0, typesTxt.length - 2); //remove last ', '
-    return typesTxt;
-  } else
-    return "(This place is in an undefined category)";
+    return callback(placeArr);
 }
 
-function getGmapsURL(gmapsURL){
-    gmapsURL = gmapsURL.replace(/['"]+/g, '');
-    gmapsURL = gmapsURL.slice(8);
-    gmapsURL = gmapsURL.substring(0, gmapsURL.indexOf('>'));
-    return gmapsURL;
-}
+function getPlacePhoto(photo_ref, callback){
+    
+    var key = appJS.google_api_key;
+    var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+photo_ref+"&key="+key;
 
+    https.get(url, function(response) {
+      var data ='';
+      
+      response.on('data', function(d) {
+        data += d;
+      });
 
+      response.on('end', function() {
+        //image withdrawn from client, error message
+        if (data.substring(0, 4) == "<!DO") {
+          data='https://chatbot-json2-lsdata.c9users.io/public/images/noIm.png';
+        
+        //image exists
+        }else
+          data = data.substring(168, data.length - 29); //remove last ', '
+        callback(data);
+      });
+    }).on('error', function(e) {
+      console.log("Got error: " + e.message);
+    });
+  }

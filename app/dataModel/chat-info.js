@@ -163,10 +163,8 @@ module.exports = {
     
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, placeArr){
-      //placeArr[placeNr] = [name, type, address, Gmaps url, photo];
-      //placeArr[counter] = [name, getAllTypes(type), address, getGmapsURL(photo_htmlattr), photo, lat, lng];
+    //placeArr[counter] = [name, type, address, ref, lat, lng];
 
-      //http://maps.google.com/maps?q=loc:51.03841,-114.01679
       var messageData = {
         recipient: {
           id: recipientId
@@ -177,47 +175,52 @@ module.exports = {
             payload: {
               template_type: "generic",
               elements: [{
-                title: placeArr[0][0],
-                subtitle: placeArr[0][1],
-                buttons: [{
-                  type: "web_url",
-                  url: "http://maps.google.com/maps?q=loc:"+placeArr[0][5] +","+placeArr[0][6],
-                  title: placeArr[0][2]
-                }]
-              }, {
-               title: placeArr[1][0],
-                subtitle: placeArr[1][1],
-                buttons: [{
-                  type: "web_url",
-                  url: "http://maps.google.com/maps?q=loc:"+placeArr[1][5] +","+placeArr[1][6],
-                  title: placeArr[1][2]
-                }]
-                }, {
-                title: placeArr[2][0],
-                subtitle: placeArr[2][1],
-                buttons: [{
-                  type: "web_url",
-                  url: "http://maps.google.com/maps?q=loc:"+placeArr[2][5] +","+placeArr[2][6],
-                  title: placeArr[2][2]
-                }]
-                }, {
-                title: placeArr[3][0],
-                subtitle: placeArr[3][1],
-                buttons: [{
-                  type: "web_url",
-                  url: "http://maps.google.com/maps?q=loc:"+placeArr[3][5] +","+placeArr[3][6],
-                  title: placeArr[3][2]
-                }]
-                }, {
-                title: placeArr[4][0],
-                subtitle: placeArr[4][1],
-                buttons: [{
-                  type: "web_url",
-                  url: "http://maps.google.com/maps?q=loc:"+placeArr[4][5] +","+placeArr[4][6],
-                  title: placeArr[4][2]
-                }]
-                }
-              ]
+            title: placeArr[0][0],
+            image_url: placeArr[0][3], 
+            subtitle: placeArr[0][1],
+            buttons: [{
+              type: "web_url",
+              url: "http://maps.google.com/maps?q=loc:"+placeArr[0][4] +","+placeArr[0][5],
+              title: placeArr[0][2]
+            }]
+          }, {
+            title: placeArr[1][0],
+            image_url: placeArr[1][3], 
+            subtitle: placeArr[1][1],
+            buttons: [{
+              type: "web_url",
+              url: "http://maps.google.com/maps?q=loc:"+placeArr[1][4] +","+placeArr[1][5],
+              title: placeArr[1][2]
+            }]
+            }, {
+            title: placeArr[2][0],
+            image_url: placeArr[2][3], 
+            subtitle: placeArr[2][1],
+            buttons: [{
+              type: "web_url",
+              url: "http://maps.google.com/maps?q=loc:"+placeArr[2][4] +","+placeArr[2][5],
+              title: placeArr[2][2]
+            }]
+            }, {
+            title: placeArr[3][0],
+            image_url: placeArr[3][3], 
+            subtitle: placeArr[3][1],
+            buttons: [{
+              type: "web_url",
+              url: "http://maps.google.com/maps?q=loc:"+placeArr[3][4] +","+placeArr[3][5],
+              title: placeArr[3][2]
+            }]
+            }, {
+            title: placeArr[4][0],
+            image_url: placeArr[4][3], 
+            subtitle: placeArr[4][1],
+            buttons: [{
+              type: "web_url",
+              url: "http://maps.google.com/maps?q=loc:"+placeArr[4][4] +","+placeArr[4][5],
+              title: placeArr[4][2]
+            }]
+            }
+            ]
             }
           }
         }
