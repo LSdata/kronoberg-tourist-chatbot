@@ -103,13 +103,7 @@ function getPlacePhoto(photo_ref, callback){
       });
 
       response.on('end', function() {
-        //image withdrawn from client, error message
-        if (data.substring(0, 4) == "<!DO") {
-          data='https://chatbot-json2-lsdata.c9users.io/public/images/noIm.png';
-        
-        //image exists
-        }else
-          data = data.substring(168, data.length - 29); //remove last ', '
+        data = data.substring(168, data.length - 29); //remove last ', '
         callback(data);
       });
     }).on('error', function(e) {
