@@ -133,7 +133,7 @@ function getPlacePhoto(photo_ref, callback){
 
       response.on('end', function() {
         var parsed = JSON.parse(data);
-        var place_website = parsed['results'].website;
+        var place_website = parsed['result'].website;
 
         callback(place_website);
       });
