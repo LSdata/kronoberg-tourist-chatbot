@@ -21,9 +21,6 @@ module.exports = {
       });
 
       response.on('end', function() {
-      //var parsed = JSON.parse(data);
-      //console.log(parsed['results'][0].name);
-        //return callback(data) //json format
         var placeArr = generatePlaceArr(data);
         return callback(placeArr);
       });
