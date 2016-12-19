@@ -71,11 +71,11 @@ function generatePlaceArr(data, callback){
       var images = parsed['results'][i].photos;
       var categTypes = parsed['results'][i].types;
       
-      var place_url = parsed['results'][i].url;
-      if(place_url)
-        console.log("WEBSITE: "+place_url); 
-      else
-        console.log("NO WEBSITE")
+      var placeID = parsed['results'][i].place_id;
+      getPlacePhoto(placeID, function(dataArr) {
+        console.log(dataArr);
+      });
+
         
       if(images && categTypes && name && address && lat && lng && counter <4){
         counter++;
@@ -110,6 +110,34 @@ function getPlacePhoto(photo_ref, callback){
 
       response.on('end', function() {
         data = data.substring(168, data.length - 29); //remove last ', '
+        callback(data);
+      });
+    }).on('error', function(e) {
+      console.log("Got error: " + e.message);
+    });
+  }
+  
+  function getPlaceWebsite(placeID, callback){
+    
+    var key = appJS.google_api_key;
+    //var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+photo_ref+"&key="+key;
+    var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeID+"&key="+key;
+    
+    https.get(url, function(response) {
+      var data ='';
+      
+      response.on('data', function(d) {
+        data += d;
+      });
+
+      response.on('end', function() {
+        var parsed = JSON.parse(data);
+        var place_url = parsed['results'][0].url;
+        
+        if(place_url)
+          console.log("WEBSITE: "+place_url); 
+        else
+          console.log("NO WEBSITE");
         callback(data);
       });
     }).on('error', function(e) {
