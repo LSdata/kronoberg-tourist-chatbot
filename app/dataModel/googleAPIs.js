@@ -73,7 +73,7 @@ function generatePlaceArr(data, callback){
       
       var placeID = parsed['results'][i].place_id;
       getPlacePhoto(placeID, function(res) {
-        console.log(placeID);
+        console.log(res);
       });
 
         
@@ -132,7 +132,7 @@ function getPlacePhoto(photo_ref, callback){
 
       response.on('end', function() {
         var parsed = JSON.parse(data);
-        var place_website = parsed['results'][0].website;
+        var place_website = parsed['results'].website;
 
         callback(place_website);
       });
