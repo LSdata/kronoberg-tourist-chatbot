@@ -30,7 +30,7 @@ module.exports = {
         }
         else if( (capitalTxt.indexOf('PLACES TO VISIT') > -1) || (capitalTxt.indexOf('HISTORICAL') > -1) || 
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
-            (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('MUSEUM') > -1) || 
+            (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('HISTORICAL PLACES') > -1) || 
             (capitalTxt.indexOf('CHURCH') > -1)){
                 var type = 'museum|church';
                 googleAPI.getPlaces(type, function(response){
