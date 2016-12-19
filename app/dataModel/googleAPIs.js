@@ -71,6 +71,10 @@ function generatePlaceArr(data, callback){
       var images = parsed['results'][i].photos;
       var categTypes = parsed['results'][i].types;
       
+      var place_url = parsed['results'][i].url;
+      if(place_url)
+        console.log(place_url);   
+        
       if(images && categTypes && name && address && lat && lng && counter <4){
         counter++;
         ref = parsed['results'][i].photos[0].photo_reference;
