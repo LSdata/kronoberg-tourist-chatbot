@@ -28,9 +28,11 @@ module.exports = {
        generatePlaceArr(data, function(arr) {
         getPlaceWebsite(arr[0][6], function(website0) {
           arr[0][6] = website0;
-          console.log(website0);
         });
-
+        
+        getPlaceWebsite(arr[1][6], function(website1) {
+          arr[1][6] = website1;
+        });
           //5 callbacks to get photo and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
               arr[0][3] = photo_ref0;
@@ -92,7 +94,6 @@ function generatePlaceArr(data, callback){
         type = type.substring(0, type.length - 2); //remove last ', '
         placeArr[counter] = [name, type, address, ref, lat, lng, placeID];
       }
-      
     }
     return callback(placeArr);
 }
@@ -122,7 +123,7 @@ function getPlacePhoto(photo_ref, callback){
     
     var key = appJS.google_api_key;
     //var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+photo_ref+"&key="+key;
-    var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+'ChIJV_flB0drV0YRv7NAqZ3CDFs'+"&key="+key;
+    var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeID+"&key="+key;
     
     https.get(url, function(response) {
       var data ='';
