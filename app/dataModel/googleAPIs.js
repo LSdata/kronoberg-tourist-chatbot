@@ -121,7 +121,7 @@ function getPlacePhoto(photo_ref, callback){
     
     var key = appJS.google_api_key;
     //var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+photo_ref+"&key="+key;
-    var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+ChIJV_flB0drV0YRv7NAqZ3CDFs+"&key="+key;
+    var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+'ChIJV_flB0drV0YRv7NAqZ3CDFs'+"&key="+key;
     
     https.get(url, function(response) {
       var data ='';
