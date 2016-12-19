@@ -30,9 +30,7 @@ module.exports = {
           arr[0][6] = website0;
         });
         
-        getPlaceWebsite(arr[1][6], function(website1) {
-          arr[1][6] = website1;
-        });
+        
           //5 callbacks to get photo and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
               arr[0][3] = photo_ref0;
