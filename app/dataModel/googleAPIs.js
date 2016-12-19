@@ -72,8 +72,8 @@ function generatePlaceArr(data, callback){
       var categTypes = parsed['results'][i].types;
       
       var placeID = parsed['results'][i].place_id;
-      getPlacePhoto(placeID, function(dataArr) {
-        console.log(dataArr);
+      getPlacePhoto(placeID, function(res) {
+        console.log(placeID);
       });
 
         
@@ -132,13 +132,9 @@ function getPlacePhoto(photo_ref, callback){
 
       response.on('end', function() {
         var parsed = JSON.parse(data);
-        var place_url = parsed['results'][0].url;
-        
-        if(place_url)
-          console.log("WEBSITE: "+place_url); 
-        else
-          console.log("NO WEBSITE");
-        callback(place_url);
+        var place_website = parsed['results'][0].website;
+
+        callback(place_website);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
