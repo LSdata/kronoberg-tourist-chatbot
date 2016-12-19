@@ -91,7 +91,7 @@ function generatePlaceArr(data, callback){
       
       var placeID = parsed['results'][i].place_id;
         
-      if(images && categTypes && name && address && lat && lng && counter <4){
+      if(images && categTypes && name && address && lat && lng && counter <4 && placeID){
         counter++;
         ref = parsed['results'][i].photos[0].photo_reference;
         
