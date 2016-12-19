@@ -138,7 +138,7 @@ function getPlacePhoto(photo_ref, callback){
           console.log("WEBSITE: "+place_url); 
         else
           console.log("NO WEBSITE");
-        callback(data);
+        callback(place_url);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
