@@ -26,6 +26,10 @@ module.exports = {
       response.on('end', function() {
         
        generatePlaceArr(data, function(arr) {
+        getPlaceWebsite(data[0][6], function(website0) {
+          console.log(website0);
+        });
+
   
           //5 callbacks to get photo and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
@@ -73,10 +77,6 @@ function generatePlaceArr(data, callback){
       var categTypes = parsed['results'][i].types;
       
       var placeID = parsed['results'][i].place_id;
-      getPlacePhoto(placeID, function(res) {
-        console.log(res);
-      });
-
         
       if(images && categTypes && name && address && lat && lng && counter <4){
         counter++;
@@ -90,7 +90,7 @@ function generatePlaceArr(data, callback){
           type += typesArr[k]+", ";
         }
         type = type.substring(0, type.length - 2); //remove last ', '
-        placeArr[counter] = [name, type, address, ref, lat, lng];
+        placeArr[counter] = [name, type, address, ref, lat, lng, placeID];
       }
       
     }
