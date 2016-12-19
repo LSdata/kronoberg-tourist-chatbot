@@ -11,6 +11,7 @@ module.exports = {
     var key = appJS.google_api_key;
     //key1: AIzaSyBxcTmedg4YyUznphWnIvZIishP6oRSCpw
     //key2: AIzaSyDo-eLFaHyTTJR-Sgyvz2JJPOHc93LJ6MY
+    //key3: AIzaSyANfovlzb3AdCG0ZJ69coocSCjXl3NDQmY
     var searchquery = 'kronoberg'; //not åäö --> aao as Vaxjo
     //var type = 'bakery|restaurant|cafe' //syntax for multiple categories
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?" + "key=" + key + "&query="+searchquery+ "&type="+type;
