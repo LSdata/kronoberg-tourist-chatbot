@@ -178,6 +178,7 @@ module.exports = {
             title: placeArr[0][0],
             image_url: placeArr[0][3], 
             subtitle: placeArr[0][1],
+            item_url: placeArr[0][6],               
             buttons: [{
               type: "web_url",
               url: "http://maps.google.com/maps?q=loc:"+placeArr[0][4] +","+placeArr[0][5],
