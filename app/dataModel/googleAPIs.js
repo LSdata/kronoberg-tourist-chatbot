@@ -26,11 +26,11 @@ module.exports = {
       response.on('end', function() {
         
        generatePlaceArr(data, function(arr) {
-        getPlaceWebsite(data[0][6], function(website0) {
+        getPlaceWebsite(arr[0][6], function(website0) {
+          arr[0][6] = website0;
           console.log(website0);
         });
 
-  
           //5 callbacks to get photo and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
               arr[0][3] = photo_ref0;
