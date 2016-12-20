@@ -88,7 +88,6 @@ function generatePlaceArr(data, callback){
       var ref ="ref";
       var images = parsed['results'][i].photos;
       var categTypes = parsed['results'][i].types;
-      
       var placeID = parsed['results'][i].place_id;
         
       if(images && categTypes && name && address && lat && lng && counter <4 && placeID){
@@ -133,7 +132,6 @@ function getPlacePhoto(photo_ref, callback){
   function getPlaceWebsite(placeID, callback){
     
     var key = appJS.google_api_key;
-    //var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=752&photoreference="+photo_ref+"&key="+key;
     var url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeID+"&key="+key;
     
     https.get(url, function(response) {

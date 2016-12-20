@@ -84,9 +84,9 @@ module.exports = {
             title:"Your position on map",
             payload:"mylocation"
           }, {
-            type:"web_url",
-            title:"Link to my Website",
-            url:"https://kronoberg-tourist-chatbot.herokuapp.com/"
+            type:"postback",
+            title:"Weather",
+            payload:"weather"
           }]
       };
 
