@@ -95,7 +95,7 @@ module.exports = {
       });
     },
 
-    //Send a read receipt to indicate the message has been read
+    //Send a read receipt to indicate the message has been read.
     sendReadReceipt: function(recipientId){
           console.log("Sending a read receipt to mark message as seen");
         

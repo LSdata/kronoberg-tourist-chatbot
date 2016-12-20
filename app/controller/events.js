@@ -183,6 +183,7 @@ module.exports = {
         var botReply = chitchat.semEval(senderID, "museum");
         chat_info.sendTextMessage(senderID, botReply)
       }
+      //removed from menu
       else if (payload =="mylocation"){
         var botReply = chitchat.semEval(senderID, "my location");
         chat_info.sendTextMessage(senderID, botReply)
