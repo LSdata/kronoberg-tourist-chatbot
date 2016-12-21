@@ -145,9 +145,10 @@ function getPlacePhoto(photo_ref, callback){
         var parsed = JSON.parse(data);
         var website = parsed['result'].website;
         if(website)
-          var place_website = parsed['result'].website;
+          console.log('WEBSITE EXISTS')
         else
           var place_website = 'www.google.com';
+        console.log('WEBSITE: '+website)
 
         callback(place_website);
       });
