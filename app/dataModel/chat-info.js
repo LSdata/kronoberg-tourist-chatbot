@@ -425,7 +425,7 @@ module.exports = {
       });
   },
   
-  userProfile: function(recipientId, callback){
+  userName: function(recipientId, callback){
     var access_token = appJS.page_access_token;
     var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name&access_token='+access_token;
     
