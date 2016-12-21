@@ -1,6 +1,7 @@
 var path = require('path');
-var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'))
-var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'))
+var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'));
+var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'));
+var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'));
 
 module.exports = {
 
@@ -158,8 +159,9 @@ module.exports = {
       
       if (payload =="USER_DEFINED_PAYLOAD"){
         chat_info.pers_startmenu();
-        //chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
-        chat_info.userName(senderID, function(response){
+        
+        //get user name from User Profile API
+        fbGraph.userName(senderID, function(response){
           chat_info.sendTextMessage(senderID, "Hi and welcome "+response+"!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
         }); 
       }

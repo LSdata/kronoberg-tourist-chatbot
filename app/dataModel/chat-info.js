@@ -333,6 +333,11 @@ module.exports = {
     
   //Send a button message using the Send API.
   histplace_btns: function(recipientId){
+    /*
+    chat_info.userName(senderID, function(response){
+      chat_info.sendTextMessage(senderID, "Hi and welcome "+response+"!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
+    }); */
+    
     var messageData = {
       recipient: {
         id: recipientId
@@ -423,58 +428,5 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-  },
-  
-  userName: function(recipientId, callback){
-    var access_token = appJS.page_access_token;
-    var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token='+access_token;
-    https.get(url, function(response) {
-      var data ='';
-      
-      response.on('data', function(d) {
-        data += d;
-      });
-
-      response.on('end', function() {
-        var name = data;
-        console.log('USER NAME: '+ name);
-        return callback(name);
-        
-      
-    }).on('error', function(e) {
-      console.log("Got error: " + e.message);
-    });        
-  
-    });
-  },
-  
-/*
- * Call the Send API. The message data goes in the body. If successful, we'll 
- * get the message id in a response 
- *
- */
-  callSendAPI: function(messageData){
-      request({
-        uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: { access_token: appJS.page_access_token },
-        method: 'POST',
-        json: messageData
-    
-      }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          var recipientId = body.recipient_id;
-          var messageId = body.message_id;
-    
-          if (messageId) {
-            console.log("Successfully sent message with id %s to recipient %s", 
-              messageId, recipientId);
-          } else {
-          console.log("Successfully called Send API for recipient %s", 
-            recipientId);
-          }
-        } else {
-          console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
-        }
-      });  
-    }
+  }
 };
