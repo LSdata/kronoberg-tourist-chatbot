@@ -22,7 +22,9 @@ module.exports = {
         else if( (capitalTxt.indexOf('FOOD') > -1) || (capitalTxt.indexOf(' EAT') > -1) || (capitalTxt == "EAT") ||
             (capitalTxt == "EATINGS") || (capitalTxt == "EATING") || (capitalTxt.indexOf('RESTAURANT') > -1) || 
             (capitalTxt.indexOf('HUNGRY') > -1) ){
-                var type = 'restaurant';
+                //var type = 'restaurant';
+                var type = 'movie_theater';
+
                 googleAPI.getPlaces(type, function(response){
                     chat_info.generic(senderID, response);
                 }); 
