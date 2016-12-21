@@ -27,9 +27,6 @@ module.exports = {
         
         
         generatePlaceArr(data, function(arr) {
-          
-          //get place websites from google place detail search by place ID
-         
           //5 callbacks to get photo and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
               arr[0][3] = photo_ref0;
@@ -41,7 +38,8 @@ module.exports = {
                     arr[3][3] = photo_ref3;
                     getPlacePhoto(arr[4][3], function(photo_ref4) {
                       arr[4][3] = photo_ref4;
-                      //callback(arr);
+                      
+                      //get place websites from google place detail search by place ID
                       getPlaceWebsite(arr[0][6], function(website) {
                         arr[0][6] = website;
                         getPlaceWebsite(arr[1][6], function(website) {
