@@ -333,11 +333,6 @@ module.exports = {
     
   //Send a button message using the Send API.
   histplace_btns: function(recipientId){
-    /*
-    chat_info.userName(senderID, function(response){
-      chat_info.sendTextMessage(senderID, "Hi and welcome "+response+"!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
-    }); */
-    
     var messageData = {
       recipient: {
         id: recipientId

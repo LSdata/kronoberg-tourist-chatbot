@@ -158,8 +158,7 @@ module.exports = {
       
       if (payload =="USER_DEFINED_PAYLOAD"){
         chat_info.pers_startmenu();
-        
-        //get user name from User Profile API
+        //chat_info.sendTextMessage(senderID, "Hi!! :) Welcome! How can I help you today? What are you looking for in Kronoberg?");
         chat_info.userName(senderID, function(response){
           chat_info.sendTextMessage(senderID, "Hi and welcome "+response+"!! :) \nHow can I help you today? \nWhat are you looking for in Kronoberg?");
         }); 
