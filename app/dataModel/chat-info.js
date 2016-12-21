@@ -1,7 +1,7 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'))
 var appJS = require(path.join(__dirname, '/../../app.js'))
-
+const https = require('https');
 const request = require('request');
 
 /*
@@ -446,6 +446,7 @@ module.exports = {
       console.log("Got error: " + e.message);
     });        
   
+    });
   },
   
 /*
