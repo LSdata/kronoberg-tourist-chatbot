@@ -143,7 +143,11 @@ function getPlacePhoto(photo_ref, callback){
 
       response.on('end', function() {
         var parsed = JSON.parse(data);
-        var place_website = parsed['result'].website;
+        var website = parsed['result'].website;
+        if(website)
+          var place_website = parsed['result'].website;
+        else
+          var place_website = 'www.google.com';
 
         callback(place_website);
       });
