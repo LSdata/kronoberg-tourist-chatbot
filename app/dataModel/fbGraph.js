@@ -1,7 +1,7 @@
 
 var path = require('path');
-var appJS = require(path.join(__dirname, '/../../app.js'));
-const https = require('https');
+var appJS = require(path.join(__dirname, '/../../app.js'))
+
 const request = require('request');
 
 /*
@@ -38,6 +38,7 @@ module.exports = {
     sendAPI_setThread: function(messageData){
       request({
         uri: 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='+appJS.page_access_token,
+        qs: { access_token: appJS.page_access_token },
         method: 'POST',
         json: messageData
     
@@ -57,28 +58,5 @@ module.exports = {
           console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
         }
       });  
-    },
-    
-    userName: function(recipientId, callback){
-    var access_token = appJS.page_access_token;
-    var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token='+access_token;
-    https.get(url, function(response) {
-      var data ='';
-      
-      response.on('data', function(d) {
-        data += d;
-      });
-
-      response.on('end', function() {
-        var name = data.first_name;
-        console.log('USER NAME: '+ name);
-        return callback(name);
-        
-      
-    }).on('error', function(e) {
-      console.log("Got error: " + e.message);
-    });        
-  
-    });
-  }
+    }
 }

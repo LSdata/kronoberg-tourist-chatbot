@@ -1,7 +1,6 @@
 var path = require('path');
-var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'));
-var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'));
-var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'));
+var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'))
+var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'))
 
 module.exports = {
 
