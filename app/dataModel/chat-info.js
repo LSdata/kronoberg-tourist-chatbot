@@ -436,7 +436,7 @@ module.exports = {
       });
 
       response.on('end', function() {
-        var name = data;
+        var name = data.first_name;
         console.log('USER NAME: '+ name);
         return callback(name);
         
