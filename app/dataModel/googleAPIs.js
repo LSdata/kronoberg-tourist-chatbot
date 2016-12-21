@@ -90,7 +90,7 @@ function generatePlaceArr(data, callback){
       var categTypes = parsed['results'][i].types;
       var placeID = parsed['results'][i].place_id;
         
-      if(images && categTypes && name && address && lat && lng && counter <4 && placeID){
+      if( (typeof images !== 'undefined') && categTypes && name && address && lat && lng && counter <4 && placeID){
         counter++;
         ref = parsed['results'][i].photos[0].photo_reference;
         
