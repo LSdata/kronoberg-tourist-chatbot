@@ -425,6 +425,29 @@ module.exports = {
       });
   },
   
+  userProfile: function(recipientId, callback){
+    var access_token = appJS.page_access_token;
+    var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name&access_token='+access_token;
+    
+    https.get(url, function(response) {
+      var data ='';
+      
+      response.on('data', function(d) {
+        data += d;
+      });
+
+      response.on('end', function() {
+        var name = data.first_name;
+        console.log('USER NAME: '+ name);
+        return callback(name);
+        
+      
+    }).on('error', function(e) {
+      console.log("Got error: " + e.message);
+    });        
+  
+  },
+  
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
  * get the message id in a response 
