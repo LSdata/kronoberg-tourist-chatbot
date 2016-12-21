@@ -427,7 +427,7 @@ module.exports = {
   
   userName: function(recipientId, callback){
     var access_token = appJS.page_access_token;
-    var url=  'https://graph.facebook.com/v2.6/me/messages/'+recipientId+'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token='+access_token;
+    var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token='+access_token;
     https.get(url, function(response) {
       var data ='';
       
