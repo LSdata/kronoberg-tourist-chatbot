@@ -339,7 +339,7 @@ module.exports = {
         }); 
     };
     var name = usrName(recipientId);
-    console.log(name);
+    console.log("USER NAME: "+name);
     
     var messageData = {
       recipient: {
