@@ -35,7 +35,6 @@ module.exports = {
                 return fbGraph.userName(senderID, function(username){
                     chat_info.histplace_btns(senderID, username);
                 }); 
-                //return chat_info.histplace_btns(senderID);
         }
         
         else if( (capitalTxt.indexOf('CHURCH') > -1) || (capitalTxt.indexOf('CATHEDRAL') > -1) ){
