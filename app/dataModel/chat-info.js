@@ -335,7 +335,7 @@ module.exports = {
   histplace_btns: function(recipientId){
      function usrName (recipientId, callback){
           fbGraph.userName(recipientId, function(response){
-             return callback(response);
+            console.log(response);
         }); 
     };
     var name = usrName(recipientId);
