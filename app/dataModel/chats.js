@@ -32,7 +32,10 @@ module.exports = {
             (capitalTxt == "MUST SEE") ||(capitalTxt.indexOf('HISTORY') > -1) ||
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('HISTORICAL PLACES') > -1) ){
                 
-                return chat_info.histplace_btns(senderID);
+                return fbGraph.userName(senderID, function(username){
+                    chat_info.histplace_btns(senderID, username);
+                }); 
+                //return chat_info.histplace_btns(senderID);
         }
         
         else if( (capitalTxt.indexOf('CHURCH') > -1) || (capitalTxt.indexOf('CATHEDRAL') > -1) ){

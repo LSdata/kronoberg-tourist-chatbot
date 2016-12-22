@@ -332,7 +332,7 @@ module.exports = {
     }, 
     
   //Send a button message using the Send API.
-  histplace_btns: function(recipientId){
+  histplace_btns: function(recipientId, username){
 
     var messageData = {
       recipient: {
@@ -343,7 +343,7 @@ module.exports = {
           type: "template",
           payload: {
             template_type: "button",
-            text: "Ok ;) What type of historical place?",
+            text: "Ok "+username+" ;) What type of historical place?",
             buttons:[{
               type: "postback",
               title: "museums",
