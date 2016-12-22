@@ -94,72 +94,6 @@ module.exports = {
         return response;
       });
     },
-
-    //Send a read receipt to indicate the message has been read.
-    sendReadReceipt: function(recipientId){
-          console.log("Sending a read receipt to mark message as seen");
-        
-          var messageData = {
-            recipient: {
-              id: recipientId
-            },
-            sender_action: "mark_seen"
-          };
-        
-        fbGraph.callSendAPI(messageData,function(response){
-            return response;
-        });
-    },
-    
-    //Send a Structured Message (Generic Message type) using the Send API.
-    sendGenericMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "template",
-            payload: {
-              template_type: "generic",
-              elements: [{
-                title: "rift",
-                subtitle: "Next-generation virtual reality",
-                item_url: "https://www.oculus.com/en-us/rift/",               
-                image_url: appJS.server_url + "/assets/rift.png",
-                buttons: [{
-                  type: "web_url",
-                  url: "https://www.oculus.com/en-us/rift/",
-                  title: "Open Web URL"
-                }, {
-                  type: "postback",
-                  title: "Call Postback",
-                  payload: "Payload for first bubble",
-                }],
-              }, {
-                title: "touch",
-                subtitle: "Your Hands, Now in VR",
-                item_url: "https://www.oculus.com/en-us/touch/",               
-                image_url: appJS.server_url + "/assets/touch.png",
-                buttons: [{
-                  type: "web_url",
-                  url: "https://www.oculus.com/en-us/touch/",
-                  title: "Open Web URL"
-                }, {
-                  type: "postback",
-                  title: "Call Postback",
-                  payload: "Payload for second bubble",
-                }]
-              }]
-            }
-          }
-        }
-      };  
-    
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-    },
     
     //Send a Structured Message (Generic Message type) using the Send API.
     generic: function(recipientId, placeArr){
@@ -295,45 +229,9 @@ module.exports = {
       return response;
     });
   },
-
-  //Send a button message using the Send API.
-  sendButtonMessage: function(recipientId){
-    var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {
-        attachment: {
-          type: "template",
-          payload: {
-            template_type: "button",
-            text: "This is test text",
-            buttons:[{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Trigger Postback",
-              payload: "DEVELOPER_DEFINED_PAYLOAD"
-            }, {
-              type: "phone_number",
-              title: "Call Phone Number",
-              payload: "+16505551234"
-            }]
-          }
-        }
-      }
-    };  
-  
-        fbGraph.callSendAPI(messageData,function(response){
-              return response;
-        });
-    }, 
     
   //Send a button message using the Send API.
   histplace_btns: function(recipientId, username){
-
     var messageData = {
       recipient: {
         id: recipientId
@@ -395,27 +293,6 @@ module.exports = {
             type: "image",
             payload: {
               url: appJS.server_url + "/assets/instagram_logo.gif"
-            }
-          }
-        }
-      };
-
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-  },
-
-  //Send audio using the Send API.
-  sendAudioMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "audio",
-            payload: {
-              url: appJS.server_url + "/assets/sample.mp3"
             }
           }
         }
