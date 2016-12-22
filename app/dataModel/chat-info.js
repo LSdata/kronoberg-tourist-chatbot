@@ -343,7 +343,7 @@ module.exports = {
           type: "template",
           payload: {
             template_type: "button",
-            text: "Ok "+username+" ;) What type of historical place?",
+            text: "Yes of course "+username+" ;) What type of historical place?",
             buttons:[{
               type: "postback",
               title: "museums",
