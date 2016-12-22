@@ -333,14 +333,10 @@ module.exports = {
     
   //Send a button message using the Send API.
   histplace_btns: function(recipientId){
-     function usrName (recipientId, callback){
-          fbGraph.userName(recipientId, function(response){
-            console.log(response.first_name);
-        }); 
-    };
-    var name = usrName(recipientId);
-    console.log("USER NAME: "+name);
-    
+      console.log(fbGraph.userName(recipientId, function(response){
+            return(response.first_name);
+        }))
+
     var messageData = {
       recipient: {
         id: recipientId
