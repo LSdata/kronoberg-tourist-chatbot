@@ -11,6 +11,7 @@ module.exports = {
     
     //Send a message with Quick Reply buttons.
     sendQuickReply: function(recipientId){
+      
       var messageData = {
         recipient: {
           id: recipientId
@@ -332,6 +333,14 @@ module.exports = {
     
   //Send a button message using the Send API.
   histplace_btns: function(recipientId){
+     var usrName = function (recipientId, callback){
+          fbGraph.userName(recipientId, function(response){
+            return callback(response);
+        }); 
+    };
+    var name = usrName(recipientId);
+    console.log(name);
+    
     var messageData = {
       recipient: {
         id: recipientId
