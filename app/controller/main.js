@@ -38,6 +38,8 @@ module.exports.post_webhook = function(req,res){
 
       // Iterate over each messaging event
       pageEntry.messaging.forEach(function(messagingEvent) {
+        if(res.statusCode==0)
+          console.log("STATUS CODE 0");
         if (messagingEvent.optin) {
           events.receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {

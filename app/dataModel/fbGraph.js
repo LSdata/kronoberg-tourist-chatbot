@@ -23,7 +23,8 @@ module.exports = {
           var messageId = body.message_id;
     
           if (messageId) {
-            console.log("Successfully sent message with id %s to recipient %s", 
+            response.statusCode(0);
+            console.log("Successfully sent message with id %s to recipient %s AND STATUS CODE 0", 
               messageId, recipientId);
           } else {
           console.log("Successfully called Send API for recipient %s", 
