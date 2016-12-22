@@ -73,7 +73,6 @@ module.exports = {
         response.on('end', function() {
           var parsed = JSON.parse(data);
           var name = parsed.first_name;
-          console.log('USER NAME: '+ data);
           return callback(name);
           
         
