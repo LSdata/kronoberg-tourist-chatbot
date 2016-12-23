@@ -316,7 +316,7 @@ module.exports = {
               "elements": [
                 {
                     "title": "Day 1 in "+weatherArr['city'],
-                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "image_url": weatherArr['img'],
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
