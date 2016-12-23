@@ -320,19 +320,19 @@ module.exports = {
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://www.facebook.com",
+                        "url": "https://www.onskefoto.se",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://www.facebook.com"
+                        "fallback_url": "https://www.onskefoto.se"
                     },
                     "buttons": [
                         {
                             "title": "View",
                             "type": "web_url",
-                            "url": "https://www.facebook.com",
+                            "url": "https://www.onskefoto.se",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://www.facebook.com"                        
+                            "fallback_url": "https://www.onskefoto.se"                        
                         }
                     ]
                 }, {
@@ -341,19 +341,19 @@ module.exports = {
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://www.facebook.com",
+                        "url": "https://www.onskefoto.se",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://www.facebook.com"
+                        "fallback_url": "https://www.onskefoto.se"
                     },
                     "buttons": [
                         {
                             "title": "View",
                             "type": "web_url",
-                            "url": "https://www.facebook.com",
+                            "url": "https://www.onskefoto.se",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://www.facebook.com"                        
+                            "fallback_url": "https://www.onskefoto.se"                        
                         }
                     ]
                 }
