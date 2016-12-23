@@ -320,7 +320,7 @@ module.exports = {
                     "subtitle": weatherArr['weather']+", "+weatherArr['tempC'],
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://www.onskefoto.se",
+                        "url": weatherArr['detail_url'],
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
@@ -329,7 +329,7 @@ module.exports = {
                         {
                             "title": "details",
                             "type": "web_url",
-                            "url": "https://www.onskefoto.se",
+                            "url": weatherArr['detail_url'],
                             //"messenger_extensions": true,
                             "webview_height_ratio": "tall",
                             //"fallback_url": "https://www.onskefoto.se"                        
