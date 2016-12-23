@@ -62,7 +62,8 @@ module.exports = {
           global.askedForCity = 0;
           var city = 'växjö';
             weather.weatherByCity(city, function(weatherData){
-                chat_info.weatherList(senderID, weatherData);
+                //chat_info.weatherList(senderID, weatherData);
+                chat_info.sendTextMessage(senderID, weatherData);
             }); 
         }else{
         
