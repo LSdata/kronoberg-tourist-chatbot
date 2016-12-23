@@ -28,7 +28,7 @@ module.exports = {
         }else{
             var weatherArr = [];
             weatherArr['city'] = parsed.current_observation.full;
-            console.log(parsed.current_observation.full)
+            console.log(parsed.current_observation.display_location.full)
         }
       });
     }).on('error', function(e) {
