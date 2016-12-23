@@ -335,6 +335,27 @@ module.exports = {
                             "fallback_url": "https://www.facebook.com"                        
                         }
                     ]
+                }, {
+                  "title": "Weather in "+weather,
+                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "subtitle": "See all our colors",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": "https://www.facebook.com",
+                        "messenger_extensions": true,
+                        "webview_height_ratio": "tall",
+                        "fallback_url": "https://www.facebook.com"
+                    },
+                    "buttons": [
+                        {
+                            "title": "View",
+                            "type": "web_url",
+                            "url": "https://www.facebook.com",
+                            "messenger_extensions": true,
+                            "webview_height_ratio": "tall",
+                            "fallback_url": "https://www.facebook.com"                        
+                        }
+                    ]
                 }
             ],
              "buttons": [
