@@ -316,7 +316,7 @@ module.exports = {
               "elements": [
                 {
                     "title": "Weather in "+weather,
-                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
@@ -338,7 +338,7 @@ module.exports = {
                 },
                 {
                     "title": "Classic White T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
@@ -360,7 +360,7 @@ module.exports = {
                 },
                 {
                     "title": "Classic Blue T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
