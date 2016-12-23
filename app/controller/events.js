@@ -55,7 +55,8 @@ module.exports = {
     
       if (messageText) {
         console.log("GLOBAL: "+global.askedForCity);
-        
+        console.log("NO CITY");
+
         if(global.askedForCity){
           console.log("CITY REPLY!");
           global.askedForCity = 0;

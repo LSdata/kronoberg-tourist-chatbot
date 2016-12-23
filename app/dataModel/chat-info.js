@@ -301,6 +301,11 @@ module.exports = {
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
+  }, 
+    //Send weather list view from Wunderground API
+  weatherList: function(recipientId){
+
+    
   }
   
 };
