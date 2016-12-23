@@ -315,28 +315,28 @@ module.exports = {
               "template_type": "list",
               "elements": [
                 {
-                    "title": "Weather in "+weather,
+                    "title": "Day 1 in "+weather,
                     "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
                         "url": "https://www.onskefoto.se",
-                        //"messenger_extensions": true,
+                        "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        //"fallback_url": "https://www.onskefoto.se"
+                        "fallback_url": "https://www.onskefoto.se"
                     },
                     "buttons": [
                         {
-                            "title": "View",
+                            "title": "details",
                             "type": "web_url",
                             "url": "https://www.onskefoto.se",
-                            //"messenger_extensions": true,
+                            "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            //"fallback_url": "https://www.onskefoto.se"                        
+                            "fallback_url": "https://www.onskefoto.se"                        
                         }
                     ]
                 }, {
-                  "title": "Weather in "+weather,
+                  "title": "Day 2 in "+weather,
                     "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "See all our colors",
                     "default_action": {
@@ -348,7 +348,7 @@ module.exports = {
                     },
                     "buttons": [
                         {
-                            "title": "View",
+                            "title": "details",
                             "type": "web_url",
                             "url": "https://www.onskefoto.se",
                             //"messenger_extensions": true,
