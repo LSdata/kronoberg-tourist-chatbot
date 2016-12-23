@@ -9,7 +9,7 @@ module.exports = {
   weatherByCity: function(city, callback){
 
     var key = appJS.wunderground_api_key;
-    var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/IA/"+city+".json";
+    var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+city+".json";
 
     http.get(url, function(response) {
       var data ='';
