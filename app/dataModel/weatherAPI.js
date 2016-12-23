@@ -19,7 +19,6 @@ module.exports = {
       });
 
       response.on('end', function() {
-        callback(city);
         console.log(data);
         var parsed = JSON.parse(data);
         
@@ -27,8 +26,10 @@ module.exports = {
           console.log("City name is not valid!");
         }else{
             var weatherArr = [];
-            //weatherArr['city'] = parsed.current_observation.full;
-            console.log("CITY: "+parsed.current_observation.display_location.full)
+            weatherArr['city'] = parsed.current_observation.display_location.full;
+            console.log("CITY: "+parsed.current_observation.display_location.full);
+            callback(weatherArr);
+
         }
       });
     }).on('error', function(e) {
