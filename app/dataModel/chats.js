@@ -54,7 +54,7 @@ module.exports = {
                 return "That's a great idea =) Here are my recommendations of great museums to visit:"
         }
         else if( (capitalTxt.indexOf('WEATHER') > -1) ){
-
+                module.exports.askedForCity = 1;
                 return "yes of course you want to now the weather! In what city in Kronoberg?";
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
