@@ -27,8 +27,8 @@ module.exports = {
           console.log("City name is not valid!");
         }else{
             var weatherArr = [];
-            weatherArr['city'] = parsed.current_observation.full;
-            console.log(parsed.current_observation.display_location.full)
+            //weatherArr['city'] = parsed.current_observation.full;
+            console.log("CITY: "+parsed.current_observation.display_location.full)
         }
       });
     }).on('error', function(e) {
