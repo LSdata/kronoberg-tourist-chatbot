@@ -382,7 +382,7 @@ module.exports = {
                 },
                 {
                     "title": "Classic Black T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
