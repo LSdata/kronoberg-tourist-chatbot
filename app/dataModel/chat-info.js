@@ -321,7 +321,7 @@ module.exports = {
                     "default_action": {
                         "type": "web_url",
                         "url": "https://www.onskefoto.se",
-                        "messenger_extensions": true,
+                        //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
                     },
@@ -330,7 +330,7 @@ module.exports = {
                             "title": "details",
                             "type": "web_url",
                             "url": "https://www.onskefoto.se",
-                            "messenger_extensions": true,
+                            //"messenger_extensions": true,
                             "webview_height_ratio": "tall",
                             //"fallback_url": "https://www.onskefoto.se"                        
                         }
