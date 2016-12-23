@@ -315,7 +315,7 @@ module.exports = {
               "template_type": "list",
               "elements": [
                 {
-                    "title": "Day 1 in ",
+                    "title": "Day 1 in "+weather,
                     "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "See all our colors",
                     "default_action": {
