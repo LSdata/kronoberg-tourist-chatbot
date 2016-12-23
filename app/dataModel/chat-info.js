@@ -317,7 +317,7 @@ module.exports = {
                 {
                     "title": "Day 1 in "+weatherArr['city'],
                     "image_url": weatherArr['img'],
-                    "subtitle": "See all our colors",
+                    "subtitle": weatherArr['weather']+", "+weatherArr['tempC'],
                     "default_action": {
                         "type": "web_url",
                         "url": "https://www.onskefoto.se",
