@@ -2,7 +2,6 @@ var path = require('path');
 var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'));
 var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'));
 var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'));
-var recievedMess = 0;
 
 module.exports = {
 
@@ -55,12 +54,13 @@ module.exports = {
       }
     
       if (messageText) {
-        console.log("RECIEVED MESSENGE NR: "+recievedMess);
-        recievedMess = chitchat.askedForCity;
-        if(recievedMess){
+        console.log("GLOBAL: "+global.askedForCity);
+        
+        if(global.askedForCity){
           console.log("CITY REPLY!");
-          recievedMess = 0;
+          global.askedForCity = 0;
         }
+        
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
           chat_info.sendTextMessage(senderID, botReply);
