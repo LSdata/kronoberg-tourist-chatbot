@@ -303,9 +303,48 @@ module.exports = {
       });
   }, 
     //Send weather list view from Wunderground API
-  weatherList: function(recipientId){
-
+  weatherList: function(recipientId, weather){
+    var messageData = {
+      "recipient":{
+        "id":recipientId
+      },
+      "message":{
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+               {
+                "title":"This weeks weather in "+weather,
+                "image_url":"https://petersfancybrownhats.com/company_image.png",
+                "subtitle":"We\'ve got the right hat for everyone.",
+                "default_action": {
+                  "type": "web_url",
+                  "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
+                  "messenger_extensions": true,
+                  "webview_height_ratio": "tall",
+                  "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                },
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "url":"https://petersfancybrownhats.com",
+                    "title":"View Website"
+                  },{
+                    "type":"postback",
+                    "title":"Start Chatting",
+                    "payload":"payload"
+                  }              
+                ]      
+              }
+            ]
+          }
+        }
+      }
+    };
     
+    fbGraph.callSendAPI(messageData,function(response){
+      return response;
+    });
   }
-  
 };

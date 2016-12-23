@@ -2,6 +2,7 @@ var path = require('path');
 var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'));
 var chitchat = require(path.join(__dirname, '/../dataModel/chats.js'));
 var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'));
+var weather = require(path.join(__dirname, '/../dataModel/weatherAPI.js'));
 
 module.exports = {
 
@@ -54,12 +55,15 @@ module.exports = {
       }
     
       if (messageText) {
-        console.log("GLOBAL: "+global.askedForCity);
-        console.log("NO CITY");
-
+        
+        //check for reply on question of weather city
         if(global.askedForCity){
           console.log("CITY REPLY!");
           global.askedForCity = 0;
+          var city = 'växjö';
+            weather.weatherByCity(city, function(weatherData){
+                chat_info.weatherList(senderID, weatherData);
+            }); 
         }
         
         var botReply = chitchat.semEval(senderID, messageText);

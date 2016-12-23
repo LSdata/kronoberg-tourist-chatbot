@@ -6,7 +6,7 @@ const https = require('https');
 // Geocode an address.
 module.exports = {
 
-  weatherByCity: function(type, callback){
+  weatherByCity: function(city, callback){
 
     
     var url = "https://...";
@@ -19,8 +19,7 @@ module.exports = {
       });
 
       response.on('end', function() {
-        
-        
+        callback(city);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
