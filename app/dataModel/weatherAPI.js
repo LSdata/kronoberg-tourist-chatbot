@@ -21,9 +21,10 @@ module.exports = {
       response.on('end', function() {
         callback(city);
         console.log(data);
-          var parsed = JSON.parse(data);
+        var parsed = JSON.parse(data);
+        
         if(parsed.response.error)
-          console.log("ERROR!!");
+          console.log("City name is not valid!");
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
@@ -31,6 +32,3 @@ module.exports = {
   }
 };
 
-function checkCity(cityName){
-    return "ok";
-}

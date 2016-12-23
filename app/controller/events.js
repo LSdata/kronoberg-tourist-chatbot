@@ -60,7 +60,7 @@ module.exports = {
         if(global.askedForCity){
           console.log("CITY REPLY!");
           global.askedForCity = 0;
-          var city = 'växjö';
+          var city = 'vaxjo';
             weather.weatherByCity(city, function(weatherData){
                 chat_info.weatherList(senderID, weatherData);
             }); 
