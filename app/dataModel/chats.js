@@ -33,7 +33,7 @@ module.exports = {
             (capitalTxt.indexOf('SIGHTS TO SEE') > -1) || (capitalTxt.indexOf('HISTORICAL PLACES') > -1) ){
                 
                 return fbGraph.userName(senderID, function(username){
-                    chat_info.histplace_btns(senderID, username);
+                    return chat_info.histplace_btns(senderID, username);
                 }); 
         }
         
