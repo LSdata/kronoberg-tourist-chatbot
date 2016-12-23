@@ -20,6 +20,7 @@ module.exports = {
 
       response.on('end', function() {
         callback(city);
+        console.log(data);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
