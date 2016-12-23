@@ -27,7 +27,10 @@ module.exports = {
         }else{
             var weatherArr = [];
             weatherArr['city'] = parsed.current_observation.display_location.full;
-            console.log("CITY: "+parsed.current_observation.display_location.full);
+            weatherArr['img'] = parsed.current_observation.icon_url;
+            weatherArr['weather'] = parsed.current_observation.weather;
+            weatherArr['tempC'] = parsed.current_observation.temp_c;
+
             callback(weatherArr);
 
         }
