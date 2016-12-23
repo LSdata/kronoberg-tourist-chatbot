@@ -57,8 +57,10 @@ module.exports = {
       if (messageText) {
         console.log("RECIEVED MESSENGE NR: "+recievedMess);
         recievedMess = chitchat.askedForCity;
-        if(recievedMess)
+        if(recievedMess){
           console.log("CITY REPLY!");
+          recievedMess = 0;
+        }
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
           chat_info.sendTextMessage(senderID, botReply);
