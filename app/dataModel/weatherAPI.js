@@ -21,7 +21,7 @@ module.exports = {
       response.on('end', function() {
         callback(city);
         console.log(data);
-        if(data.error)
+        if(data.response.error)
             console.log("ERROR!!");
       });
     }).on('error', function(e) {
