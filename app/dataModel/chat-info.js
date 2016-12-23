@@ -316,89 +316,89 @@ module.exports = {
               "elements": [
                 {
                     "title": "Weather in "+weather,
-                    "image_url": "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/shop_collection",
+                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
                     },
                     "buttons": [
                         {
                             "title": "View",
                             "type": "web_url",
-                            "url": "https://peterssendreceiveapp.ngrok.io/collection",
+                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://peterssendreceiveapp.ngrok.io/"                        
+                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
                         }
                     ]
                 },
                 {
                     "title": "Classic White T-Shirt",
-                    "image_url": "https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
+                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
                     },
                     "buttons": [
                         {
                             "title": "Shop Now",
                             "type": "web_url",
-                            "url": "https://peterssendreceiveapp.ngrok.io/shop?item=100",
+                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://peterssendreceiveapp.ngrok.io/"                        
+                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
                         }
                     ]                
                 },
                 {
                     "title": "Classic Blue T-Shirt",
-                    "image_url": "https://peterssendreceiveapp.ngrok.io/img/blue-t-shirt.png",
+                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/view?item=101",
+                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
                     },
                     "buttons": [
                         {
                             "title": "Shop Now",
                             "type": "web_url",
-                            "url": "https://peterssendreceiveapp.ngrok.io/shop?item=101",
+                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://peterssendreceiveapp.ngrok.io/"                        
+                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
                         }
                     ]                
                 },
                 {
                     "title": "Classic Black T-Shirt",
-                    "image_url": "https://peterssendreceiveapp.ngrok.io/img/black-t-shirt.png",
+                    "image_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                     "subtitle": "100% Cotton, 200% Comfortable",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/view?item=102",
+                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
                     },
                     "buttons": [
                         {
                             "title": "Shop Now",
                             "type": "web_url",
-                            "url": "https://peterssendreceiveapp.ngrok.io/shop?item=102",
+                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "https://peterssendreceiveapp.ngrok.io/"                        
+                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
                         }
                     ]                
                 }
