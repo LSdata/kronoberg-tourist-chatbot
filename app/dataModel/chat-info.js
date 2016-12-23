@@ -320,87 +320,21 @@ module.exports = {
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                        "url": "https://www.facebook.com",
                         "messenger_extensions": true,
                         "webview_height_ratio": "tall",
-                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
+                        "fallback_url": "https://www.facebook.com"
                     },
                     "buttons": [
                         {
                             "title": "View",
                             "type": "web_url",
-                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                            "url": "https://www.facebook.com",
                             "messenger_extensions": true,
                             "webview_height_ratio": "tall",
-                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
+                            "fallback_url": "https://www.facebook.com"                        
                         }
                     ]
-                },
-                {
-                    "title": "Classic White T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
-                        }
-                    ]                
-                },
-                {
-                    "title": "Classic Blue T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
-                        }
-                    ]                
-                },
-                {
-                    "title": "Classic Black T-Shirt",
-                    "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png"                        
-                        }
-                    ]                
                 }
             ],
              "buttons": [
