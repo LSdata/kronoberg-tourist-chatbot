@@ -23,8 +23,13 @@ module.exports = {
         console.log(data);
         var parsed = JSON.parse(data);
         
-        if(parsed.response.error)
+        if(parsed.response.error){
           console.log("City name is not valid!");
+        }else{
+            var weatherArr = [];
+            weatherArr['city'] = parsed.current_observation.full;
+            console.log(parsed.current_observation.full)
+        }
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
