@@ -62,6 +62,12 @@ const GOOGLE_API_KEY = (process.env.GOOGLE_API_KEY) ?
   config.get('googleAPIkey');
 module.exports.google_api_key = GOOGLE_API_KEY;
 
+//Wunderground API
+const WUNDERGROUND_API_KEY = (process.env.WUNDERGROUND_API_KEY) ?
+  (process.env.WUNDERGROUND_API_KEY) :
+  config.get('wundergroundAPIkey');
+module.exports.wunderground_api_key = WUNDERGROUND_API_KEY;
+
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   console.error("Missing config values");
   process.exit(1);

@@ -1,18 +1,17 @@
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'));
 var chat_info = require(path.join(__dirname, 'chat-info.js'))
-const https = require('https');
+const http = require('http');
 
 // Geocode an address.
 module.exports = {
 
   weatherByCity: function(city, callback){
 
-            callback(city);
+    var key = appJS.wunderground_api_key;
+    var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/IA/Cedar_Rapids.json";
 
-    var url = "https://...";
-/*
-    https.get(url, function(response) {
+    http.get(url, function(response) {
       var data ='';
       
       response.on('data', function(d) {
@@ -24,7 +23,7 @@ module.exports = {
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
-    });*/
+    });
   }
 };
 
