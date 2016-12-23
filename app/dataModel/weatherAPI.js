@@ -9,7 +9,7 @@ module.exports = {
   weatherByCity: function(city, callback){
 
     var key = appJS.wunderground_api_key;
-    var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/IA/Cedar_Rapids.json";
+    var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/IA/"+city+".json";
 
     http.get(url, function(response) {
       var data ='';
@@ -20,7 +20,7 @@ module.exports = {
 
       response.on('end', function() {
         callback(city);
-        console.log(data);
+        console.log(data.current_observation);
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
