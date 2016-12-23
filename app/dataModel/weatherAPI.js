@@ -8,9 +8,10 @@ module.exports = {
 
   weatherByCity: function(city, callback){
 
-    
-    var url = "https://...";
+            callback(city);
 
+    var url = "https://...";
+/*
     https.get(url, function(response) {
       var data ='';
       
@@ -23,7 +24,7 @@ module.exports = {
       });
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
-    });
+    });*/
   }
 };
 
