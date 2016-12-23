@@ -64,11 +64,12 @@ module.exports = {
             weather.weatherByCity(city, function(weatherData){
                 chat_info.weatherList(senderID, weatherData);
             }); 
-        }
+        }else{
         
         var botReply = chitchat.semEval(senderID, messageText);
         if(botReply)
           chat_info.sendTextMessage(senderID, botReply);
+        }
       } 
       else if (messageAttachments) {
         chat_info.sendTextMessage(senderID, "Great! 👍 You can now tap on the map above to zoom or to enter directions to a place if you like");
