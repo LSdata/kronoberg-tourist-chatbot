@@ -61,13 +61,10 @@ module.exports = {
           console.log("CITY REPLY!");
           global.askedForCity = 0;
           var city = 'vaxjo';
-          /*
+          
             weather.weatherByCity(city, function(weatherData){
                 chat_info.weatherList(senderID, weatherData);
-            }); */
-            weather.weatherByCity3days(city, function(weatherData){
-                chat_info.sendTextMessage(senderID, "weather 3 days");
-            }); 
+            });  
         }else{
         
         var botReply = chitchat.semEval(senderID, messageText);

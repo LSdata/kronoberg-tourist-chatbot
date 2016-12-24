@@ -10,8 +10,9 @@ module.exports = {
   weatherByCity: function(city, callback){
 
     var key = appJS.wunderground_api_key;
+    
+    //the weather today by city
     var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/Sweden/"+city+".json";
-    //var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
 
     http.get(url, function(response) {
       var data ='';
@@ -33,6 +34,10 @@ module.exports = {
             weatherArr['weather'] = parsed.current_observation.weather;
             weatherArr['tempC'] = parsed.current_observation.temp_c;
             weatherArr['detail_url'] = parsed.current_observation.ob_url;
+            
+            weatherNext2days(city, function(weather2d) {
+               weatherArr[1]['img'] = weather2d;
+            });
 
             callback(weatherArr);
 
@@ -41,35 +46,35 @@ module.exports = {
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
     });
-  },
-    //weather forecast 3 days 
-    weatherByCity3days: function(city, callback){
-        var key = appJS.wunderground_api_key;
-        var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
-    
-        http.get(url, function(response) {
-          var data ='';
-          
-          response.on('data', function(d) {
-            data += d;
-          });
-    
-          response.on('end', function() {
-            console.log(data);
-            var parsed = JSON.parse(data);
-            
-            if(parsed.response.error){
-              console.log("City name is not valid!");
-            }else{
-                console.log(data);
-                callback("ok");
-    
-            }
-          });
-        }).on('error', function(e) {
-          console.log("Got error: " + e.message);
-        });
-        }
-
+  }
 };
+
+//weather forecast 3 days
+function weatherNext2days(city, callback){
+    var key = appJS.wunderground_api_key;
+    var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
+
+    http.get(url, function(response) {
+      var data ='';
+      
+      response.on('data', function(d) {
+        data += d;
+      });
+
+      response.on('end', function() {
+        console.log(data);
+        var parsed = JSON.parse(data);
+        
+        if(parsed.response.error){
+          console.log("City name is not valid!");
+        }else{
+            console.log(data);
+            return callback("ok");
+
+        }
+      });
+    }).on('error', function(e) {
+      console.log("Got error: " + e.message);
+    });
+}
 
