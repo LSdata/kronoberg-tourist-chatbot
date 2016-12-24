@@ -73,9 +73,7 @@ function weatherNext2days(city, callback){
         if(parsed.response.error){
           console.log("City name is not valid!");
         }else{
-            
-            console.log("PERIOD NR: "+parsed.forecast.txt_forecast.forecastday[2].period);
-            return callback(parsed);//parsed
+          return callback(parsed);//parsed
 
         }
       });

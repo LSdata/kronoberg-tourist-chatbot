@@ -345,17 +345,18 @@ module.exports = {
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
-                    },
-                    "buttons": [
-                        {
-                            "title": "details",
-                            "type": "web_url",
-                            "url": "https://www.onskefoto.se",
-                            //"messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            //"fallback_url": "https://www.onskefoto.se"                        
-                        }
-                    ]
+                    }
+                  }, {
+                    "title": "Day 2 in ",
+                    "image_url": weatherArr[1]['img'],
+                    "subtitle": "See all our colors",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": "https://www.onskefoto.se",
+                        //"messenger_extensions": true,
+                        "webview_height_ratio": "tall",
+                        //"fallback_url": "https://www.onskefoto.se"
+                    }
                 }
             ],
              "buttons": [
