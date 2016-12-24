@@ -317,41 +317,20 @@ module.exports = {
                   {
                     "title": "Todays weather in "+weatherArr[0]['city'],
                     "image_url": weatherArr[0]['img'],
-                    "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC']/*,
-                    "default_action": {
-                        "type": "web_url",
-                        //"url": weatherArr[0]['detail_url'],
-                        //"messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        //"fallback_url": "https://www.onskefoto.se"
-                      }*/
+                    "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC']
                   }, {
                   "title": "Tomorrows weather:",
                     "image_url": weatherArr[1]['img'],
-                    "subtitle": "See all our colors"/*,
-                    "default_action": {
-                        "type": "web_url",
-                        //"url": "https://www.onskefoto.se",
-                        //"messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        //"fallback_url": "https://www.onskefoto.se"
-                    }*/
+                    "subtitle": "See all our colors"
                   }, {
                     "title": "Weather on "+weatherArr[2]['dayName'],
                     "image_url": weatherArr[2]['img'],
-                    "subtitle": "See all our colors"/*,
-                    "default_action": {
-                        "type": "web_url",
-                        //"url": "https://www.onskefoto.se",
-                        //"messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        //"fallback_url": "https://www.onskefoto.se"
-                    }*/
-                }
-            ],
+                    "subtitle": "See all our colors"
+                  }
+              ],
              "buttons": [
                 {
-                  "title": "View weather details",
+                  "title": "View weather details at Wunderground.com",
                   "type": "web_url",
                   "url": weatherArr[0]['detail_url'],
                 }
