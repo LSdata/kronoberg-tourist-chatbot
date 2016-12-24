@@ -6,10 +6,12 @@ const http = require('http');
 // Geocode an address.
 module.exports = {
 
+    //todays weather
   weatherByCity: function(city, callback){
 
     var key = appJS.wunderground_api_key;
     var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/Sweden/"+city+".json";
+    //var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
 
     http.get(url, function(response) {
       var data ='';
@@ -39,6 +41,35 @@ module.exports = {
     }).on('error', function(e) {
       console.log("Got error: " + e.message);
     });
-  }
+  },
+    //weather forecast 3 days 
+    weatherByCity3days: function(city, callback){
+        var key = appJS.wunderground_api_key;
+        var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
+    
+        http.get(url, function(response) {
+          var data ='';
+          
+          response.on('data', function(d) {
+            data += d;
+          });
+    
+          response.on('end', function() {
+            console.log(data);
+            var parsed = JSON.parse(data);
+            
+            if(parsed.response.error){
+              console.log("City name is not valid!");
+            }else{
+                console.log(data);
+                //callback(weatherArr);
+    
+            }
+          });
+        }).on('error', function(e) {
+          console.log("Got error: " + e.message);
+        });
+        }
+
 };
 
