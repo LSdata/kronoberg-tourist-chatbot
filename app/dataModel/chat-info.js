@@ -314,7 +314,7 @@ module.exports = {
           "payload": {
               "template_type": "list",
               "elements": [
-                {
+                  {
                     "title": "Day 1 in "+weatherArr[0]['city'],
                     "image_url": weatherArr[0]['img'],
                     "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC'],
@@ -324,18 +324,8 @@ module.exports = {
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
-                    },
-                    "buttons": [
-                        {
-                            "title": "details",
-                            "type": "web_url",
-                            "url": weatherArr[0]['detail_url'],
-                            //"messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            //"fallback_url": "https://www.onskefoto.se"                        
-                        }
-                    ]
-                }, {
+                      }
+                  }, {
                   "title": "Day 2 in ",
                     "image_url": weatherArr[1]['img'],
                     "subtitle": "See all our colors",
@@ -361,9 +351,9 @@ module.exports = {
             ],
              "buttons": [
                 {
-                    "title": "View More",
-                    "type": "postback",
-                    "payload": "payload"                        
+                  "title": "View weather details",
+                  "type": "web_url",
+                  "url": weatherArr[0]['detail_url'],
                 }
             ]  
         }
