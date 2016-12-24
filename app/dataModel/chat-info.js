@@ -315,12 +315,12 @@ module.exports = {
               "template_type": "list",
               "elements": [
                 {
-                    "title": "Day 1 in "+weatherArr['city'],
-                    "image_url": weatherArr['img'],
-                    "subtitle": weatherArr['weather']+", "+weatherArr['tempC'],
+                    "title": "Day 1 in "+weatherArr[0]['city'],
+                    "image_url": weatherArr[0]['img'],
+                    "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC'],
                     "default_action": {
                         "type": "web_url",
-                        "url": weatherArr['detail_url'],
+                        "url": weatherArr[0]['detail_url'],
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
@@ -329,7 +329,7 @@ module.exports = {
                         {
                             "title": "details",
                             "type": "web_url",
-                            "url": weatherArr['detail_url'],
+                            "url": weatherArr[0]['detail_url'],
                             //"messenger_extensions": true,
                             "webview_height_ratio": "tall",
                             //"fallback_url": "https://www.onskefoto.se"                        
