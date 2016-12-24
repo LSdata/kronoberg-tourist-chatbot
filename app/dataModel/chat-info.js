@@ -317,7 +317,7 @@ module.exports = {
                   {
                     "title": "Todays weather in "+weatherArr[0]['city'],
                     "image_url": weatherArr[0]['img'],
-                    "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC']
+                    "subtitle": weatherArr[0]['weather']+". High "+weatherArr[0]['tempC']+"C."
                   }, {
                   "title": "Tomorrow "+weatherArr[1]['dayName']+"'s weather:",
                     "image_url": weatherArr[1]['img'],
