@@ -336,7 +336,7 @@ module.exports = {
                         }
                     ]
                 }, {
-                  "title": "Day 2 in ",
+                  "title": "Day 2 in "+weatherArr[1]['img'],
                     "image_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
                     "subtitle": "See all our colors",
                     "default_action": {
