@@ -320,7 +320,7 @@ module.exports = {
                     "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC'],
                     "default_action": {
                         "type": "web_url",
-                        "url": weatherArr[0]['detail_url'],
+                        //"url": weatherArr[0]['detail_url'],
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
@@ -331,18 +331,18 @@ module.exports = {
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://www.onskefoto.se",
+                        //"url": "https://www.onskefoto.se",
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
                     }
                   }, {
-                    "title": "weather on"+weatherArr[2]['dayName'],
+                    "title": "Weather on "+weatherArr[2]['dayName'],
                     "image_url": weatherArr[2]['img'],
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://www.onskefoto.se",
+                        //"url": "https://www.onskefoto.se",
                         //"messenger_extensions": true,
                         "webview_height_ratio": "tall",
                         //"fallback_url": "https://www.onskefoto.se"
