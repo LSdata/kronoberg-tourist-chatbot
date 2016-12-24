@@ -42,6 +42,8 @@ module.exports = {
               weatherArr[1] = [];
               weatherArr[1]['img'] = weather2d.forecast.txt_forecast.forecastday[2].icon_url;
               weatherArr[1]['dayName'] = weather2d.forecast.txt_forecast.forecastday[2].title;
+              weatherArr[1]['fcTxt'] = weather2d.forecast.txt_forecast.forecastday[2].fcttext_metric;
+
               
               //day 3
               weatherArr[2] = [];
