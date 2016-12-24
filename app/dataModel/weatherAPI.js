@@ -38,9 +38,14 @@ module.exports = {
             
             //new API call for weather day 2 and 3
             weatherNext2days(city, function(weather2d) {
+              //day 2
               weatherArr[1] = [];
-              //parsed.forecast.txt_forecast.forecastday[2].period
               weatherArr[1]['img'] = weather2d.forecast.txt_forecast.forecastday[2].icon_url;
+              
+              //day 3
+              weatherArr[2]['dayName'] = weather2d.forecast.txt_forecast.forecastday[4].title;
+              weatherArr[2]['img'] = weather2d.forecast.txt_forecast.forecastday[4].icon_url;
+                            
               callback(weatherArr);
               
             });

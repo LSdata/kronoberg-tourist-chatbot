@@ -315,7 +315,7 @@ module.exports = {
               "template_type": "list",
               "elements": [
                   {
-                    "title": "Day 1 in "+weatherArr[0]['city'],
+                    "title": "Todays weather in "+weatherArr[0]['city'],
                     "image_url": weatherArr[0]['img'],
                     "subtitle": weatherArr[0]['weather']+", "+weatherArr[0]['tempC'],
                     "default_action": {
@@ -326,7 +326,7 @@ module.exports = {
                         //"fallback_url": "https://www.onskefoto.se"
                       }
                   }, {
-                  "title": "Day 2 in ",
+                  "title": "Tomorrows weather:",
                     "image_url": weatherArr[1]['img'],
                     "subtitle": "See all our colors",
                     "default_action": {
@@ -337,8 +337,8 @@ module.exports = {
                         //"fallback_url": "https://www.onskefoto.se"
                     }
                   }, {
-                    "title": "Day 2 in ",
-                    "image_url": weatherArr[1]['img'],
+                    "title": "weather on"+weatherArr[2]['dayName'],
+                    "image_url": weatherArr[2]['img'],
                     "subtitle": "See all our colors",
                     "default_action": {
                         "type": "web_url",
