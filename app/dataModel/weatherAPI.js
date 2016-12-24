@@ -29,22 +29,21 @@ module.exports = {
           console.log("City name is not valid!");
         }else{
             var weatherArr = [];
+            weatherArr[0] = [];
+            weatherArr[0]['city'] = parsed.current_observation.display_location.full;
+            weatherArr[0]['img'] = parsed.current_observation.icon_url;
+            weatherArr[0]['weather'] = parsed.current_observation.weather;
+            weatherArr[0]['tempC'] = parsed.current_observation.temp_c;
+            weatherArr[0]['detail_url'] = parsed.current_observation.ob_url;
             
             //new API call for weather day 2 and 3
             weatherNext2days(city, function(weather2d) {
-              weatherArr[0] = [];
-              weatherArr[0]['city'] = parsed.current_observation.display_location.full;
-              weatherArr[0]['img'] = parsed.current_observation.icon_url;
-              weatherArr[0]['weather'] = parsed.current_observation.weather;
-              weatherArr[0]['tempC'] = parsed.current_observation.temp_c;
-              weatherArr[0]['detail_url'] = parsed.current_observation.ob_url;
-               
               weatherArr[1] = [];
               weatherArr[1]['img'] = weather2d;
+              callback(weatherArr);
               
             });
 
-            callback(weatherArr);
 
         }
       });
