@@ -62,7 +62,7 @@ module.exports = {
               console.log("City name is not valid!");
             }else{
                 console.log(data);
-                //callback(weatherArr);
+                callback("ok");
     
             }
           });
