@@ -321,11 +321,11 @@ module.exports = {
                   }, {
                   "title": "Tomorrow "+weatherArr[1]['dayName']+"'s weather:",
                     "image_url": weatherArr[1]['img'],
-                    "subtitle": weatherArr[1]['fcTxt']
+                    "subtitle": weatherArr[1]['d2tempC']
                   }, {
                     "title": "Weather on "+weatherArr[2]['dayName'],
                     "image_url": weatherArr[2]['img'],
-                    "subtitle": weatherArr[2]['fcTxt']
+                    "subtitle": weatherArr[2]['d3tempC']
                   }
               ],
              "buttons": [
