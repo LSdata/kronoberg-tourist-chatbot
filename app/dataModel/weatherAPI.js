@@ -26,6 +26,7 @@ module.exports = {
         
         if(parsed.response.error){
           console.log("City name is not valid!");
+          callback(null);
         }else{
             var weatherArr = [];
             weatherArr[0] = [];

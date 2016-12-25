@@ -56,7 +56,7 @@ module.exports = {
         }
         else if( (capitalTxt.indexOf('WEATHER') > -1) ){
                 global.askedForCity = 1;
-                return "yes of course you want to now the weather! In what city in Kronoberg?";
+                return "yes of course you want to now the weather! In what city in Kronoberg? \n\n(Write letter 'a' for swedish 'å' and 'ä' and o for 'ö'. Ex vaxjo for växjö)";
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){

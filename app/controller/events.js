@@ -60,9 +60,14 @@ module.exports = {
         if(global.askedForCity){
           global.askedForCity = 0;
 
-            weather.weatherByCity(messageText, function(weatherData){
-                chat_info.weatherList(senderID, weatherData);
-            });  
+          weather.weatherByCity(messageText, function(weatherData){
+            if(weatherData)
+              chat_info.weatherList(senderID, weatherData);
+            else{
+              global.askedForCity = 1;
+              chat_info.sendTextMessage(senderID, "hmm..I'm so sorry I couldn't find any weather info at that city! Please try again and write only the city name! \n\n(Write letter 'a' for swedish 'å' and 'ä' and o for 'ö'. Ex vaxjo for växjö)");
+            }
+          });  
         }else{
         
         var botReply = chitchat.semEval(senderID, messageText);
