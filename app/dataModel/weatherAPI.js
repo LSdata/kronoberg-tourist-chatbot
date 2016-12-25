@@ -78,7 +78,6 @@ function weatherNext2days(city, callback){
       });
 
       response.on('end', function() {
-        console.log(data);
         var parsed = JSON.parse(data);
         
         if(parsed.response.error){
