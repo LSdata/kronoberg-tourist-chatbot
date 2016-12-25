@@ -317,15 +317,15 @@ module.exports = {
                   {
                     "title": "Todays weather in "+weatherArr[0]['city'],
                     "image_url": weatherArr[0]['img'],
-                    "subtitle": weatherArr[0]['weather']+". High "+weatherArr[0]['tempC']+"C."
+                    "subtitle": weatherArr[0]['weather']+". High "+weatherArr[0]['tempC']+" C."
                   }, {
                   "title": "Tomorrow "+weatherArr[1]['dayName']+"'s weather:",
                     "image_url": weatherArr[1]['img'],
-                    "subtitle": weatherArr[1]['d2cond']+". High "+weatherArr[1]['d2tempC']+"C."
+                    "subtitle": weatherArr[1]['d2cond']+". High "+weatherArr[1]['d2tempC']+" C."
                   }, {
                     "title": "Weather on "+weatherArr[2]['dayName'],
                     "image_url": weatherArr[2]['img'],
-                    "subtitle": weatherArr[2]['d3cond']+". High "+weatherArr[2]['d3tempC']+"C."
+                    "subtitle": weatherArr[2]['d3cond']+". High "+weatherArr[2]['d3tempC']+" C."
                   }
               ],
              "buttons": [
