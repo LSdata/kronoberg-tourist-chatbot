@@ -43,7 +43,7 @@ module.exports = {
               weatherArr[1]['img'] = weather2d.forecast.txt_forecast.forecastday[2].icon_url;
               weatherArr[1]['dayName'] = weather2d.forecast.txt_forecast.forecastday[2].title;
               weatherArr[1]['fcTxt'] = weather2d.forecast.txt_forecast.forecastday[2].fcttext_metric;
-              weatherArr[1]['d2tempC'] = weather2d.forecast.simpleforecast.forecastday[1].hight.celsius;
+              weatherArr[1]['d2tempC'] = weather2d.forecast.simpleforecast.forecastday[1].high.celsius;
 
               
               //day 3
