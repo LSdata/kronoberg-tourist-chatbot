@@ -58,7 +58,7 @@ module.exports = {
         
         //check for reply on question of weather city
         if(global.askedForCity){
-          console.log("CITY REPLY!");
+          console.log("MESSAGE: "+messageText);
           global.askedForCity = 0;
           var city = 'vaxjo';
           
