@@ -43,6 +43,7 @@ module.exports = {
               weatherArr[1]['img'] = weather2d.forecast.txt_forecast.forecastday[2].icon_url;
               weatherArr[1]['dayName'] = weather2d.forecast.txt_forecast.forecastday[2].title;
               weatherArr[1]['fcTxt'] = weather2d.forecast.txt_forecast.forecastday[2].fcttext_metric;
+              weatherArr[1]['d2tempC'] = weather2d.forecast.simpleforecast.forecastday[1].hight.celsius;
 
               
               //day 3
@@ -50,8 +51,8 @@ module.exports = {
               weatherArr[2]['dayName'] = weather2d.forecast.txt_forecast.forecastday[4].title;
               weatherArr[2]['img'] = weather2d.forecast.txt_forecast.forecastday[4].icon_url;
               weatherArr[2]['fcTxt'] = weather2d.forecast.txt_forecast.forecastday[4].fcttext_metric;
-              //weatherArr[2]['fcTxt'] = weather2d.forecast.simpleforecast.forecastday[1];
-              console.log("WEATHER: "+weather2d.forecast.simpleforecast.forecastday[1].high.celsius);
+              weatherArr[2]['d3tempC'] = weather2d.forecast.simpleforecast.forecastday[2].high.celsius;
+              console.log("WEATHER: "+weather2d.forecast.simpleforecast.forecastday[2].high.celsius);
               
               callback(weatherArr);
               
