@@ -49,6 +49,7 @@ module.exports = {
               weatherArr[2] = [];
               weatherArr[2]['dayName'] = weather2d.forecast.txt_forecast.forecastday[4].title;
               weatherArr[2]['img'] = weather2d.forecast.txt_forecast.forecastday[4].icon_url;
+              weatherArr[2]['d3tempC'] = weather2d.forecast.simpleforecast.forecastday[2].high.celsius;
               weatherArr[2]['d3cond'] = weather2d.forecast.simpleforecast.forecastday[2].conditions;
 
               callback(weatherArr);
