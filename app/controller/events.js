@@ -58,11 +58,11 @@ module.exports = {
         
         //check for reply on question of weather city
         if(global.askedForCity){
-          console.log("MESSAGE: "+messageText);
+          //console.log("MESSAGE: "+messageText);
           global.askedForCity = 0;
-          var city = 'vaxjo';
+          //var city = 'vaxjo';
           
-            weather.weatherByCity(city, function(weatherData){
+            weather.weatherByCity(messageText, function(weatherData){
                 chat_info.weatherList(senderID, weatherData);
             });  
         }else{
