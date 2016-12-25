@@ -52,10 +52,7 @@ module.exports = {
               weatherArr[2]['d3cond'] = weather2d.forecast.simpleforecast.forecastday[2].conditions;
 
               callback(weatherArr);
-              
             });
-
-
         }
       });
     }).on('error', function(e) {
