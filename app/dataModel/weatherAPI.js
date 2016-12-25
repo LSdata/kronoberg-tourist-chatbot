@@ -22,7 +22,6 @@ module.exports = {
       });
 
       response.on('end', function() {
-        console.log(data);
         var parsed = JSON.parse(data);
         
         if(parsed.response.error){
