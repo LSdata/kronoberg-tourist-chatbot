@@ -56,12 +56,15 @@ module.exports = {
         }
         else if( (capitalTxt.indexOf('WEATHER') > -1) ){
                 global.askedForCity = 1;
-                return "yes of course you want to now the weather! In what city in Kronoberg? \n\n(Write letter 'a' for swedish 'å' and 'ä' and o for 'ö'. Ex vaxjo for växjö)";
+                return "yes of course you want to now the weather! In what city in Kronoberg? \n\n(Write letter 'a' for swedish 'å' and 'ä' and o for 'ö'. For example 'vaxjo' for 'växjö')";
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 
             (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) || (capitalTxt.indexOf('MY POSITION ON A MAP') > -1) ){
             
             return chat_info.sendQuickReply(senderID)
+        }
+        else if( (capitalTxt.indexOf('HELP') > -1) ){
+            return "Don't worry ;) Please check out the main menu below with the most common topics. (The menu at the bottom is in the icon with the three caret lines next to the text input field) ";
         }
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
