@@ -123,12 +123,12 @@ module.exports = {
       console.log("Received authentication for user %d and page %d with pass " +
         "through param '%s' at %d", senderID, recipientID, passThroughParam, 
         timeOfAuth);
-    
+      chat_info.startGreetings();
+      chat_info.startBtn();
       // When an authentication is received, we'll send a message back to the sender
       // to let them know it was successful.
       chat_info.sendTextMessage(senderID, "Hi :) You are now authenticated to this site. Welcome! How can I help you?");
-      chat_info.startGreetings();
-      chat_info.startBtn();
+     
     },
 
 
