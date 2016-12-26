@@ -37,7 +37,7 @@ module.exports = {
       var messageData = {
         setting_type:"greeting",
         greeting:{
-          text:"Hi {{user_first_name}}!! :) Welcome! I'm travel bot  that can guide you when you visit Kronoberg. \n\nLet's have a chat and let me know what you are looking for in Kronoberg! Press the Get Started button below :)"
+          text:"Hi {{user_first_name}}!! :) Welcome! I'm travel bot  that can guide you when you visit Kronoberg. \n\nPress the Get Started button below to start the chat:)"
         }
       };
       
