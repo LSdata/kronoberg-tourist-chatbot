@@ -68,8 +68,7 @@ module.exports = {
         }
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
-            (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") || 
-            (capitalTxt == "HEJ") || (capitalTxt == "HEJSAN") || (capitalTxt == "TJENARE")   ){
+            (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
             
             var greetings = [
                 'hi!! :)',
