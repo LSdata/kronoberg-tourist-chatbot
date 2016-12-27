@@ -87,10 +87,10 @@ module.exports = {
             (capitalTxt == "TJENA!") || (capitalTxt == "TJA!") || (capitalTxt == "GODDAG!")){
         
             return "Hejsan!! :) what do you want to visit in Kronoberg? \n\n(my swedish is not so good yet so please write in english ;) )";
-        }else if( (capitalTxt.indexOf('HOW ARE YOU?') > -1) ){
+        }else if( (capitalTxt.indexOf('HOW ARE YOU') > -1) ){
             return "I'm just fine thank you! I hope you are fine as well :) ";
         }
-        else if( (capitalTxt.indexOf('WHO ARE YOU?') > -1) ){
+        else if( (capitalTxt.indexOf('WHO ARE YOU') > -1) ){
             return "I'm a tourist chatbot developed by Linnea, Nurane and Natali.";
         }
         else {
