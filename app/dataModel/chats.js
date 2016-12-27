@@ -68,7 +68,8 @@ module.exports = {
         }
         else if ((capitalTxt == "HI") || (capitalTxt == "HI!") || (capitalTxt == "HI!!") || (capitalTxt == "HELLO") || 
             (capitalTxt == "HELLO!") || (capitalTxt == "HEY") || (capitalTxt == "HEY!") || (capitalTxt == "HEY!") || 
-            (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") ){
+            (capitalTxt == "HI THERE!") || (capitalTxt == "HI THERE") || (capitalTxt == "HI :)") || 
+            (capitalTxt == "HEJ") || (capitalTxt == "HEJSAN") || (capitalTxt == "TJENARE")   ){
             
             var greetings = [
                 'hi!! :)',
@@ -81,6 +82,12 @@ module.exports = {
             var randomNr = Math.floor(Math.random()*greetings.length);
         
             return greetings[randomNr];
+        } else if ( (capitalTxt == "HEJ") || (capitalTxt == "HEJSAN") || (capitalTxt == "TJENARE") ||
+            (capitalTxt == "TJENA") || (capitalTxt == "TJA") || (capitalTxt == "GODDAG") || 
+            (capitalTxt == "HEJ!") || (capitalTxt == "HEJSAN!") || (capitalTxt == "TJENARE!") ||
+            (capitalTxt == "TJENA!") || (capitalTxt == "TJA!") || (capitalTxt == "GODDAG!")){
+        
+            return "Hejsan!! :) what do you want to visit in Kronoberg? \n\n(my swedish is not so good yet so please write in english ;) )";
         }
         else {
           return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.";
