@@ -6,7 +6,7 @@
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'))
 var events = require(path.join(__dirname, 'events.js'))
-var chat_info = require(path.join(__dirname, '/../dataModel/chat-info.js'))
+var chat_info = require(path.join(__dirname, '/../dataModel/respMessages.js'))
 
 const 
     crypto = require('crypto'), 

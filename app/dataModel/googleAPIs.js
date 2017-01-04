@@ -1,6 +1,6 @@
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'));
-var chat_info = require(path.join(__dirname, 'chat-info.js'))
+var chat_info = require(path.join(__dirname, 'respMessages.js'))
 const https = require('https');
 
 // Geocode an address.

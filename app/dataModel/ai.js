@@ -1,6 +1,6 @@
 var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'));
-var chat_info = require(path.join(__dirname, 'chat-info.js'));
+var chat_info = require(path.join(__dirname, 'respMessages.js'));
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'));
 global.askedForCity = 0; //global variable
 
@@ -91,7 +91,7 @@ module.exports = {
             return "I'm just fine thank you! I hope you are fine as well :) ";
         }
         else if( (capitalTxt.indexOf('WHO ARE YOU') > -1) ){
-            return "I'm a tourist chatbot developed by Linnea, Nurane and Natali.";
+            return "I'm a tourist chatbot developed by Linnea, Nurane and Natali";
         }
         else {
           return "..I'm sorry I didn't quite get that. \n\n Please try the main menu below with the most common topics. It is in the icon with the three caret lines next to the text input field.";
