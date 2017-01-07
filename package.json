@@ -29,7 +29,7 @@
   },
   "devDependencies": {},
   "bugs": {
-    "url": "https://github.com/LSdata/kronoberg-tourist-chatbot/blob/master/README.md"
+    "url": "https://kronoberg-tourist-chatbot.herokuapp.com/"
   },
-  "homepage": "https://github.com/LSdata/kronoberg-tourist-chatbot/blob/master/README.md"
+  "homepage": "https://kronoberg-tourist-chatbot.herokuapp.com/"
 }
