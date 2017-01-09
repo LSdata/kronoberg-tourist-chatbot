@@ -2,7 +2,11 @@ var path = require('path');
 var fbGraph = require(path.join(__dirname, 'fbGraph.js'));
 var chat_info = require(path.join(__dirname, 'respMessages.js'));
 var googleAPI = require(path.join(__dirname, 'googleAPIs.js'));
-global.askedForCity = 0; //global variable
+global.askedForCity = 0; //flagging when the chatbot asks for weather city name
+
+/* This server side module is the AI of the chatbot.
+ * The AI declares how the chatbot should respond to various user chat phrases 
+ */
 
 module.exports = {
     semEval: function(senderID, messageText){
@@ -55,7 +59,7 @@ module.exports = {
                 return "That's a great idea =) Here are my recommendations of great museums to visit:"
         }
         else if( (capitalTxt.indexOf('WEATHER') > -1) ){
-                global.askedForCity = 1;
+                global.askedForCity = 1; //global flag that tracks when a chatbot question is asked to the user
                 return "yes of course you want to now the weather! In what city in Kronoberg? \n\n(Write letter 'a' for swedish 'å' and 'ä' and o for 'ö'. For example 'vaxjo' for 'växjö')";
         }
         else if( (capitalTxt == 'MY LOCATION')|| (capitalTxt.indexOf('WHERE AM I') > -1)|| 

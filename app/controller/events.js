@@ -4,21 +4,21 @@ var chitchat = require(path.join(__dirname, '/../dataModel/ai.js'));
 var fbGraph = require(path.join(__dirname, '/../dataModel/fbGraph.js'));
 var weather = require(path.join(__dirname, '/../dataModel/weatherAPI.js'));
 
+/* 
+ * Description: this file is the part of the controller handeling messaging events.
+ * This files contains functions that can be accessed from the Express Router.
+ * The controller deligates furhter to server side modules for handeling the tasks.
+ */
+
 module.exports = {
 
-    /*
+/*
  * Message Event
  *
- * This event is called when a message is sent to your page. The 'message' 
+ * This event is called when a message is sent to the chatbot. The 'message' 
  * object format can vary depending on the kind of message that was received.
- * Read more at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received
- *
- * For this example, we're going to echo any text that we get. If we get some 
- * special keywords ('button', 'generic', 'receipt'), then we'll send back
- * examples of those bubbles to illustrate the special message bubbles we've 
- * created. If we receive a message with an attachment (image, video, audio), 
- * then we'll simply confirm that we've received the attachment.
  * 
+ * More infor at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received
  */
     receivedMessage: function(event){
       var senderID = event.sender.id;
@@ -35,13 +35,12 @@ module.exports = {
       var appId = message.app_id;
       var metadata = message.metadata;
     
-      // You may get a text or attachment but not both
       var messageText = message.text;
       var messageAttachments = message.attachments;
       var quickReply = message.quick_reply;
     
       if (isEcho) {
-        // Just logging message echoes to console
+        //logging message echoes to console
         console.log("Received echo for message %s and app %d with metadata %s", 
           messageId, appId, metadata);
         return;
@@ -58,7 +57,7 @@ module.exports = {
         
         //check for reply on question of weather city
         if(global.askedForCity){
-          global.askedForCity = 0;
+          global.askedForCity = 0; //reset flag
 
           weather.weatherByCity(messageText, function(weatherData){
             if(weatherData)
@@ -81,8 +80,6 @@ module.exports = {
     }, 
     
     /*
-     * Account Link Event
-     *
      * This event is called when the Link Account or UnLink Account action has been
      * tapped.
      * https://developers.facebook.com/docs/messenger-platform/webhook-reference/account-linking
@@ -102,11 +99,7 @@ module.exports = {
     
     /*
      * Authorization Event
-     *
-     * The value for 'optin.ref' is defined in the entry point. For the "Send to 
-     * Messenger" plugin, it is the 'data-ref' field. Read more at 
-     * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
-     *
+     * More info at https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
      */
     receivedAuthentication: function(event){
       var senderID = event.sender.id;
@@ -114,10 +107,6 @@ module.exports = {
       var timeOfAuth = event.timestamp;
     
       // The 'ref' field is set in the 'Send to Messenger' plugin, in the 'data-ref'
-      // The developer can set this to an arbitrary value to associate the 
-      // authentication callback with the 'Send to Messenger' click event. This is
-      // a way to do account linking when the user clicks the 'Send to Messenger' 
-      // plugin.
       var passThroughParam = event.optin.ref;
     
       console.log("Received authentication for user %d and page %d with pass " +
@@ -125,20 +114,12 @@ module.exports = {
         timeOfAuth);
       chat_info.startGreetings();
       chat_info.startBtn();
-      // When an authentication is received, we'll send a message back to the sender
-      // to let them know it was successful.
+
       chat_info.sendTextMessage(senderID, "Hi :) You are now authenticated to this site. Welcome! How can I help you?");
-     
     },
 
-
-
-/*
- * Delivery Confirmation Event
- *
- * This event is sent to confirm the delivery of a message. Read more about 
- * these fields at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered
- *
+/* This event is sent to confirm the delivery of a message. 
+ * More info at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered
  */
     receivedDeliveryConfirmation: function(event){
       var senderID = event.sender.id;
@@ -154,24 +135,18 @@ module.exports = {
             messageID);
         });
       }
-    
       console.log("All message before %d were delivered.", watermark);
     },
 
-/*
- * Postback Event
- *
- * This event is called when a postback is tapped on a Structured Message. 
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received
- * 
+/* This event is called when a postback is tapped on a Structured Message. 
+ * More infor at https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received
  */
     receivedPostback: function(event){
       var senderID = event.sender.id;
       var recipientID = event.recipient.id;
       var timeOfPostback = event.timestamp;
     
-      // The 'payload' param is a developer-defined field which is set in a postback 
-      // button for Structured Messages. 
+      // 'payload' parameters are used to identify button events in structured messages 
       var payload = event.postback.payload;
       
       if (payload =="USER_DEFINED_PAYLOAD"){
@@ -209,7 +184,6 @@ module.exports = {
         var botReply = chitchat.semEval(senderID, "weather");
         chat_info.sendTextMessage(senderID, botReply)
       }
-      //removed from menu
       else if (payload =="mylocation"){
         var botReply = chitchat.semEval(senderID, "my location");
         chat_info.sendTextMessage(senderID, botReply)
@@ -218,13 +192,9 @@ module.exports = {
         "at %d", senderID, recipientID, payload, timeOfPostback);
     },
 
-/*
- * Message Read Event
- *
- * This event is called when a previously-sent message has been read.
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-read
- * 
- */
+    /* This event is called when a previously-sent message has been read.
+     * https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-read
+     */
     receivedMessageRead: function(event){
       var senderID = event.sender.id;
       var recipientID = event.recipient.id;

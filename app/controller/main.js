@@ -1,8 +1,3 @@
-/* 
- * Description: this file is the main controller of the web applicaation.
- * This files contains functions that can be accessed from the Express Router. 
- */
-
 var path = require('path');
 var appJS = require(path.join(__dirname, '/../../app.js'))
 var events = require(path.join(__dirname, 'events.js'))
@@ -12,7 +7,13 @@ const
     crypto = require('crypto'), 
     request = require('request');
 
-//
+/* 
+ * Description: this file is the main controller of the web applicaation.
+ * This files contains functions that can be accessed from the Express Router.
+ * The controller deligates furhter to server side modules for handeling the tasks.
+ */
+
+//subscribes to the webhook and establishes a chat event channel
 module.exports.get_webhook = function(req,res){
 
  if (req.query['hub.mode'] === 'subscribe' &&
@@ -25,18 +26,19 @@ module.exports.get_webhook = function(req,res){
   }  
 }
 
+//recieving new messages from the chatbot user
 module.exports.post_webhook = function(req,res){
   var data = req.body;
 
   // Make sure this is a page subscription
   if (data.object == 'page') {
+    
     // Iterate over each entry
-    // There may be multiple if batched
     data.entry.forEach(function(pageEntry) {
       var pageID = pageEntry.id;
       var timeOfEvent = pageEntry.time;
 
-      // Iterate over each messaging event
+      // Iterate over each messaging events
       pageEntry.messaging.forEach(function(messagingEvent) {
         if (messagingEvent.optin) {
           events.receivedAuthentication(messagingEvent);
@@ -56,22 +58,17 @@ module.exports.post_webhook = function(req,res){
       });
     });
     
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know you've 
-    // successfully received the callback. Otherwise, the request will time out.
+    //returning status ok that this chatbot received the callback. Otherwise, the request will time out.
     res.sendStatus(200);
   }
-    
 }
 
+//authorizes the chatbot
 module.exports.authorize = function(req,res){
 
   var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
 
-  // Authorization Code should be generated per user by the developer. This will 
-  // be passed to the Account Linking callback.
   var authCode = "1234567890";
 
   // Redirect users to this URI on successful login
