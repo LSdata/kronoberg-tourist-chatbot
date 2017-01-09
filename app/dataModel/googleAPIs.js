@@ -13,7 +13,7 @@ const https = require('https');
  */
  module.exports = {
 
-  /* get information about google places at the specificy query type.
+  /* get information about google places by a specific textsearch and place type 
    * Return array with place information.
    */
   getPlaces: function(type, callback){
