@@ -12,7 +12,7 @@ const
     crypto = require('crypto'), 
     request = require('request');
 
-//search results page
+//
 module.exports.get_webhook = function(req,res){
 
  if (req.query['hub.mode'] === 'subscribe' &&
@@ -82,7 +82,6 @@ module.exports.authorize = function(req,res){
     redirectURI: redirectURI,
     redirectURISuccess: redirectURISuccess
   });
-    
 }
 
 

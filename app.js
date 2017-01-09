@@ -1,5 +1,5 @@
 /*
- Initiating the app server
+ This file is starting the app and is setting up the server runtime environment. 
  */
 
 /* jshint node: true, devel: true */
@@ -13,7 +13,7 @@ const
   https = require('https'),  
   request = require('request'),
   routes = require('./app/router/routes.js'),
-  path = require("path"); //using the Express.js Router
+  path = require("path"); 
 
 var app = express();
 
@@ -25,13 +25,8 @@ app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static(path.resolve(__dirname, 'app/public')));
 app.use('/', routes)
 
-/*
- * Be sure to setup your config values before running this code. You can 
- * set them using environment variables or modifying the config file in /config.
- *
- */
 
-// App Secret can be retrieved from the App Dashboard
+// App Secret is retrieved from the App Dashboard (https://developers.facebook.com/apps/)
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? 
   process.env.MESSENGER_APP_SECRET :
   config.get('appSecret');
@@ -43,7 +38,7 @@ const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
   config.get('validationToken');
 module.exports.validation_token = VALIDATION_TOKEN;
 
-// Generate a page access token for your page from the App Dashboard
+// Page access token is generated for the page from the App Dashboard
 const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ?
   (process.env.MESSENGER_PAGE_ACCESS_TOKEN) :
   config.get('pageAccessToken');
@@ -56,13 +51,13 @@ const SERVER_URL = (process.env.SERVER_URL) ?
   config.get('serverURL');
 module.exports.server_url = SERVER_URL;
 
-//Google API
+//Google API key
 const GOOGLE_API_KEY = (process.env.GOOGLE_API_KEY) ?
   (process.env.GOOGLE_API_KEY) :
   config.get('googleAPIkey');
 module.exports.google_api_key = GOOGLE_API_KEY;
 
-//Wunderground API
+//Wunderground API key
 const WUNDERGROUND_API_KEY = (process.env.WUNDERGROUND_API_KEY) ?
   (process.env.WUNDERGROUND_API_KEY) :
   config.get('wundergroundAPIkey');
@@ -74,20 +69,19 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 }
 
 /*
- * Verify that the callback came from Facebook. Using the App Secret from 
- * the App Dashboard, we can verify the signature that is sent with each 
+ * Verifies that the callback came from Facebook. Using the App Secret from 
+ * the App Dashboard, the signature is verified that it is sent with each 
  * callback in the x-hub-signature field, located in the header.
  *
- * https://developers.facebook.com/docs/graph-api/webhooks#setup
+ * (https://developers.facebook.com/docs/graph-api/webhooks#setup)
  *
  */
 function verifyRequestSignature(req, res, buf) {
   var signature = req.headers["x-hub-signature"];
 
   if (!signature) {
-    // For testing, let's log an error. In production, you should throw an 
-    // error.
     console.error("Couldn't validate the signature.");
+    throw new Error("Couldn't validate the signature.");
   } else {
     var elements = signature.split('=');
     var method = elements[0];
