@@ -5,11 +5,13 @@ const https = require('https');
 const request = require('request');
 
 /*
- * Call the Send API. The message data goes in the body. If successful, we'll 
- * get the message id in a response 
- *
+ * This server side module that handle requests to the Facebook Graph API. 
+ * The sub-API:s used are the Facebook Graph Send API, Thread Settngs and Profile API.
+ 
+ * https://developers.facebook.com/docs/messenger-platform/product-overview
  */
 module.exports = {
+  //Facebook Graph Send API: send message in JSON to the chatbot user
   callSendAPI: function(messageData){
       request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
@@ -35,6 +37,7 @@ module.exports = {
       });  
     }, 
     
+    //Set thread settings for the start page greeting, Get Started button and the persistent main menu
     sendAPI_setThread: function(messageData){
       request({
         uri: 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='+appJS.page_access_token,
@@ -60,6 +63,7 @@ module.exports = {
       });  
     },
     
+    //Facebook Graph Profile API: get the user name
     userName: function(recipientId, callback){
       var access_token = appJS.page_access_token;
       var url=  'https://graph.facebook.com/v2.6/'+recipientId+'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token='+access_token;

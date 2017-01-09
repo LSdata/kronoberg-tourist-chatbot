@@ -4,8 +4,8 @@ var appJS = require(path.join(__dirname, '/../../app.js'))
 const request = require('request');
 
 /*
- * Send a message with the account linking call-to-action
- *
+ * Create a response message in JSON. 
+ * Send the message to Facebook Graph Send API (in the fbGraph.js file).
  */
 module.exports = {
     
@@ -32,7 +32,7 @@ module.exports = {
         });
     },
     
-    //Set start greetings
+    //create start page greetings that is above the Get Started button
     startGreetings: function(){
       var messageData = {
         setting_type:"greeting",
@@ -40,14 +40,12 @@ module.exports = {
           text:"Hi {{user_first_name}}!! :) Welcome! I'm a travel chatbot that can guide you when you visit Kronoberg. \n\nPress the Get Started button below to start the chat:)"
         }
       };
-      
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
-
     },
     
-    //set the get started button 
+    //create the Get Started button 
     startBtn: function(){
       var messageData = {
         "setting_type":"call_to_actions",
@@ -61,7 +59,7 @@ module.exports = {
       });
     },
     
-    //persistent start menu 
+    //persistent main menu, at the three stacked lines left to the chat input field
     pers_startmenu: function(){
       var messageData = {
         setting_type: "call_to_actions",
@@ -89,13 +87,12 @@ module.exports = {
             payload:"weather"
           }]
       };
-
       fbGraph.sendAPI_setThread(messageData,function(response){
         return response;
       });
     },
     
-    //Send a Structured Message (Generic Message type) using the Send API.
+    //Send a Structured Message (Generic Message type)
     generic: function(recipientId, placeArr){
     //placeArr[counter] = [name, type, address, ref, lat, lng, website];
 
@@ -164,56 +161,12 @@ module.exports = {
           }
         }
       };  
-      
       fbGraph.callSendAPI(messageData,function(response){
             return response;
       });
-
     },
-    
-    //Send a video using the Send API.
-    sendVideoMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "video",
-            payload: {
-              url: appJS.server_url + "/assets/allofus480.mov"
-            }
-          }
-        }
-      };
-    
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-  },
-    
-    //Send a file using the Send API.
-    sendFileMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "file",
-            payload: {
-              url: appJS.server_url + "/assets/test.txt"
-            }
-          }
-        }
-      };
-    
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-  },
 
-  //Send a text message using the Send API.
+  //Send a text message
   sendTextMessage: function(recipientId, messageText){
     var messageData = {
       recipient: {
@@ -230,7 +183,8 @@ module.exports = {
     });
   },
     
-  //Send a button message using the Send API.
+  /*Send a button message of historical places. 
+  The two button options are museums and churches*/
   histplace_btns: function(recipientId, username){
     var messageData = {
       recipient: {
@@ -255,54 +209,12 @@ module.exports = {
         }
       }
     };  
-  
         fbGraph.callSendAPI(messageData,function(response){
               return response;
         });
     }, 
     
-  //Send an image using the Send API.
-  sendImageMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "image",
-            payload: {
-              url: appJS.server_url + "/assets/rift.png"
-            }
-          }
-        }
-      };
-    
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-  },
-
-  //Send a Gif using the Send API.
-  sendGifMessage: function(recipientId){
-      var messageData = {
-        recipient: {
-          id: recipientId
-        },
-        message: {
-          attachment: {
-            type: "image",
-            payload: {
-              url: appJS.server_url + "/assets/instagram_logo.gif"
-            }
-          }
-        }
-      };
-
-      fbGraph.callSendAPI(messageData,function(response){
-            return response;
-      });
-  }, 
-    //Send weather list view from Wunderground API
+  //Send weather list view from Wunderground API
   weatherList: function(recipientId, weatherArr){
     var messageData = {
       "recipient":{

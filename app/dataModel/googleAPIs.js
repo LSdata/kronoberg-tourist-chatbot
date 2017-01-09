@@ -3,9 +3,19 @@ var appJS = require(path.join(__dirname, '/../../app.js'));
 var chat_info = require(path.join(__dirname, 'respMessages.js'))
 const https = require('https');
 
-// Geocode an address.
-module.exports = {
+/*
+ * This server side module retrieves weather information from Google Places Web Service API.
+ * General information is retrieved from the sub-API Google Places Textsearch API.
+ * The sub-API Place details is used to retrieve the place website address. 
+ * The sub-API Place Photo Service is used to retrieve a place photo.
+ * 
+ * https://developers.google.com/places/web-service/
+ */
+ module.exports = {
 
+  /* get information about google places at the specificy query type.
+   * Return array with place information.
+   */
   getPlaces: function(type, callback){
 
     var key = appJS.google_api_key;
@@ -26,7 +36,7 @@ module.exports = {
         
         
         generatePlaceArr(data, function(arr) {
-          //5 callbacks to get photo and add to array
+          //5 callbacks to get place photos and add to array
           getPlacePhoto(arr[0][3], function(photo_ref0) {
               arr[0][3] = photo_ref0;
               getPlacePhoto(arr[1][3], function(photo_ref1) {
@@ -69,6 +79,7 @@ module.exports = {
   }
 };
 
+//create array with information from Google Places Textsearch
 function generatePlaceArr(data, callback){
   var placeArr = [];
   var parsed = JSON.parse(data);
@@ -76,12 +87,12 @@ function generatePlaceArr(data, callback){
   var counter = -1; //init
   var flagFirst = 0;
 
-  //get 7 google place items. Place in array.
+  //get 5 google place items. Place in array.
   for(var i=0; i<len; i++){
       var name = parsed['results'][i].name;
       var type="Categories: "
       var address = parsed['results'][i].formatted_address;
-      var photo = "photo"; //getPlacePhoto();
+      var photo = "photo";
       var lat = parsed['results'][i].geometry.location.lat;
       var lng = parsed['results'][i].geometry.location.lng;
       var ref ="ref";
@@ -107,6 +118,7 @@ function generatePlaceArr(data, callback){
     return callback(placeArr);
 }
 
+//get place photo url address
 function getPlacePhoto(photo_ref, callback){
     
     var key = appJS.google_api_key;
@@ -128,6 +140,7 @@ function getPlacePhoto(photo_ref, callback){
     });
   }
   
+  //get place website address
   function getPlaceWebsite(placeID, callback){
     
     var key = appJS.google_api_key;

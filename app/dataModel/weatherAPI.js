@@ -3,15 +3,21 @@ var appJS = require(path.join(__dirname, '/../../app.js'));
 var chat_info = require(path.join(__dirname, 'respMessages.js'))
 const http = require('http');
 
-// Geocode an address.
+/*
+ * This server side module retrieves weather information from Wunderground API.
+ * The weather is collected for the current day and the next following two days.
+ * 
+ * https://www.wunderground.com/weather/api/d/docs?d=index
+ */
+ 
 module.exports = {
 
-    //todays weather
+  //retrieve the weather information and store in an array
   weatherByCity: function(city, callback){
 
     var key = appJS.wunderground_api_key;
     
-    //the weather today by city
+    //the weather of the current day by city
     var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/Sweden/"+city+".json";
 
     http.get(url, function(response) {
@@ -62,7 +68,7 @@ module.exports = {
   }
 };
 
-//weather forecast 3 days
+//weather forecast for the next following 2 days
 function weatherNext2days(city, callback){
     var key = appJS.wunderground_api_key;
     var url = "http://api.wunderground.com/api/"+key+"/geolookup/forecast10day/q/Sweden/"+city+".json";
@@ -80,7 +86,7 @@ function weatherNext2days(city, callback){
         if(parsed.response.error){
           console.log("City name is not valid!");
         }else{
-          return callback(parsed);//parsed
+          return callback(parsed);
 
         }
       });
