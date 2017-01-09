@@ -4,7 +4,7 @@ var chat_info = require(path.join(__dirname, 'respMessages.js'))
 const https = require('https');
 
 /*
- * This server side module retrieves weather information from Google Places Web Service API.
+ * This server side module retrieves place information from Google Places Web Service API.
  * General information is retrieved from the sub-API Google Places Textsearch API.
  * The sub-API Place details is used to retrieve the place website address. 
  * The sub-API Place Photo Service is used to retrieve a place photo.
